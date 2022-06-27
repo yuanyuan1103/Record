@@ -134,123 +134,112 @@
     <h2>精選推薦</h2>
   </div>
   <div class="container">
-    <div class="row p-0 justify-content-center">
-      <div class="card col-lg-4 col-sm-8">
-        <img
-          src="https://images.unsplash.com/photo-1602848596718-45693ff58c78?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=875"
-          class="card-img-top"
-          alt="..."
-        />
-        <div class="infoShop d-flex justify-content-between align-items-center">
-          <a class="d-block w-50 p-3" href=""><i class="bi bi-basket-fill"></i>加入購物</a>
-          <a class="d-block w-50 p-3" href=""><i class="bi bi-file-earmark-text-fill"></i>詳細資訊</a>
+    <div class="row">
+      <div class="col-12 col-sm-6 col-lg-3 p-3" v-for="item in productRandom" :key="item.id">
+        <div class="product">
+          <div class="bgr position-absolute top-0 end-0" v-if="!(item.price == item.origin_price)">sale</div>
+          <a href="#" @click.prevent="gotoProduct(item.id)"><i class="bi bi-search"></i></a>
+          <img style="aspect-ratio: 4/3" :src="item.imageUrl" class="card-img-top" alt="..." />
         </div>
-      </div>
-      <div class="card col-lg-4 col-sm-8">
-        <img
-          src="https://images.unsplash.com/photo-1602848597941-0d3d3a2c1241?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=875"
-          class="card-img-top"
-          alt="..."
-        />
-        <div class="infoShop d-flex justify-content-between align-items-center">
-          <a class="d-block w-50 p-3" href=""><i class="bi bi-basket-fill"></i>加入購物</a>
-          <a class="d-block w-50 p-3" href=""><i class="bi bi-file-earmark-text-fill"></i>詳細資訊</a>
-        </div>
-      </div>
-      <div class="card col-lg-4 col-sm-8">
-        <img
-          src="https://images.unsplash.com/photo-1620831450720-de4a2a539e61?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880"
-          class="card-img-top"
-          alt="..."
-        />
-        <div class="infoShop d-flex justify-content-between align-items-center">
-          <a class="d-block w-50 p-3" href=""><i class="bi bi-basket-fill"></i>加入購物</a>
-          <a class="d-block w-50 p-3" href=""><i class="bi bi-file-earmark-text-fill"></i>詳細資訊</a>
+        <div class="proDetil p-2">
+          <div class="proTitle fw-bolder">
+            <h3>{{ item.title }}</h3>
+            <span v-if="item.price == item.origin_price" class="fs-5">${{ currency(item.origin_price) }}</span>
+            <span v-if="!(item.price == item.origin_price)" class="text-danger fs-5">${{ currency(item.price) }}</span>
+          </div>
         </div>
       </div>
     </div>
   </div>
   <!-- FQA -->
   <div class="container title p-5">
-    <h2>FQA</h2>
+    <h2>FAQ</h2>
   </div>
-  <div class="container accordion pb-3" id="accordionExample">
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingOne">
-        <button
-          class="accordion-button"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#collapseOne"
-          aria-expanded="true"
-          aria-controls="collapseOne"
-        >
-          如何付款呢？
-        </button>
-      </h2>
-      <div
-        id="collapseOne"
-        class="accordion-collapse collapse show"
-        aria-labelledby="headingOne"
-        data-bs-parent="#accordionExample"
-      >
-        <div class="accordion-body">
-          <p>1.信用卡</p>
-          <p>2.ATM轉帳匯款</p>
+  <section id="info-utile" class="bg-white pb-5 h100">
+    <div class="container">
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOne"
+              aria-expanded="true"
+              aria-controls="collapseOne"
+            >
+              如何付款呢？
+            </button>
+          </h2>
+          <div
+            id="collapseOne"
+            class="accordion-collapse collapse show"
+            aria-labelledby="headingOne"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <ul class="ms-5">
+                <li>信用卡</li>
+                <li>ATM轉帳匯款</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo"
+              aria-expanded="false"
+              aria-controls="collapseTwo"
+            >
+              購物流程
+            </button>
+          </h2>
+          <div
+            id="collapseTwo"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingTwo"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <ul class="ms-5">
+                <li>Step1。選購您喜愛的商品您可以透過網頁引導或搜尋的方式找到您要的商品再點選加入購物車。</li>
+                <li>Step2。繼續購物/訂單結帳 。</li>
+                <li>Step3。確認購買清單。</li>
+                <li>Step4。前往結帳。</li>
+                <li>Step5。完成購物。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingFour">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseFour"
+              aria-expanded="false"
+              aria-controls="collapseFour"
+            >
+              運費如何計算?
+            </button>
+          </h2>
+          <div
+            id="collapseFour"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingFour"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">只要您在本站購買500(包含)以上，即可享有免運費優惠喔!</div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingTwo">
-        <button
-          class="accordion-button collapsed"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#collapseTwo"
-          aria-expanded="false"
-          aria-controls="collapseTwo"
-        >
-          購物流程
-        </button>
-      </h2>
-      <div
-        id="collapseTwo"
-        class="accordion-collapse collapse"
-        aria-labelledby="headingTwo"
-        data-bs-parent="#accordionExample"
-      >
-        <div class="accordion-body">
-          <p>Step1選購您喜愛的商品您可以透過網頁引導或搜尋的方式找到您要的商品再點選加入購物車。</p>
-          <p>Step2繼續購物/訂單結帳 。</p>
-          <p>Step3確認購買清單。</p>
-          <p>Step4前往結帳。</p>
-          <p>Step5完成購物。</p>
-        </div>
-      </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingThree">
-        <button
-          class="accordion-button collapsed"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#collapseThree"
-          aria-expanded="false"
-          aria-controls="collapseThree"
-        >
-          運費如何計算?
-        </button>
-      </h2>
-      <div
-        id="collapseThree"
-        class="accordion-collapse collapse"
-        aria-labelledby="headingThree"
-        data-bs-parent="#accordionExample"
-      >
-        <div class="accordion-body">只要您在本站購買500(包含)以上，即可享有免運費優惠喔!</div>
-      </div>
-    </div>
-  </div>
+  </section>
   <!-- coupon -->
   <div class="coupon">
     <div class="intro-banner row m-5">
@@ -258,7 +247,7 @@
         <div class="ticket m-3">
           <span>優惠碼</span>
           <span class="mx-3 ticket-dash"></span>
-          <span>text</span>
+          <span>open2022</span>
         </div>
       </div>
       <div class="ticketContent col-lg-6 col-sm-12 p-3 d-lg-flex flex-sm-column justify-content-center">
@@ -272,25 +261,47 @@
 <style src="../assets/helpers/_Index.css" scoped></style>
 <script>
 import { categoryList } from '../methods/commonData';
-
+import { currency } from '../methods/filters';
 export default {
   data() {
     return {
       //分類列表 不取全部
-      categoryList: categoryList.filter((e) => e.value != undefined)
+      categoryList: categoryList.filter((e) => e.value != undefined),
+      productRandom: [],
+      isLoading: false
     };
   },
   methods: {
+    currency,
     gotoCategory(category) {
       this.$router.push({
         name: '產品清單',
         query: { category: `${category}` }
       });
-      //http://localhost:8080/#/product?category=%E5%8E%9F%E8%81%B2%E5%B8%B6&page=1
+    },
+    rendomProducts() {
+      this.isLoading = true;
+
+      this.$http
+        .get(`${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/products/all`)
+        .then((res) => {
+          if (!res.data.success) throw new Error(res.data.message);
+
+          this.productRandom = res.data.products
+            .filter((x) => x.id !== this.id)
+            .sort(() => Math.random() - 0.5)
+            .splice(1, 4);
+
+          // done
+          this.isLoading = false;
+        })
+        .catch((err) => {
+          console.log(err?.message);
+        });
     }
   },
   created() {
-    console.log(this.categoryList);
+    this.rendomProducts();
   }
 };
 </script>
