@@ -1,0 +1,32 @@
+.min-height-70{
+  min-height: 70vh;
+}
+.bg-mask-60{
+  filter: brightness(60%);
+}
+.collectbanner{
+  height: 264px;
+  background: url('https://images.unsplash.com/photo-1626814204422-9f97352a32c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1475&q=80');
+  background-size: cover;
+  background-position: 60%;
+}
+.text-hv-center {
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  white-space: nowrap;
+}
+.bgcolor{
+  background: #2D2B1E;
+  color:#FEF2F2;
+}
+.btnShop{
+  color:#2D2B1E;
+}
+.btnShop:hover{
+  color:#838288;
+}
+.productImg{
+  width: 150px;
+  aspect-ratio: 4/3;
+}
