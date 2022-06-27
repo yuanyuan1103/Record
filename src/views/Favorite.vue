@@ -121,7 +121,6 @@ export default {
           this.qty = 1;
           this.emitter.emit('update-cart', id);
           this.$httpMessageState(response, '加入購物車');
-          // console.log(response);
         })
         .catch((error) => {
           this.$httpMessageState(error, '連線錯誤');
