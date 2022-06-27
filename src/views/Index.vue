@@ -1,4 +1,5 @@
 <template>
+  <Loading :active="isLoading"></Loading>
   <!-- banner -->
   <div class="banner">
     <!-- 輪播 Carousel -->
@@ -298,6 +299,11 @@ export default {
         .catch((err) => {
           console.log(err?.message);
         });
+    },
+    gotoProduct(id) {
+      //跳轉至專屬於此產品id的頁面
+      //給予空參數 取代原有的頁數或分類
+      this.$router.push({ path: `/product/${id}`, params: {} });
     }
   },
   created() {

@@ -20,10 +20,6 @@
   background-color: #fff;
   transition: 0.6s;
 }
-/* .bgproDetil{
-  background-color: rgb(133, 133, 133);
-  color:#fff;
-} */
 .product {
   position: relative;
 }
@@ -35,7 +31,6 @@
   background-color:rgb(0, 0, 0);
   height: 74px;
 }
-
 .product a {
   opacity: 0;
   display: flex;
@@ -115,8 +110,10 @@
   display: inline-block;
   vertical-align: middle;
   position: relative;
+  letter-spacing: .2rem;
 }
 .listCategoryActive{
+  letter-spacing: .2rem;
   font-weight:bolder;
 }
 
@@ -134,8 +131,8 @@
   width: 100%;
 }
 .listCategory:hover{
-  font-size: 1.4rem;
   font-weight:bolder;
+  letter-spacing: .2rem;
 }
 .categoryList{
   display: flex;
@@ -150,6 +147,7 @@
   justify-content: center;
   gap: 1em;
   padding-top: 2rem;
+  letter-spacing: .2rem;
 }
 @media(max-width:768px){
   .categoryList{

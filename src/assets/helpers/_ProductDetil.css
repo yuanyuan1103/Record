@@ -1,3 +1,6 @@
+.textspac{
+  letter-spacing: .2rem;
+}
 .product{
   position: relative;
 }

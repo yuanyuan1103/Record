@@ -5,7 +5,7 @@
       <h2 class="position-absolute text-hv-center h2 fw-bold text-white-50 pageBanner-text">{{ product.title }}</h2>
     </div>
   </div>
-  <div class="container">
+  <div class="container textspac">
     <!-- 麵包 -->
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb p-3">
@@ -98,20 +98,24 @@
     <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade show active pt-4" id="home" role="tabpanel" aria-labelledby="home-tab">
         <ul>
-          <li>組合包為整組販賣，不拆售</li>
-          <li>如選取「改尺寸（請備註尺寸）」規格，請務必在訂單備註欄中註明商品名稱及對應的欲客製尺寸</li>
-          <li>飾品圖檔顏色會因每台電腦設定差異而略有不同，以實際商品顏色為準，敬請見諒</li>
+          <li>現貨商品將於1-2天內為您寄出。(例假日除外)</li>
+          <li>如調貨時程須 超過十日 以上，或是 商品缺貨 等其他問題，我們會以E-mail告知，請務必留意任何來信。</li>
+          <li>訂單內若有預購商品，須待預購商品到貨後一併寄出，如欲分開寄送，請個別下單。</li>
           <li>尺寸皆以公分（cm）為測量單位，因測量方式不同，正負 1-2 公分的誤差為合理範圍</li>
-          <li>若有禮物包裝需求，請於訂單中備註，我們將會協助進行免費包裝</li>
         </ul>
       </div>
       <div class="tab-pane fade pt-4" id="profile" role="tabpanel" aria-labelledby="profile-tab">
         <ul>
-          <li>10 天鑑賞期時間判定基準：如 9/1 號收到商品，則請 9/10（含）前申請退換貨，依此類推</li>
           <li>
-            商品鑑賞期不等於試用期，退回時請保持商品與包裝完整，如因外力撞擊等意外因素，造成了飾品刮傷受損，請恕無法接受退換貨
+            黑膠唱片較容易因外在因素產生變化，「製作過程」或「拿取過程」也易有刮傷、不平等問題產生。由於本站售出的商品並皆是全新且未拆封的，故無法得知商品內部是否有瑕疵的狀況。
           </li>
-          <li>如商品超過鑑賞期欲辦理退換貨者，恕不受理</li>
+          <li>
+            黑膠出廠時，每間壓片廠沒辦法保證有百分之百的平整，若不平狀況晃動很大造成跳針或撥放聲音明顯不對，可以協助您換貨，但若不影響唱片撥放及聲音，是屬正常的。
+          </li>
+          <li>
+            為避免黑膠瑕疵產生退換貨問題，本站可在出貨前先為您拆封檢查是否有嚴重「刮傷」、「不平」等狀況導致「無法播放」，請至「客服中心」留言告知訂單編號，以便我們為您安排。
+          </li>
+          <li>由於本站已有免運優惠，瑕疵商品如欲換貨，需自行負擔往返的運送費用。</li>
         </ul>
       </div>
       <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"></div>

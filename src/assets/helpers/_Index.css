@@ -251,9 +251,10 @@
   transition: opacity 0.8s;
 }
 .proTitle{
-      display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
 }
 .bgr{
   background: red;
@@ -276,7 +277,7 @@
   }
 
   .title h2{
-  width:100%;
+    width:100%;
     text-align: center;
 }
 }
