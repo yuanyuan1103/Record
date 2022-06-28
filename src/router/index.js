@@ -16,6 +16,7 @@ const CheckInfo = () => import('../views/CheckInfo.vue');
 const CheckOut = () => import('../views/CheckOut.vue');
 const FAQ = () => import('../views/FQA.vue');
 const UserOrder = () => import('../views/UserOrder.vue');
+
 const routes = [
   {
     path: '/',
@@ -112,6 +113,11 @@ const router = createRouter({
   history: createWebHashHistory(),
   linkActiveClass: 'active',
   routes
+});
+
+router.beforeEach((to, from, next) => {
+  window.document.title = `${to.name} - Record`;
+  next();
 });
 
 export default router;
