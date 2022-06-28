@@ -17,9 +17,9 @@
       <div class="card">
         <div class="card-body">
           <ul class="card-text">
-            <li>付款方式限 信用卡 付款。</li>
-            <li>大部分商品體積較大，因此不適用超商取貨，只提供 宅配到府。</li>
-            <li>無庫存商品調貨時間請參考「商品平均調貨時間」。</li>
+            <li>付款方式限 信用卡&ATM轉帳 付款。</li>
+            <li>如購買過程及收到商品有任何問題，歡迎聯繫我們， 我們會盡快回覆您。</li>
+            <li>在商品庫存充足下，我們允諾下單三天內會出貨，如您所訂購的商品庫存不足，我們將盡快以電子郵件通知您。</li>
             <li>目前無提供海外服務。</li>
           </ul>
         </div>
@@ -38,9 +38,7 @@ export default {
   inject: [],
   methods: {
     gotoOrder() {
-      console.log(this.order);
       this.$router.push(`/ordertrack/${this.order}`);
-      //ordertrack/:orderId
     }
   }
 };

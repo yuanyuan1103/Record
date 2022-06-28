@@ -61,12 +61,15 @@
         :style="{ visibility: showMenu ? 'visible' : 'hidden' }"
       >
         <div class="offcanvas-header">
-          <button type="button" class="btn-close text-reset" @click.prevent="showOffcanvasMenu()">
+          <button type="button" class="btn-close text-reset h2" @click.prevent="showOffcanvasMenu()">
             <i class="bi bi-x-lg"></i>
           </button>
         </div>
         <div class="offcanvas-body">
           <ul class="list-unstyled">
+            <li class="nav-item">
+              <router-link to="/" class="nav-link" @click.prevent="showOffcanvasMenu()">Home</router-link>
+            </li>
             <li class="nav-item">
               <router-link to="/about" class="nav-link" @click.prevent="showOffcanvasMenu()">About</router-link>
             </li>
@@ -82,7 +85,6 @@
           </ul>
         </div>
       </div>
-      <a class="navbar-brand iconFont fs-3" href="#">Record</a>
       <div class="otherMeun">
         <router-link to="/userboard/favorite" class="nav-link"
           ><i class="bi bi-heart"></i

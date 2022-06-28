@@ -1,5 +1,5 @@
-.min-height-70{
-  min-height: 70vh;
+.h100{
+  min-height: calc(100vh - 264px);
 }
 .bg-mask-60{
   filter: brightness(60%);

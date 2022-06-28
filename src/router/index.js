@@ -15,7 +15,7 @@ const OrderTrack = () => import('../views/OrderTrack.vue');
 const CheckCart = () => import('../views/CheckCart.vue');
 const CheckInfo = () => import('../views/CheckInfo.vue');
 const CheckOut = () => import('../views/CheckOut.vue');
-const FQA = () => import('../views/FQA.vue');
+const FAQ = () => import('../views/FQA.vue');
 const UserOrder = () => import('../views/UserOrder.vue');
 const routes = [
   {
@@ -36,7 +36,7 @@ const routes = [
       {
         path: 'faq',
         name: '問與答',
-        component: FQA
+        component: FAQ
       },
       {
         path: 'product',

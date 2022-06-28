@@ -4,7 +4,7 @@
       <h2 class="position-absolute text-hv-center h2 fw-bold text-white-50 pageBanner-text">查看訂單狀態</h2>
     </div>
   </div>
-  <div class="orderTrack">
+  <div class="orderTrack" v-if="order.id">
     <div class="pt-5">
       <div class="row px-5">
         <div class="col-12 col-lg-7 mb-4">
@@ -14,23 +14,23 @@
               <span>{{ order.id }}</span>
             </div>
             <div class="mb-3">
-              <h3 class="border-bottom">Email :</h3>
+              <h3 class="border-bottom">收件人信箱</h3>
               <span>{{ order.user.email }}</span>
             </div>
             <div class="mb-3">
-              <h3 class="border-bottom">收件人姓名 :</h3>
+              <h3 class="border-bottom">收件人姓名</h3>
               <span>{{ order.user.name }}</span>
             </div>
             <div class="mb-3">
-              <h3 class="border-bottom">收件人電話 :</h3>
+              <h3 class="border-bottom">收件人電話</h3>
               <span>{{ order.user.tel }}</span>
             </div>
             <div class="mb-3">
-              <h3 class="border-bottom">收件人地址 :</h3>
+              <h3 class="border-bottom">收件人地址</h3>
               <span>{{ order.user.address }}</span>
             </div>
             <div class="mb-3">
-              <h3 class="border-bottom">留言 :</h3>
+              <h3 class="border-bottom">留言</h3>
               <span>{{ order.message }}</span>
             </div>
           </div>
@@ -71,6 +71,13 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="h100 d-flex justify-content-center align-items-center" v-else>
+    <div class="text-center">
+      <i class="bi bi-bag-heart display-1 fw-bold text-dark"></i>
+      <h3 class="p-3">請輸入正確的訂單編號或是再次逛逛商店下單</h3>
+      <a href="#/product" class="btn btn-dark btn-lg mb-5">Shop Now</a>
     </div>
   </div>
 </template>

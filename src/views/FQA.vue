@@ -91,29 +91,6 @@
         </div>
 
         <div class="accordion-item">
-          <h2 class="accordion-header" id="headingFour">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseFour"
-              aria-expanded="false"
-              aria-controls="collapseFour"
-            >
-              運費如何計算?
-            </button>
-          </h2>
-          <div
-            id="collapseFour"
-            class="accordion-collapse collapse"
-            aria-labelledby="headingFour"
-            data-bs-parent="#accordionExample"
-          >
-            <div class="accordion-body">只要您在本站購買500(包含)以上，即可享有免運費優惠喔!</div>
-          </div>
-        </div>
-
-        <div class="accordion-item">
           <h2 class="accordion-header" id="headingFive">
             <button
               class="accordion-button collapsed"

@@ -4,7 +4,7 @@
       <h2 class="position-absolute text-hv-center h2 fw-bold text-white-50 pageBanner-text">喜愛清單</h2>
     </div>
   </div>
-  <div class="container mt-4 min-height-70" v-if="favoriteProduct.length">
+  <div class="container mt-4 h100" v-if="favoriteProduct.length">
     <table class="table table-striped table-hover align-middle">
       <thead>
         <tr class="text-center align-middle fw-bold fs-4 bgcolor">
@@ -40,7 +40,7 @@
       </tbody>
     </table>
   </div>
-  <div class="container-fluid mt-4 min-height-70" v-else>
+  <div class="container-fluid d-flex justify-content-center align-items-center h100" v-else>
     <div class="text-center">
       <i class="bi bi-bag-heart display-1 fw-bold text-dark"></i>
       <h3 class="p-3">目前喜愛清單還沒有商品唷</h3>
