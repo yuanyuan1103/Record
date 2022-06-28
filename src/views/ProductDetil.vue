@@ -163,7 +163,6 @@ export default {
       immediate: true,
       handler(params) {
         const { orderId } = params;
-        // console.log('orderId', orderId);
         this.id = orderId;
         this.getProduct();
         this.rendomProducts();
@@ -219,7 +218,6 @@ export default {
           this.status.loadingItem = '';
           this.qty = 1;
           this.$httpMessageState(response, '加入購物車');
-          // console.log(response);
           this.emitter.emit('update-cart', id);
         })
         .catch((error) => {

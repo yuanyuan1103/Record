@@ -162,9 +162,7 @@ export default {
     createOrder() {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/order`;
       const order = this.form;
-      console.log(order);
       this.$http.post(url, { data: order }).then((res) => {
-        console.log(res.data.orderId);
         this.emitter.emit('update-cart');
         this.$router.push(`/checkout/${res.data.orderId}`);
       });
@@ -173,7 +171,6 @@ export default {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`;
       this.isLoading = true;
       this.$http.get(url).then((response) => {
-        console.log(response);
         this.cart = response.data.data;
         this.isLoading = false;
       });

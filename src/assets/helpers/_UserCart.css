@@ -1,3 +1,8 @@
+.textover{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .colorHeart{
   color:#000;
   font-size: 0.6rem;

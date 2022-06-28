@@ -212,7 +212,6 @@ export default {
       this.isLoading = true;
       this.$http.post(url, { data: coupon }).then((res) => {
         this.$httpMessageState(res, '加入優惠券');
-        console.log(res);
         this.getCart();
         this.isLoading = false;
       });
@@ -225,11 +224,9 @@ export default {
         product_id: item.product_id,
         qty
       };
-      console.log(cart);
       this.$http.put(url, { data: cart }).then((response) => {
         this.$httpMessageState(response, '更新購物車');
         this.status.loadingItem = '';
-        console.log(response);
         this.getCart();
       });
     },

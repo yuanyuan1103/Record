@@ -80,7 +80,6 @@ export default {
             return;
           }
           this.favoriteProduct = response.data.products.filter((product) => this.favorite.includes(product.id));
-          console.log(this.favoriteProduct);
         })
         .catch((error) => {
           this.$httpMessageState(error, '連線錯誤');
@@ -88,7 +87,6 @@ export default {
     },
     removeFavorite(itemId) {
       this.isLoading = true;
-      // console.log(this.favorite.indexOf(itemId));
       this.favorite.splice(this.favorite.indexOf(itemId), 1);
       this.$httpMessageState(
         {

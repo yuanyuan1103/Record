@@ -29,33 +29,31 @@
                 <a href="#" @click.prevent="getProduct(item.id)"><i class="bi bi-search"></i></a>
                 <img style="aspect-ratio: 4/3" :src="item.imageUrl" class="card-img-top" alt="..." />
               </div>
-              <div class="bgproDetil">
-                <h3 class="pt-2">{{ item.title }}</h3>
-                <div class="proDetil pb-3">
-                  <div class="proBtn">
-                    <button
-                      type="button"
-                      @click="addToCart(item.id, 1)"
-                      class="btn colorCart border border-dark me-2"
-                      :disabled="this.status.loadingItem === item.id"
-                    >
-                      <i class="bi bi-cart"></i>
-                    </button>
-                    <button
-                      type="button"
-                      @click.stop="toggleFavorite(item)"
-                      class="btn btn-favorite colorHeart border border-dark"
-                    >
-                      <i class="bi" :class="favorite.includes(item.id) ? 'bi-heart-fill' : 'bi-heart'"></i>
-                    </button>
-                  </div>
-                  <div class="proTitle">
-                    <span v-if="!(item.price == item.origin_price)" class="text-decoration-line-through text-muted fs-6"
-                      >${{ currency(item.origin_price) }}</span
-                    >
-                    <span v-if="item.price == item.origin_price" class="text-light fs-6">.</span>
-                    <span class="fs-4">${{ currency(item.price) }}</span>
-                  </div>
+              <p class="pt-2 fs-3 textover">{{ item.title }}</p>
+              <div class="proDetil pb-3">
+                <div class="proBtn">
+                  <button
+                    type="button"
+                    @click="addToCart(item.id, 1)"
+                    class="btn colorCart border border-dark me-2"
+                    :disabled="this.status.loadingItem === item.id"
+                  >
+                    <i class="bi bi-cart"></i>
+                  </button>
+                  <button
+                    type="button"
+                    @click.stop="toggleFavorite(item)"
+                    class="btn btn-favorite colorHeart border border-dark"
+                  >
+                    <i class="bi" :class="favorite.includes(item.id) ? 'bi-heart-fill' : 'bi-heart'"></i>
+                  </button>
+                </div>
+                <div class="proTitle">
+                  <span v-if="!(item.price == item.origin_price)" class="text-decoration-line-through text-muted fs-6"
+                    >${{ currency(item.origin_price) }}</span
+                  >
+                  <span v-if="item.price == item.origin_price" class="text-light fs-6">.</span>
+                  <span class="fs-4">${{ currency(item.price) }}</span>
                 </div>
               </div>
             </div>
@@ -139,7 +137,6 @@ export default {
     replaceUrlQuery(type, value) {
       let query = { ...this.$route.query };
       query[type] = value;
-      // console.log(query);
       if (type == 'category') {
         query.page = 1;
       }
@@ -181,13 +178,12 @@ export default {
       this.favorite = saveFavorite.getFavorite();
     },
     getProduct(id) {
-      // const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/products/${id}`;
-      // console.log(api);
       //跳轉至專屬於此產品id的頁面
       //給予空參數 取代原有的頁數或分類
       this.$router.push({ path: `/product/${id}`, params: {} });
     },
     addToCart(id, qty) {
+      this.isLoading = true;
       const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`;
       const data = {
         product_id: id,
@@ -201,14 +197,15 @@ export default {
             this.$httpMessageState(response, '加入購物車');
             return;
           }
+          this.isLoading = false;
           this.status.loadingItem = '';
           this.qty = 1;
           this.emitter.emit('update-cart', id);
           this.$httpMessageState(response, '加入購物車');
-          // console.log(response);
         })
         .catch((error) => {
           this.$httpMessageState(error, '連線錯誤');
+          this.isLoading = false;
         });
     }
   },

@@ -103,7 +103,6 @@ export default {
       this.$http.get(url).then((res) => {
         if (res.data.success) {
           this.order = res.data.order;
-          console.log(this.order);
           this.isLoading = false;
         }
       });
@@ -123,7 +122,6 @@ export default {
   created() {
     //取得路由id
     this.orderId = this.$route.params.orderId;
-    console.log(this.orderId);
     //透過getOrder取得對應的訂單資料
     this.getOrder();
   }

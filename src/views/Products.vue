@@ -83,12 +83,10 @@ export default {
       const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/products/?page=${page}`;
       //因讀取資料 故使用過場效果
       this.isLoading = true;
-      console.log(api);
       this.$http.get(api).then((res) => {
         //若已讀取完成 則將讀取效果關閉
         this.isLoading = false;
         if (res.data.success) {
-          console.log(res.data);
           this.products = res.data.products;
           this.pagination = res.data.pagination;
         }
@@ -105,14 +103,12 @@ export default {
       }
       //將狀態存入
       this.isNew = isNew;
-      console.log(isNew, item);
       const productComponent = this.$refs.productModal;
       productComponent.showModal();
     },
     //編輯更新product
     updateProduct(item) {
       this.isLoading = true;
-      console.log(item);
       this.tempProduct = item;
       //若為新增則執行以下
       let api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/product`;
@@ -128,7 +124,6 @@ export default {
       const productComponent = this.$refs.productModal;
       this.$http[httpMethod](api, { data: this.tempProduct }).then((response) => {
         this.isLoading = false;
-        console.log(response);
         productComponent.hideModal();
         //加入吐司
         this.$httpMessageState(response, '修改產品成功');
@@ -149,12 +144,9 @@ export default {
       //實作刪除
       this.$http.delete(url).then((response) => {
         this.isLoading = false;
-        console.log(response.data);
-
         //關閉刪除 Modal
         const delComponent = this.$refs.delModal;
         delComponent.hideModal();
-
         //重新取得產品資料
         this.getProducts();
       });
