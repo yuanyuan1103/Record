@@ -2,7 +2,7 @@
   <!-- navbar desktop-header -->
   <nav class="desktop header navbar navbar-expand-lg navbar-dark fixed-top" :class="{ colorNav: act }">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Records</a>
+      <a class="navbar-brand iconFont fs-3" href="#">Record</a>
       <div class="mainMeun">
         <button
           class="navbar-toggler"
@@ -18,19 +18,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav navbar-nav-scroll">
             <li class="nav-item">
-              <router-link to="/" class="nav-link">Home</router-link>
+              <router-link to="/about" class="nav-link iconFont">About</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/about" class="nav-link">About</router-link>
+              <router-link to="/product" class="nav-link iconFont">Records</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/product" class="nav-link">Records</router-link>
+              <router-link to="/faq" class="nav-link iconFont">FAQ</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/faq" class="nav-link">FAQ</router-link>
-            </li>
-            <li class="nav-item">
-              <router-link to="/ordertrack" class="nav-link">Order</router-link>
+              <router-link to="/ordertrack" class="nav-link iconFont">Order</router-link>
             </li>
           </ul>
         </div>
@@ -71,11 +68,6 @@
         <div class="offcanvas-body">
           <ul class="list-unstyled">
             <li class="nav-item">
-              <router-link to="/" class="nav-link" aria-current="page" @click.prevent="showOffcanvasMenu()"
-                >Home</router-link
-              >
-            </li>
-            <li class="nav-item">
               <router-link to="/about" class="nav-link" @click.prevent="showOffcanvasMenu()">About</router-link>
             </li>
             <li class="nav-item">
@@ -90,7 +82,7 @@
           </ul>
         </div>
       </div>
-      <a class="navbar-brand" href="#">Records</a>
+      <a class="navbar-brand iconFont fs-3" href="#">Record</a>
       <div class="otherMeun">
         <router-link to="/userboard/favorite" class="nav-link"
           ><i class="bi bi-heart"></i
@@ -123,9 +115,6 @@ export default {
     };
   },
   created() {
-    // this.emitter.on('update-favorite', (data) => {
-    //   console.log('favorite', data);
-    // });
     window.addEventListener('scroll', this.handleScroll);
     this.getCart();
   },
@@ -144,7 +133,6 @@ export default {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`;
       this.$http.get(url).then((response) => {
         this.cart = response.data.data.carts.length;
-        // console.log('this.cart', this.cart);
       });
     }
   },

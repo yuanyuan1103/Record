@@ -1,6 +1,5 @@
-.banner{
-  overflow-y: hidden;
-  overflow-x: hidden;
+.textspac{
+  letter-spacing: .2rem;
 }
 .animated{
   opacity: 0;
@@ -12,6 +11,10 @@
   transform: translateY(0);
 }
 /* banner */
+.banner{
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
 .carousel-item img{
   height: calc(100vh);
   background-size: cover;
@@ -58,7 +61,6 @@
   border: 0 solid transparent;
   background: #000000bf;
   color: #fff;
-  text-transform: uppercase;
   text-align: center;
   display: inline-block;
   padding: 1em 2em;
@@ -89,7 +91,7 @@
 .ticket::after{
   right: -0.7em;
 }
-
+/* music */
 .effect-lily{
   position: relative;
   overflow:hidden;
@@ -159,7 +161,7 @@
 	opacity: 1;
   transform:scale(1.2,1.2);
 }
-
+/* introduce */
 .title h2{
   font-weight:600;
   font-size: 2rem;
@@ -172,7 +174,6 @@
   font-size: 1.5rem;
   letter-spacing: 2.5px;
   text-indent: 3rem;
-  line-height:2rem;
 }
 .infoShop{
   color:#000;
@@ -188,7 +189,7 @@
   color:#6c6c6c;
   text-decoration:none;
 }
-
+/* FQA */
 .accordion-button {
   background-color: #fff;
   box-shadow: none;
@@ -227,7 +228,7 @@
   background-size: 1.25rem;
   transition: transform .2s ease-in-out;
 }
-
+/* recommend */
 .product{
   position: relative;
 }

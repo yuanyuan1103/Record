@@ -34,8 +34,8 @@
             alt="..."
           />
           <div class="carousel-caption d-md-block">
-            <h2>時光在歌唱<br />黑膠唱片收藏的不僅僅是聲音</h2>
-            <a href="#/products" class="custom-btn btn btn-outline-light rounded-pill px-5"> SHOP NOW </a>
+            <h2 class="textspac">時光在歌唱<br />黑膠唱片收藏的不僅僅是聲音</h2>
+            <a href="#/product" class="custom-btn btn btn-outline-light rounded-pill px-5"> SHOP NOW </a>
           </div>
         </div>
         <div class="carousel-item">
@@ -45,8 +45,8 @@
             alt="..."
           />
           <div class="carousel-caption d-md-block">
-            <h2>近年被譽為<br />「黑膠唱片復興時代」</h2>
-            <a href="#/products" class="custom-btn btn btn-outline-light rounded-pill px-5"> SHOP NOW </a>
+            <h2 class="textspac">近年被譽為<br />「黑膠唱片復興時代」</h2>
+            <a href="#/product" class="custom-btn btn btn-outline-light rounded-pill px-5"> SHOP NOW </a>
           </div>
         </div>
         <div class="carousel-item">
@@ -56,8 +56,8 @@
             alt="..."
           />
           <div class="carousel-caption d-md-block">
-            <h2>聽黑膠需要理由嗎？</h2>
-            <a href="#/products" class="custom-btn btn btn-outline-light rounded-pill px-5"> SHOP NOW </a>
+            <h2 class="textspac">聽黑膠需要理由嗎？</h2>
+            <a href="#/product" class="custom-btn btn btn-outline-light rounded-pill px-5"> SHOP NOW </a>
           </div>
         </div>
       </div>
@@ -82,7 +82,7 @@
     </div>
   </div>
   <!-- introduce -->
-  <div class="container title p-5" id="introduce">
+  <div class="container title p-5">
     <h2>黑膠唱片?</h2>
   </div>
   <div class="container">
@@ -122,7 +122,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-6 col-sm-12 effect-lily p-0 pointers" v-for="item in categoryList" :key="item.value">
-        <img :src="item.imgUrl" class="img-fluid" />
+        <img :src="item.imgUrl" class="img-fluid" @click.prevent="gotoCategory(item.value)" />
         <div class="detil" @click.prevent="gotoCategory(item.value)">
           <h2>{{ item.value }}</h2>
           <span>View more</span>

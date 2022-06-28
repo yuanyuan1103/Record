@@ -1,7 +1,10 @@
-/* #app{
-  overflow-x: hidden;
-} */
-
+.iconFont{
+  font-family:serif;
+  font-size: 1.25rem;
+}
+.textspac{
+  letter-spacing: .2rem;
+}
 .textS{
   font-size: 5px;
   transform: translate(-50%, 0%);
@@ -63,6 +66,13 @@
     justify-content: center;
   }
   .offcanvas-body a{
+    font-family:serif;
+    letter-spacing: .2rem;
+    color: rgba(255, 255, 255, 0.55);
+    text-decoration: none;
+    padding: 20px;
+  }
+  .offcanvas-body a:hover{
     color:#fff;
     text-decoration: none;
     padding: 20px;
@@ -83,7 +93,7 @@
   }
 
   .title h2{
-  width:100%;
+    width:100%;
     text-align: center;
 }
 }
