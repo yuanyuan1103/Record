@@ -117,6 +117,7 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   window.document.title = `${to.name} - Record`;
+  window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   next();
 });
 
