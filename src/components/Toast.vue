@@ -1,9 +1,9 @@
 <template>
   <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" ref="toast">
-    <div class="toast-header">
+    <div class="toast-header bg-dark text-white">
       <span :class="`bg-${msg.style}`" class="p-2 rounded me-2 d-inline-block"></span>
       <strong class="me-auto">{{ msg.title }}</strong>
-      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
     </div>
     <div class="toast-body" v-if="msg.content">
       {{ msg.content }}
@@ -19,7 +19,7 @@ export default {
     const toastEl = this.$refs.toast;
     //此吐司顯示5s
     const toast = new Toast(toastEl, {
-      delay: 5000
+      delay: 1000
     });
     toast.show();
   }
