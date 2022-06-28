@@ -1,8 +1,8 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
-import HomeView from '../views/HomeView.vue';
+// import HomeView from '';
+const HomeView = () => import('../views/HomeView.vue');
 const IndexView = () => import('../views/Index.vue');
 const LoginView = () => import('../views/Login.vue');
-const UserboardView = () => import('../views/Userboard.vue');
 const AboutView = () => import('../views/AboutView.vue');
 const DashboardView = () => import('../views/Dashboard.vue');
 const UserProductView = () => import('../views/UserCart.vue');
@@ -59,31 +59,24 @@ const routes = [
         component: UserOrder
       },
       {
-        path: 'userboard',
-        name: '用戶儀表板',
-        component: UserboardView,
-        children: [
-          {
-            path: 'favorite',
-            name: '最愛',
-            component: FavoriteView
-          },
-          {
-            path: 'cart',
-            name: '購物車',
-            component: CheckCart
-          },
-          {
-            path: 'checkinfo',
-            name: '訂單資訊',
-            component: CheckInfo
-          },
-          {
-            path: 'checkout/:orderId',
-            name: '結帳',
-            component: CheckOut
-          }
-        ]
+        path: 'favorite',
+        name: '最愛',
+        component: FavoriteView
+      },
+      {
+        path: 'cart',
+        name: '購物車',
+        component: CheckCart
+      },
+      {
+        path: 'checkinfo',
+        name: '訂單資訊',
+        component: CheckInfo
+      },
+      {
+        path: 'checkout/:orderId',
+        name: '結帳',
+        component: CheckOut
       }
     ]
   },

@@ -101,7 +101,6 @@
           <li>現貨商品將於1-2天內為您寄出。(例假日除外)</li>
           <li>如調貨時程須 超過十日 以上，或是 商品缺貨 等其他問題，我們會以E-mail告知，請務必留意任何來信。</li>
           <li>訂單內若有預購商品，須待預購商品到貨後一併寄出，如欲分開寄送，請個別下單。</li>
-          <li>尺寸皆以公分（cm）為測量單位，因測量方式不同，正負 1-2 公分的誤差為合理範圍</li>
         </ul>
       </div>
       <div class="tab-pane fade pt-4" id="profile" role="tabpanel" aria-labelledby="profile-tab">

@@ -7,7 +7,7 @@
   <div class="container mt-4 h100" v-if="favoriteProduct.length">
     <table class="table table-striped table-hover align-middle">
       <thead>
-        <tr class="text-center align-middle fw-bold fs-4 bgcolor">
+        <tr class="text-center align-middle bgcolor">
           <th scope="col" class="d-none d-sm-block border-bottom-0"></th>
           <th scope="col">名稱</th>
           <th scope="col">金額</th>
@@ -21,10 +21,14 @@
             <img class="productImg" :src="item.imageUrl" />
           </td>
           <td class="align-middle h4 fw-bold">{{ item.title }}</td>
-          <td class="align-middle h5">
-            ${{ currency(item.origin_price) }}<br /><span class="text-decoration-line-through text-muted h6"
-              >${{ currency(item.price) }}</span
-            >
+          <td class="align-middle">
+            <p v-if="item.price == item.origin_price" class="fs-5 m-0 fw-bold">${{ currency(item.origin_price) }}</p>
+            <p v-if="!(item.price == item.origin_price)" class="text-danger fw-bold m-0 fs-5">
+              ${{ currency(item.price) }}
+            </p>
+            <p v-if="!(item.price == item.origin_price)" class="text-decoration-line-through m-0 text-muted fs-6">
+              ${{ currency(item.origin_price) }}
+            </p>
           </td>
           <td class="align-middle">
             <button type="button" class="btn d-md-block mx-auto btnShop" @click.prevent="addToCart(item.id, 1)">

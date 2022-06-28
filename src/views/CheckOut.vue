@@ -27,23 +27,23 @@
               <span>{{ order.id }}</span>
             </div>
             <div class="mb-3">
-              <h3 class="border-bottom">Email :</h3>
+              <h3 class="border-bottom">收件人信箱</h3>
               <span>{{ order.user.email }}</span>
             </div>
             <div class="mb-3">
-              <h3 class="border-bottom">收件人姓名 :</h3>
+              <h3 class="border-bottom">收件人姓名</h3>
               <span>{{ order.user.name }}</span>
             </div>
             <div class="mb-3">
-              <h3 class="border-bottom">收件人電話 :</h3>
+              <h3 class="border-bottom">收件人電話</h3>
               <span>{{ order.user.tel }}</span>
             </div>
             <div class="mb-3">
-              <h3 class="border-bottom">收件人地址 :</h3>
+              <h3 class="border-bottom">收件人地址</h3>
               <span>{{ order.user.address }}</span>
             </div>
             <div class="mb-3">
-              <h3 class="border-bottom">留言 :</h3>
+              <h3 class="border-bottom">留言</h3>
               <span>{{ order.message }}</span>
             </div>
           </div>

@@ -166,7 +166,7 @@ export default {
       this.$http.post(url, { data: order }).then((res) => {
         console.log(res.data.orderId);
         this.emitter.emit('update-cart');
-        this.$router.push(`/userboard/checkout/${res.data.orderId}`);
+        this.$router.push(`/checkout/${res.data.orderId}`);
       });
     },
     getCart() {

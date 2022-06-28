@@ -234,7 +234,7 @@ export default {
       });
     },
     gotocheckinfo() {
-      this.$router.push(`/userboard/checkinfo`);
+      this.$router.push(`/checkinfo`);
     }
   },
   created() {
