@@ -29,7 +29,7 @@
                 <a href="#" @click.prevent="getProduct(item.id)"><i class="bi bi-search"></i></a>
                 <img style="aspect-ratio: 4/3" :src="item.imageUrl" class="card-img-top" alt="..." />
               </div>
-              <p class="pt-2 fs-3 textover">{{ item.title }}</p>
+              <p class="pt-2 fs-5 textover">{{ item.title }}</p>
               <div class="proDetil pb-3">
                 <div class="proBtn">
                   <button

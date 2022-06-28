@@ -18,7 +18,7 @@
     </nav>
     <div class="row">
       <div class="col-12 col-md-6 d-flex align-items-center p-3">
-        <img style="aspect-ratio: 4/3" :src="product.imageUrl" class="card-img-top" :alt="product.title" />
+        <img :src="product.imageUrl" class="card-img-top" :alt="product.title" />
       </div>
       <div class="col-12 col-md-6 p-3 d-flex flex-column justify-content-center">
         <div class="proTitle border-bottom mb-3">
@@ -30,13 +30,13 @@
 
         <div classs="d-flex align-items-center">
           <span class="bg-secondary text-light rounded px-2">{{ product.category }}</span>
-          <h2 v-if="!product.price" class="text-danger fs-5 fw-bolder pt-3">${{ currency(product.origin_price) }}</h2>
-          <h2 class="text-danger fs-5 fw-bolder pt-3">${{ currency(product.origin_price) }}</h2>
+          <h2 v-if="!product.price" class="text-danger fs-5 fw-bolder pt-3">${{ currency(product.price) }}</h2>
+          <h2 class="text-danger fs-5 fw-bolder pt-3">${{ currency(product.price) }}</h2>
           <span v-if="!(product.price == product.origin_price)" class="text-decoration-line-through text-muted pt-3"
-            >${{ currency(product.price) }}
+            >${{ currency(product.origin_price) }}
           </span>
-          <h3 class="pt-3">{{ product.description }}</h3>
-          <h3 class="pt-3">{{ product.content }}</h3>
+          <p class="pt-3 textspace">{{ product.description }}</p>
+          <p class="pt-3 textspace text-muted">{{ product.content }}</p>
           <div class="input-group pt-3">
             <select class="form-select" v-model="qty">
               <option :value="qty" v-for="qty in 10" :key="qty">{{ qty }}</option>
@@ -128,8 +128,8 @@
           <img style="aspect-ratio: 4/3" :src="item.imageUrl" class="card-img-top" alt="..." />
         </div>
         <div class="proDetil p-2">
-          <div class="proTitle fw-bolder">
-            <h3>{{ item.title }}</h3>
+          <div class="fw-bolder">
+            <p class="textover">{{ item.title }}</p>
             <span v-if="item.price == item.origin_price" class="fs-5">${{ currency(item.origin_price) }}</span>
             <span v-if="!(item.price == item.origin_price)" class="text-danger fs-5">${{ currency(item.price) }}</span>
           </div>
