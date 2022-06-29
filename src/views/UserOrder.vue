@@ -4,7 +4,7 @@
       <h2 class="position-absolute text-hv-center h2 fw-bold text-white-50 pageBanner-text">查看訂單狀態</h2>
     </div>
   </div>
-  <div class="orderTrack" v-if="order.id">
+  <div class="orderTrack" v-if="this.order">
     <div class="pt-5">
       <div class="row px-5">
         <div class="col-12 col-lg-7 mb-4">
@@ -92,7 +92,8 @@ export default {
         products: {}
       },
       orderId: '',
-      isLoading: false
+      isLoading: false,
+      searchOrderResult: ''
     };
   },
   inject: ['$httpMessageState', 'emitter'],
