@@ -140,11 +140,11 @@
         <div class="product">
           <div class="bgr position-absolute top-0 end-0" v-if="!(item.price == item.origin_price)">sale</div>
           <a href="#" @click.prevent="gotoProduct(item.id)"><i class="bi bi-search"></i></a>
-          <img style="aspect-ratio: 4/3" :src="item.imageUrl" class="card-img-top" alt="..." />
+          <img :src="item.imageUrl" class="card-img-top imgProduct" alt="..." />
         </div>
         <div class="proDetil p-2">
           <div class="proTitle fw-bolder">
-            <h3>{{ item.title }}</h3>
+            <p>{{ item.title }}</p>
             <span v-if="item.price == item.origin_price" class="fs-5">${{ currency(item.origin_price) }}</span>
             <span v-if="!(item.price == item.origin_price)" class="text-danger fs-5">${{ currency(item.price) }}</span>
           </div>

@@ -1,3 +1,8 @@
+.imgProduct{
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: #efefef;
+}
 .textspac{
   letter-spacing: .2rem;
 }
