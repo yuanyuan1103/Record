@@ -19,7 +19,7 @@ export default {
     const toastEl = this.$refs.toast;
     //此吐司顯示5s
     const toast = new Toast(toastEl, {
-      delay: 5000
+      delay: 1000
     });
     toast.show();
   }
