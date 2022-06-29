@@ -1,10 +1,19 @@
 <template>
+  <Loading :active="isLoading"></Loading>
   <div class="position-relative bg-cover">
     <div class="collectbanner bg-mask-60">
       <h2 class="position-absolute text-hv-center h2 fw-bold text-white-50 pageBanner-text">查看訂單狀態</h2>
     </div>
   </div>
-  <div class="orderTrack" v-if="this.order">
+
+  <div class="h100 d-flex justify-content-center align-items-center" v-if="this.order == null">
+    <div class="text-center">
+      <i class="bi bi-bag-heart display-1 fw-bold text-dark"></i>
+      <h3 class="p-3">請輸入正確的訂單編號或是再次逛逛商店下單</h3>
+      <a href="#/product" class="btn btn-dark btn-lg mb-5">Shop Now</a>
+    </div>
+  </div>
+  <div class="orderTrack" v-else>
     <div class="pt-5">
       <div class="row px-5">
         <div class="col-12 col-lg-7 mb-4">
@@ -48,11 +57,9 @@
                   <td class="d-flex align-items-center flex-column flex-sm-row">
                     <img class="productImg" :src="item.product.imageUrl" alt="" />
                     <div class="ms-3 text-start py-4">
-                      <div class="h3">{{ item.title }}</div>
-                      <div class="">
-                        <h5>數量:{{ item.qty }}</h5>
-                        <h5>NT${{ $filters.currency(item.final_total) }}</h5>
-                      </div>
+                      <div class="h5">{{ item.product.title }}</div>
+                      <h6>數量:{{ item.qty }}</h6>
+                      <h6>NT${{ $filters.currency(item.final_total) }}</h6>
                     </div>
                   </td>
                 </tr>
@@ -71,13 +78,6 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="h100 d-flex justify-content-center align-items-center" v-else>
-    <div class="text-center">
-      <i class="bi bi-bag-heart display-1 fw-bold text-dark"></i>
-      <h3 class="p-3">請輸入正確的訂單編號或是再次逛逛商店下單</h3>
-      <a href="#/product" class="btn btn-dark btn-lg mb-5">Shop Now</a>
     </div>
   </div>
 </template>
@@ -104,6 +104,7 @@ export default {
       this.$http.get(url).then((res) => {
         if (res.data.success) {
           this.order = res.data.order;
+          console.log(this.order);
           this.isLoading = false;
         }
       });

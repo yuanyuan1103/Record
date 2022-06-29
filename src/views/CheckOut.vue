@@ -61,11 +61,9 @@
                   <td class="d-flex align-items-center flex-column flex-sm-row">
                     <img class="productImg" :src="item.product.imageUrl" alt="" />
                     <div class="ms-3 text-start py-4">
-                      <div class="h3">{{ item.title }}</div>
-                      <div class="">
-                        <h5>數量:{{ item.qty }}</h5>
-                        <h5>NT${{ $filters.currency(item.final_total) }}</h5>
-                      </div>
+                      <div class="h5">{{ item.product.title }}</div>
+                      <h6>數量:{{ item.qty }}</h6>
+                      <h6>NT${{ $filters.currency(item.final_total) }}</h6>
                     </div>
                   </td>
                 </tr>

@@ -46,18 +46,16 @@
   background-color: #424242;
   color:#fff;
 }
-
-
 .productImg{
-  aspect-ratio: 4/3;
-  width: 50%;
+  max-width: 50%;
   height: auto;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  aspect-ratio: 4/3;
+  object-fit: contain;
 }
-
 .text-gray-400{
---tw-text-opacity: 1;
+  --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 .p-6{

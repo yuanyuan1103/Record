@@ -30,13 +30,13 @@
   color:#fff;
 }
 
-
 .productImg{
-  aspect-ratio: 4/3;
-  width: 50%;
+  max-width: 50%;
   height: auto;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  aspect-ratio: 4/3;
+  object-fit: contain;
 }
 
 .text-gray-400{

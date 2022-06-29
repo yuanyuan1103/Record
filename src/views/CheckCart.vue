@@ -47,13 +47,13 @@
                       </div>
                       <img class="productImg" :src="item.product.imageUrl" alt="" />
                       <div class="ms-3 text-start py-4">
-                        <div class="h3">{{ item.product.title }}</div>
-                        <div v-if="item.product.origin_price != item.product.price" class="h4">
+                        <div class="h5">{{ item.product.title }}</div>
+                        <div v-if="item.product.origin_price != item.product.price" class="h5">
                           <span class="text-decoration-line-through text-muted h6"
                             >NT${{ $filters.currency(item.product.origin_price) }}</span
                           ><br />NT${{ $filters.currency(item.product.price) }}
                         </div>
-                        <div v-if="item.product.origin_price == item.product.price" class="h4">
+                        <div v-if="item.product.origin_price == item.product.price" class="h5">
                           NT${{ $filters.currency(item.product.price) }}
                         </div>
                         <div class="d-md-none">
