@@ -5,7 +5,7 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-12 col-md-3 p-3 categoryList">
-          <div class="list-group list-group-flush flex-md-column flex-row">
+          <div class="list-group list-group-flush flex-md-column flex-row align-items-end">
             <button
               type="button"
               class="listCategory"
@@ -14,17 +14,20 @@
               @click.prevent="replaceUrlQuery('category', item.value)"
               :class="{ listCategoryActive: item.value === this.category }"
             >
-              <i :class="item.value === this.category ? 'bi-music-note-list' : ''" class="bi"></i>{{ item.label }}
+              <span class="writingMode"
+                ><i :class="item.value === this.category ? 'bi-music-note-list' : ''" class="bi"></i
+                >{{ item.label }}</span
+              >
             </button>
           </div>
         </div>
-        <div class="col-12 col-md-9 productList">
+        <div class="col-10 col-md-9 productList">
           <div class="form-floating mb-2">
             <input v-model="search" type="text" class="form-control" id="search" placeholder="search" />
             <label for="search">search</label>
           </div>
-          <div class="row" style="min-height: 70vh">
-            <div v-for="item in slicePage" :key="item.id" class="col-12 col-md-6 col-lg-4">
+          <div class="row justify-content-center" style="min-height: 70vh">
+            <div v-for="item in slicePage" :key="item.id" class="col-10 col-md-6 col-lg-4">
               <div class="product">
                 <a href="#" @click.prevent="getProduct(item.id)"><i class="bi bi-search"></i></a>
                 <img :src="item.imageUrl" class="card-img-top imgProduct" alt="..." />
@@ -57,6 +60,8 @@
                 </div>
               </div>
             </div>
+            <div class="col-10 col-md-6 col-lg-4" />
+            <div class="col-10 col-md-6 col-lg-4" />
           </div>
         </div>
         <!-- 分頁資訊 -->
