@@ -6,7 +6,8 @@
   letter-spacing: .2rem;
 }
 .textS{
-  font-size: 5px;
+  font-size: 10px;
+  font-weight:bold;
   transform: translate(-50%, 0%);
 }
 .animated{

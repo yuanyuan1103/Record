@@ -1,7 +1,7 @@
 <template>
   <!-- navbar desktop-header -->
   <nav class="desktop header navbar navbar-expand-lg navbar-dark fixed-top" :class="{ colorNav: act }">
-    <div class="container-fluid">
+    <div class="container">
       <a class="navbar-brand iconFont fs-3" href="#">Record</a>
       <div class="mainMeun">
         <button
