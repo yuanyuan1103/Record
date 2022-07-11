@@ -38,16 +38,12 @@
                   <button
                     type="button"
                     @click="addToCart(item.id, 1)"
-                    class="btn colorCart border border-dark me-2"
+                    class="btn colorCart me-2"
                     :disabled="this.status.loadingItem === item.id"
                   >
                     <i class="bi bi-cart"></i>
                   </button>
-                  <button
-                    type="button"
-                    @click.stop="toggleFavorite(item)"
-                    class="btn btn-favorite colorHeart border border-dark"
-                  >
+                  <button type="button" @click.stop="toggleFavorite(item)" class="btn btn-favorite colorHeart">
                     <i class="bi" :class="favorite.includes(item.id) ? 'bi-heart-fill' : 'bi-heart'"></i>
                   </button>
                 </div>
