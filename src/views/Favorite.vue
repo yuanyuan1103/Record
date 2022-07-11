@@ -1,6 +1,7 @@
 <template>
+  <Loading :active="isLoading"></Loading>
   <div class="position-relative bg-cover">
-    <div class="favoritebanner bg-mask-60">
+    <div class="favoritebanner">
       <h2 class="position-absolute text-hv-center h2 fw-bold favoritebanner-text">喜愛清單</h2>
     </div>
   </div>
@@ -72,16 +73,20 @@ export default {
   methods: {
     currency,
     getFavoriteProduct() {
+      this.isLoading = true;
       this.$http
         .get(`${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/products/all`)
         .then((response) => {
           if (!response.data.success) {
             this.$httpMessageState(response, '取得全部產品資料');
+            this.isLoading = false;
             return;
           }
+          this.isLoading = false;
           this.favoriteProduct = response.data.products.filter((product) => this.favorite.includes(product.id));
         })
         .catch((error) => {
+          this.isLoading = false;
           this.$httpMessageState(error, '連線錯誤');
         });
     },
