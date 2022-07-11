@@ -1,7 +1,7 @@
 <template>
   <div class="position-relative bg-cover">
-    <div class="collectbanner bg-mask-60">
-      <h2 class="position-absolute text-hv-center h2 fw-bold text-white-50 pageBanner-text">喜愛清單</h2>
+    <div class="favoritebanner bg-mask-60">
+      <h2 class="position-absolute text-hv-center h2 fw-bold favoritebanner-text">喜愛清單</h2>
     </div>
   </div>
   <div class="container mt-4 h100" v-if="favoriteProduct.length">
