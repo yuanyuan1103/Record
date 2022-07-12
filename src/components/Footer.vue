@@ -6,7 +6,7 @@
           width="140"
           style="height: fit-content"
           src="https://cdn2.iconfinder.com/data/icons/party-new-years/128/Party_Newyears_Vinyl_Cassete-512.png"
-          alt=""
+          alt="Record"
         />
         <div class="text-center space">
           <h1 class="fw-bolder">Record</h1>
