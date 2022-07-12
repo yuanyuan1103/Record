@@ -1,6 +1,3 @@
-.bread{
-  text-decoration:none;
-}
 .breadcrumb-item a{
   text-decoration:none;
 }
@@ -58,7 +55,6 @@
   font-size: 1.25rem;
   padding: 5px;
 }
-
 .bg-mask-60{
   filter: brightness(60%);
 }
