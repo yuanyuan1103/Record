@@ -1,9 +1,9 @@
 <template>
-  <!-- <div class="box"></div> -->
-  <div class="position-relative bg-cover">
-    <div class="collectbanner bg-mask-60">
-      <h2 class="position-absolute text-hv-center h2 fw-bold text-white-50 pageBanner-text">FAQ</h2>
+  <div class="position-relative">
+    <div style="overflow: hidden">
+      <div class="collectbanner"></div>
     </div>
+    <h2 class="position-absolute text-hv-center h2 fw-bold faqbanner-text">常見問題</h2>
   </div>
   <section id="info-utile" class="bg-white py-5 h100">
     <div class="container">
