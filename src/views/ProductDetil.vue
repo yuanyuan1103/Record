@@ -1,15 +1,16 @@
 <template>
   <Loading :active="isLoading"></Loading>
   <div class="position-relative bg-cover">
-    <div class="collectbanner bg-mask-60">
-      <h2 class="position-absolute text-hv-center h2 fw-bold text-white-50 pageBanner-text">{{ product.title }}</h2>
-    </div>
+    <div class="collectbanner" :style="{ backgroundImage: 'url(' + product.imageUrl + ')' }"></div>
+    <h2 class="position-absolute text-hv-center h2 fw-bold pageBanner-text">{{ product.title }}</h2>
   </div>
-  <div class="container textspac">
+  <div class="container">
     <!-- 麵包 -->
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb p-3">
-        <li class="breadcrumb-item"><router-link to="/product">Recorods</router-link></li>
+        <li class="breadcrumb-item">
+          <router-link to="/product">Recorods</router-link>
+        </li>
         <li class="breadcrumb-item">
           <a href="#" @click.prevent="updateCategory(product.category)">{{ product.category }}</a>
         </li>
@@ -20,7 +21,7 @@
       <div class="col-12 col-md-6 d-flex align-items-center p-3">
         <img :src="product.imageUrl" class="card-img-top imgProduct" :alt="product.title" />
       </div>
-      <div class="col-12 col-md-6 p-3 d-flex flex-column justify-content-center">
+      <div class="col-12 col-md-6 p-3 d-flex flex-column justify-content-center textspac">
         <div class="proTitle border-bottom mb-3">
           <h1 class="fw-bolder">{{ product.title }}</h1>
           <button type="button" @click.stop="toggleFavorite(product)" class="btn btn-favorite colorHeart">
@@ -36,7 +37,6 @@
             >${{ currency(product.origin_price) }}
           </span>
           <p class="pt-3 textspace">{{ product.description }}</p>
-          <p class="pt-3 textspace text-muted">{{ product.content }}</p>
           <div class="input-group pt-3">
             <select class="form-select" v-model="qty">
               <option :value="qty" v-for="qty in 10" :key="qty">{{ qty }}</option>
@@ -53,6 +53,8 @@
         </div>
       </div>
     </div>
+    <h1 class="pt-5 border-bottom">曲目</h1>
+    <p class="pt-3 textspace text-muted textspac">{{ product.content }}</p>
     <ul class="nav nav-tabs pt-5" id="myTab" role="tablist">
       <li class="nav-item" role="presentation">
         <button
@@ -96,14 +98,14 @@
       </li>
     </ul>
     <div class="tab-content" id="myTabContent">
-      <div class="tab-pane fade show active pt-4" id="home" role="tabpanel" aria-labelledby="home-tab">
+      <div class="textspac tab-pane fade show active pt-4" id="home" role="tabpanel" aria-labelledby="home-tab">
         <ul>
           <li>現貨商品將於1-2天內為您寄出。(例假日除外)</li>
           <li>如調貨時程須 超過十日 以上，或是 商品缺貨 等其他問題，我們會以E-mail告知，請務必留意任何來信。</li>
           <li>訂單內若有預購商品，須待預購商品到貨後一併寄出，如欲分開寄送，請個別下單。</li>
         </ul>
       </div>
-      <div class="tab-pane fade pt-4" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+      <div class="textspac tab-pane fade pt-4" id="profile" role="tabpanel" aria-labelledby="profile-tab">
         <ul>
           <li>
             黑膠唱片較容易因外在因素產生變化，「製作過程」或「拿取過程」也易有刮傷、不平等問題產生。由於本站售出的商品並皆是全新且未拆封的，故無法得知商品內部是否有瑕疵的狀況。
