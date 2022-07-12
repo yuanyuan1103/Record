@@ -1,7 +1,9 @@
 <template>
   <Loading :active="isLoading"></Loading>
   <div class="position-relative bg-cover">
-    <div class="collectbanner" :style="{ backgroundImage: 'url(' + product.imageUrl + ')' }"></div>
+    <div style="overflow: hidden">
+      <div class="collectbanner" :style="{ backgroundImage: 'url(' + product.imageUrl + ')' }"></div>
+    </div>
     <h2 class="position-absolute text-hv-center h2 fw-bold pageBanner-text">{{ product.title }}</h2>
   </div>
   <div class="container">
@@ -53,7 +55,7 @@
         </div>
       </div>
     </div>
-    <h1 class="pt-5 border-bottom">曲目</h1>
+    <h2 class="pt-5 border-bottom">曲目</h2>
     <p class="pt-3 textspace text-muted textspac">{{ product.content }}</p>
     <ul class="nav nav-tabs pt-5" id="myTab" role="tablist">
       <li class="nav-item" role="presentation">
@@ -121,7 +123,7 @@
       </div>
       <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"></div>
     </div>
-    <h1 class="pt-5 border-bottom">為您推薦</h1>
+    <h2 class="pt-5 border-bottom">為您推薦</h2>
     <div class="row">
       <div class="col-12 col-sm-6 col-lg-3 p-3" v-for="item in productRandom" :key="item.id">
         <div class="product">
