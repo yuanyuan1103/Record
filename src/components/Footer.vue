@@ -1,7 +1,7 @@
 <template>
   <div class="footer py-3 sticky-top">
-    <div class="container row center">
-      <div class="footerIcon col-lg-4 col-sm-8 mb-2 lh-sm p-3">
+    <div class="container row center" style="gap: 1rem">
+      <div class="footerIcon col-lg-4 col-sm-8 mb-2 lh-sm">
         <img
           width="140"
           style="height: fit-content"
@@ -13,7 +13,7 @@
           <p>紀錄回憶的聲音</p>
         </div>
       </div>
-      <div class="contact col-lg-4 col-sm-8 lh-sm p-3">
+      <div class="contact col-lg-3 col-sm-8 lh-sm p-3">
         <h2 class="fs-2 mb-2 text-muted fw-bolder">關於本站</h2>
         <div class="d-flex flex-column space">
           <router-link to="/about" class="px-0 nav-link iconFont"
@@ -36,13 +36,7 @@
         <p class="pt-2 space"><i class="bi bi-geo-alt-fill pe-1"></i>地球上某個角落</p>
         <div class="d-flex">
           <i class="bi bi-clock-fill pe-1"></i>
-          <p>
-            <span class="space">週一至週五</span> 13:30 - 21:50<br /><span class="space">週六</span> 10:00 - 21:50<br /><span
-              class="space"
-              >週日</span
-            >
-            10:00 - 18:00
-          </p>
+          <p class="space">週一至週五 13:30 - 21:50<br />週六 10:00 - 21:50<br />週日 10:00 - 18:00</p>
         </div>
         <p class="space"><i class="bi bi-envelope-fill pe-1"></i>pijhs70401@gmail.com</p>
         <p class="space"><i class="bi bi-telephone-fill pe-1"></i>(09)-8765-4321</p>
