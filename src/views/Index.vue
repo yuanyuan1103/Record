@@ -83,35 +83,20 @@
   </div>
   <!-- introduce -->
   <div class="container title p-5">
-    <h2>黑膠唱片?</h2>
+    <h2>本月推薦</h2>
   </div>
   <div class="container">
-    <div class="row">
+    <div class="row" v-for="product in productTest" :key="product.value">
       <div class="col-lg-6 align-self-center">
-        <div class="introduce mx-auto p-5">
-          習慣又稱電木唱片，指轉速每分鐘78轉、聲槽寬度0.10—0.16毫米、聲槽密度每厘米30—50條的留聲機唱片。<br />黑膠唱片是一般人對過往使用唱盤機播放的唱片的稱呼。這種唱片是一種黑色圓盤形的膠片。
+        <div class="mx-auto px-5">
+          <p style="font-size: 20px">{{ product.title }}</p>
+        </div>
+        <div class="introduce mx-auto px-5">
+          <p style="font-size: 15px; white-space: pre-line">{{ product.description }}</p>
         </div>
       </div>
-      <div class="col-lg-6 p-0">
-        <img
-          class="img-fluid"
-          src="https://images.unsplash.com/photo-1536849249744-44e01e7a089d?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074"
-          alt=""
-        />
-      </div>
-    </div>
-    <div class="row flex-lg-row flex-sm-column-reverse">
-      <div class="col-lg-6 p-0">
-        <img
-          class="img-fluid"
-          src="https://images.unsplash.com/photo-1511735111819-9a3f7709049c?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974"
-          alt=""
-        />
-      </div>
-      <div class="col-lg-6 text-center align-self-center">
-        <div class="introduce mx-auto p-5">
-          直徑常見10英寸和12英寸兩種規格，前者大量用於錄製流行音樂，錄音時間較短，一面一般只能容納一首歌曲；後者一面錄音時間也僅有約5分鐘，通常用於錄製交響樂，此尺寸成為日後立體聲LP的標準規格。
-        </div>
+      <div class="col-lg-6 p-0 d-flex align-items-center">
+        <img :src="product.imageUrl" class="card-img-top productTest d-flex align-items-center" />
       </div>
     </div>
   </div>
@@ -269,7 +254,8 @@ export default {
       //分類列表 不取全部
       categoryList: categoryList.filter((e) => e.value != undefined),
       productRandom: [],
-      isLoading: false
+      isLoading: false,
+      productTest: {}
     };
   },
   methods: {
@@ -292,6 +278,11 @@ export default {
             .filter((x) => x.id !== this.id)
             .sort(() => Math.random() - 0.5)
             .splice(1, 4);
+          console.log(this.productRandom);
+          this.productTest = res.data.products
+            .filter((x) => x.id !== this.id)
+            .sort(() => Math.random() - 0.5)
+            .splice(1, 1);
 
           // done
           this.isLoading = false;
