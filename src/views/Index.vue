@@ -86,7 +86,7 @@
     <h2>本月推薦</h2>
   </div>
   <div class="container">
-    <div class="row" v-for="product in productTest" :key="product.value">
+    <div class="row animated" v-for="product in productIntroduce" :key="product.value" :class="{ fadeIn: act }">
       <div class="col-lg-6 align-self-center">
         <div class="mx-auto px-5">
           <p style="font-size: 20px">{{ product.title }}</p>
@@ -255,7 +255,8 @@ export default {
       categoryList: categoryList.filter((e) => e.value != undefined),
       productRandom: [],
       isLoading: false,
-      productTest: {}
+      productIntroduce: {},
+      act: false
     };
   },
   methods: {
@@ -278,8 +279,7 @@ export default {
             .filter((x) => x.id !== this.id)
             .sort(() => Math.random() - 0.5)
             .splice(1, 4);
-          console.log(this.productRandom);
-          this.productTest = res.data.products
+          this.productIntroduce = res.data.products
             .filter((x) => x.id !== this.id)
             .sort(() => Math.random() - 0.5)
             .splice(1, 1);
@@ -295,9 +295,13 @@ export default {
       //跳轉至專屬於此產品id的頁面
       //給予空參數 取代原有的頁數或分類
       this.$router.push({ path: `/product/${id}`, params: {} });
+    },
+    handleScroll() {
+      this.act = window.scrollY > 300 ? true : false;
     }
   },
   created() {
+    window.addEventListener('scroll', this.handleScroll);
     this.rendomProducts();
   }
 };

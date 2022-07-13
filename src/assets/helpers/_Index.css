@@ -1,3 +1,12 @@
+.animated {
+  opacity: 0;
+  transition: all 1.5s;
+  transform: translateY(100px);
+}
+.fadeIn{
+  opacity: 1;
+  transform: translateY(0);
+}
 .productTest{
   aspect-ratio: 4 / 3;
   object-fit: contain;
@@ -9,15 +18,6 @@
 }
 .textspac{
   letter-spacing: .2rem;
-}
-.animated{
-  opacity: 0;
-  transition: all 1.5s;
-  transform: translateY(50px);
-}
-.fadeIn{
-  opacity:1;
-  transform: translateY(0);
 }
 /* banner */
 .banner{
