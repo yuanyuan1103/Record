@@ -1,14 +1,11 @@
 .h100{
   min-height: calc(100vh - 264px);
 }
-.bg-mask-60{
-  filter: brightness(60%);
-}
-.collectbanner{
-  height: 264px;
-  background: url('https://images.unsplash.com/photo-1626814204422-9f97352a32c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1475&q=80');
-  background-size: cover;
-  background-position: 60%;
+.orderBanner-text{
+  color: #ffffff;
+  letter-spacing: .5rem;
+  text-shadow: -1px 0 black, 0 1px black,
+  1px 0 black, 0 -1px black;
 }
 .text-hv-center {
   transform: translate(-50%,-50%);
@@ -16,13 +13,19 @@
   left: 50%;
   white-space: nowrap;
 }
+.orderBanner{
+  height: 264px;
+  background: url('https://images.unsplash.com/photo-1505672984986-b7c468c7a134?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');
+  background-size: cover;
+  filter: blur(5px);
+  transform: scale(1.1);
+}
 .orderTrack{
   min-height: calc(100vh - 264px);
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .checkCart{
   display: flex;
   justify-content: space-evenly;
@@ -53,10 +56,6 @@
   padding-bottom: 1rem;
   aspect-ratio: 4/3;
   object-fit: contain;
-}
-.text-gray-400{
-  --tw-text-opacity: 1;
-  color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 .p-6{
   padding: 1.5rem;

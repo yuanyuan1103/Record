@@ -1,11 +1,11 @@
 <template>
   <Loading :active="isLoading"></Loading>
-  <div class="position-relative bg-cover">
-    <div class="collectbanner bg-mask-60">
-      <h2 class="position-absolute text-hv-center h2 fw-bold text-white-50 pageBanner-text">查看訂單狀態</h2>
+  <div class="position-relative">
+    <div style="overflow: hidden">
+      <div class="orderBanner"></div>
     </div>
+    <h2 class="position-absolute text-hv-center h2 fw-bold orderBanner-text">查看訂單狀態</h2>
   </div>
-
   <div class="h100 d-flex justify-content-center align-items-center" v-if="this.order == null">
     <div class="text-center">
       <i class="bi bi-bag-heart display-1 fw-bold text-dark"></i>
@@ -13,14 +13,19 @@
       <a href="#/product" class="btn btn-dark btn-lg mb-5">Shop Now</a>
     </div>
   </div>
-  <div class="orderTrack" v-else>
+  <div class="orderTrack container-fluid" v-else>
     <div class="pt-5">
-      <div class="row px-5">
+      <div class="row">
         <div class="col-12 col-lg-7 mb-4">
           <div class="justify-content-center p-6 border">
             <div class="mb-3">
               <h3 class="border-bottom">訂單編號</h3>
-              <span>{{ order.id }}</span>
+              <div class="d-flex justify-content-between">
+                <span>{{ order.id }}</span>
+                <button type="button" class="btn btn-outline-secondary" @click="toCopy(order.id)">
+                  <i class="bi bi-clipboard-check"></i>
+                </button>
+              </div>
             </div>
             <div class="mb-3">
               <h3 class="border-bottom">收件人信箱</h3>
@@ -65,6 +70,11 @@
                 </tr>
               </tbody>
             </table>
+            <span class="text-sm text-gray-400">下單時間:</span>{{ new Date(order.create_at * 1000).toLocaleString() }}
+            <div v-if="order.is_paid">
+              <span class="text-sm text-gray-400">付款時間:</span
+              >{{ new Date(order.paid_date * 1000).toLocaleString() }}
+            </div>
             <div class="py-4">
               <span class="text-sm text-gray-400 mr-4">總金額</span>
             </div>
@@ -104,7 +114,6 @@ export default {
       this.$http.get(url).then((res) => {
         if (res.data.success) {
           this.order = res.data.order;
-          console.log(this.order);
           this.isLoading = false;
         }
       });
@@ -119,6 +128,23 @@ export default {
           this.getOrder();
         }
       });
+    },
+    toCopy(id) {
+      this.copy(id);
+    },
+    copy(data) {
+      let elInput = document.createElement('input');
+      elInput.value = data;
+      elInput.select();
+      document.execCommand('Copy');
+      this.$httpMessageState(
+        {
+          data: {
+            success: true
+          }
+        },
+        '複製訂單編號'
+      );
     }
   },
   created() {
