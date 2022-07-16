@@ -1,5 +1,5 @@
 <template>
-  <div class="footer py-3 sticky-top">
+  <div class="footer py-3">
     <div class="container row center" style="gap: 1rem">
       <div class="footerIcon col-lg-4 col-sm-8 mb-2 lh-sm">
         <img
