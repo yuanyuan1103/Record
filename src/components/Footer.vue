@@ -41,9 +41,10 @@
         <p class="space"><i class="bi bi-envelope-fill pe-1"></i>pijhs70401@gmail.com</p>
         <p class="space"><i class="bi bi-telephone-fill pe-1"></i>(09)-8765-4321</p>
       </div>
-      <p class="space text-center pt-3">
-        © 2022. All Rights Reserved. | <router-link to="/login" class="iconFont">管理員登入</router-link>
-      </p>
+      <div class="space text-center">
+        <p>僅個人練習使用．不做商業用途 | <router-link to="/login" class="iconFont">管理員登入</router-link></p>
+        <p>© 2022. YuanYuan All Rights Reserved.</p>
+      </div>
     </div>
   </div>
 </template>
