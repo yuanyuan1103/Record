@@ -94,6 +94,11 @@
         <div class="introduce mx-auto px-5">
           <p style="font-size: 15px; white-space: pre-line">{{ product.description }}</p>
         </div>
+        <div class="float-end px-5">
+          <button type="button" class="btn btn-outline-secondary" @click.prevent="gotoProduct(product.id)">
+            View More
+          </button>
+        </div>
       </div>
       <div class="col-lg-6 p-0 d-flex align-items-center">
         <img :src="product.imageUrl" class="card-img-top productTest d-flex align-items-center" />
