@@ -129,10 +129,7 @@ export default {
         }
       });
     },
-    toCopy(id) {
-      this.copy(id);
-    },
-    copy(data) {
+    toCopy(data) {
       let elInput = document.createElement('input');
       elInput.value = data;
       elInput.select();

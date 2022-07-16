@@ -24,7 +24,12 @@
           <div class="justify-content-center p-6 border">
             <div class="mb-3">
               <h3 class="border-bottom">訂單編號</h3>
-              <span>{{ order.id }}</span>
+              <div class="d-flex justify-content-between">
+                <span>{{ order.id }}</span>
+                <button type="button" class="btn btn-outline-secondary" @click="toCopy(order.id)">
+                  <i class="bi bi-clipboard-check"></i>
+                </button>
+              </div>
             </div>
             <div class="mb-3">
               <h3 class="border-bottom">收件人信箱</h3>
@@ -69,6 +74,11 @@
                 </tr>
               </tbody>
             </table>
+            <span class="text-sm text-gray-400">下單時間:</span>{{ new Date(order.create_at * 1000).toLocaleString() }}
+            <div v-if="order.is_paid">
+              <span class="text-sm text-gray-400">付款時間:</span
+              >{{ new Date(order.paid_date * 1000).toLocaleString() }}
+            </div>
             <div class="py-4">
               <span class="text-sm text-gray-400 mr-4">總金額</span>
             </div>
@@ -121,6 +131,20 @@ export default {
           this.getOrder();
         }
       });
+    },
+    toCopy(id) {
+      let elInput = document.createElement('input');
+      elInput.value = id;
+      elInput.select();
+      document.execCommand('Copy');
+      this.$httpMessageState(
+        {
+          data: {
+            success: true
+          }
+        },
+        '複製訂單編號'
+      );
     }
   },
   created() {

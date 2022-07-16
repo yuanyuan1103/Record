@@ -138,7 +138,7 @@ export default {
     },
     //刪除資料
     delProduct() {
-      this.isLoading = ture;
+      this.isLoading = true;
       //取得api路徑
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/product/${this.tempProduct.id}`;
       //實作刪除
