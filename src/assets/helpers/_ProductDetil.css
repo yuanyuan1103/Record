@@ -72,7 +72,6 @@
   left: 50%;
   white-space: nowrap;
 }
-
 .colorHeart{
   color:#070707;
   font-size: 1.5rem;
@@ -81,5 +80,4 @@
 .colorHeart:hover{
   color:#fb6aba;
   font-size: 1.5rem;
-
 }

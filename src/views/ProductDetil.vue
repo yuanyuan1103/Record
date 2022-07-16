@@ -1,6 +1,6 @@
 <template>
   <Loading :active="isLoading"></Loading>
-  <div class="position-relative bg-cover">
+  <div class="position-relative">
     <div style="overflow: hidden">
       <div class="collectbanner" :style="{ backgroundImage: 'url(' + product.imageUrl + ')' }"></div>
     </div>
@@ -21,7 +21,7 @@
     </nav>
     <div class="row">
       <div class="col-12 col-md-6 d-flex align-items-center p-3">
-        <img :src="product.imageUrl" class="card-img-top imgProduct" :alt="product.title" />
+        <img :src="product.imageUrl" class="card-img-top imgProduct" :title="product.title" />
       </div>
       <div class="col-12 col-md-6 p-3 d-flex flex-column justify-content-center textspac">
         <div class="proTitle border-bottom mb-3">
@@ -30,7 +30,6 @@
             <i class="bi" :class="favorite.includes(product.id) ? 'bi-heart-fill' : 'bi-heart'"></i>
           </button>
         </div>
-
         <div classs="d-flex align-items-center">
           <span class="bg-secondary text-light rounded px-2">{{ product.category }}</span>
           <h2 v-if="!product.price" class="text-danger fs-5 fw-bolder pt-3">${{ currency(product.price) }}</h2>
@@ -57,57 +56,48 @@
     </div>
     <h2 class="pt-5 border-bottom">曲目</h2>
     <p class="pt-3 textspace text-muted textspac">{{ product.content }}</p>
-    <ul class="nav nav-tabs pt-5" id="myTab" role="tablist">
-      <li class="nav-item" role="presentation">
+    <nav>
+      <div class="pt-4 nav nav-tabs" id="nav-tab" role="tablist">
         <button
           class="nav-link active"
-          id="home-tab"
+          id="nav-first-tab"
           data-bs-toggle="tab"
-          data-bs-target="#home"
+          data-bs-target="#nav-first"
           type="button"
           role="tab"
-          aria-controls="home"
+          aria-controls="nav-first"
           aria-selected="true"
         >
           購買須知
         </button>
-      </li>
-      <li class="nav-item" role="presentation">
         <button
           class="nav-link"
-          id="profile-tab"
+          id="nav-second-tab"
           data-bs-toggle="tab"
-          data-bs-target="#profile"
+          data-bs-target="#nav-second"
           type="button"
           role="tab"
-          aria-controls="profile"
+          aria-controls="nav-second"
           aria-selected="false"
         >
           退換貨須知
         </button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button
-          class="nav-link"
-          id="contact-tab"
-          data-bs-toggle="tab"
-          data-bs-target="#contact"
-          type="button"
-          role="tab"
-          aria-controls="contact"
-          aria-selected="false"
-        ></button>
-      </li>
-    </ul>
-    <div class="tab-content" id="myTabContent">
-      <div class="textspac tab-pane fade show active pt-4" id="home" role="tabpanel" aria-labelledby="home-tab">
+      </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+      <div
+        class="textspac pt-4 tab-pane fade show active"
+        id="nav-first"
+        role="tabpanel"
+        aria-labelledby="nav-first-tab"
+      >
         <ul>
           <li>現貨商品將於1-2天內為您寄出。(例假日除外)</li>
           <li>如調貨時程須 超過十日 以上，或是 商品缺貨 等其他問題，我們會以E-mail告知，請務必留意任何來信。</li>
           <li>訂單內若有預購商品，須待預購商品到貨後一併寄出，如欲分開寄送，請個別下單。</li>
         </ul>
       </div>
-      <div class="textspac tab-pane fade pt-4" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+      <div class="textspac pt-4 tab-pane fade" id="nav-second" role="tabpanel" aria-labelledby="nav-second-tab">
         <ul>
           <li>
             黑膠唱片較容易因外在因素產生變化，「製作過程」或「拿取過程」也易有刮傷、不平等問題產生。由於本站售出的商品並皆是全新且未拆封的，故無法得知商品內部是否有瑕疵的狀況。
@@ -121,7 +111,6 @@
           <li>由於本站已有免運優惠，瑕疵商品如欲換貨，需自行負擔往返的運送費用。</li>
         </ul>
       </div>
-      <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"></div>
     </div>
     <h2 class="pt-5 border-bottom">為您推薦</h2>
     <div class="row">
@@ -129,7 +118,7 @@
         <div class="product">
           <div class="bgr position-absolute top-0 end-0" v-if="!(item.price == item.origin_price)">sale</div>
           <a href="#" @click.prevent="gotoProduct(item.id)"><i class="bi bi-search"></i></a>
-          <img :src="item.imageUrl" class="card-img-top imgProduct" alt="..." />
+          <img :src="item.imageUrl" class="card-img-top imgProduct" :title="item.title" />
         </div>
         <div class="proDetil p-2">
           <div class="fw-bolder">
@@ -235,8 +224,7 @@ export default {
         this.$httpMessageState(
           {
             data: {
-              success: true,
-              message: `已將 ${product.title} 移除收藏`
+              success: true
             }
           },
           '移除收藏'
@@ -247,8 +235,7 @@ export default {
         this.$httpMessageState(
           {
             data: {
-              success: true,
-              message: `已將 ${product.title} 加入收藏`
+              success: true
             }
           },
           '加入收藏'
