@@ -2,7 +2,10 @@
   <Loading :active="isLoading"></Loading>
   <div class="position-relative">
     <div style="overflow: hidden">
-      <div class="collectbanner" :style="{ backgroundImage: 'url(' + product.imageUrl + ')' }"></div>
+      <div
+        class="collectbanner"
+        :style="[product.imageUrl ? { backgroundImage: 'url(' + product.imageUrl + ')' } : {}]"
+      ></div>
     </div>
     <h2 class="position-absolute text-hv-center h2 fw-bold pageBanner-text">{{ product.title }}</h2>
   </div>
