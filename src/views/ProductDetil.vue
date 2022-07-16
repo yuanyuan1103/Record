@@ -9,7 +9,7 @@
     </div>
     <h2 class="position-absolute text-hv-center h2 fw-bold pageBanner-text">{{ product.title }}</h2>
   </div>
-  <div class="container">
+  <div class="container" v-if="!isLoading">
     <!-- 麵包 -->
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb p-3">
