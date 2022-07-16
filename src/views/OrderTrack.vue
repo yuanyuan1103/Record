@@ -31,7 +31,7 @@
       <div class="card orderInput">
         <div class="card-body">
           <ul class="card-text">
-            <li>訂單編號範例：-N5W3-LgdceGmQwCcPt_</li>
+            <li>訂單編號範例：-N778fIMygF_0rRl8LlH</li>
             <li>付款方式限 信用卡&ATM轉帳 付款。</li>
             <li>如購買過程及收到商品有任何問題，歡迎聯繫我們， 我們會盡快回覆您。</li>
             <li>在商品庫存充足下，我們允諾下單三天內會出貨，如您所訂購的商品庫存不足，我們將盡快以電子郵件通知您。</li>

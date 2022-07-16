@@ -129,11 +129,14 @@ export default {
         }
       });
     },
-    toCopy(data) {
-      let elInput = document.createElement('input');
-      elInput.value = data;
-      elInput.select();
-      document.execCommand('Copy');
+    toCopy(orderId) {
+      var oInput = document.createElement('input');
+      oInput.value = orderId; //賦值
+      document.body.appendChild(oInput);
+      oInput.select(); // 選擇物件
+      document.execCommand('Copy'); // 執行瀏覽器複製命令
+      oInput.className = 'oInput';
+      oInput.style.display = 'none';
       this.$httpMessageState(
         {
           data: {
