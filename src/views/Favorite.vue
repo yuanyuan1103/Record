@@ -53,7 +53,7 @@
     </div>
   </div>
 </template>
-<style src="../assets/helpers/_Favorite.css" scoped></style>
+
 <script>
 import saveFavorite from '@/methods/saveFavorite';
 import { currency } from '../methods/filters';
@@ -143,3 +143,5 @@ export default {
   }
 };
 </script>
+
+<style src="../assets/helpers/_Favorite.css" scoped></style>

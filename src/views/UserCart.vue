@@ -69,7 +69,6 @@
     </div>
   </div>
 </template>
-<style src="../assets/helpers/_UserCart.css" scoped></style>
 
 <script>
 import { categoryList } from '../methods/commonData';
@@ -259,3 +258,5 @@ export default {
   }
 };
 </script>
+
+<style src="../assets/helpers/_UserCart.css" scoped></style>

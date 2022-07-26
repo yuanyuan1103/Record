@@ -42,7 +42,7 @@
     </div>
   </div>
 </template>
-<style src="../assets/helpers/_OrderTrack.css" scoped></style>
+
 <script>
 export default {
   data() {
@@ -75,3 +75,5 @@ export default {
   }
 };
 </script>
+
+<style src="../assets/helpers/_OrderTrack.css" scoped></style>

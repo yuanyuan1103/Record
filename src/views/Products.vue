@@ -46,7 +46,6 @@
   <DelModal :item="tempProduct" ref="delModal" @del-item="delProduct" />
 </template>
 
-
 <script>
 //將寫好的ProductModal載入
 import ProductModal from '../components/ProductModal.vue';

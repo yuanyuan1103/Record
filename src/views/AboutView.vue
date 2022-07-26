@@ -21,4 +21,5 @@
     </div>
   </div>
 </template>
+
 <style src="../assets/helpers/_About.css" scoped></style>

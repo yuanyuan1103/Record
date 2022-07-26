@@ -170,7 +170,7 @@
     </div>
   </div>
 </template>
-<style src="../assets/helpers/_CheckCart.css" scoped></style>
+
 <script>
 export default {
   data() {
@@ -240,3 +240,5 @@ export default {
   }
 };
 </script>
+
+<style src="../assets/helpers/_CheckCart.css" scoped></style>

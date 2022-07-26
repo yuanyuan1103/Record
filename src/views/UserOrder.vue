@@ -94,7 +94,7 @@
     </div>
   </div>
 </template>
-<style src="../assets/helpers/_UserOrder.css" scoped></style>
+
 <script>
 export default {
   data() {
@@ -158,3 +158,5 @@ export default {
   }
 };
 </script>
+
+<style src="../assets/helpers/_UserOrder.css" scoped></style>
