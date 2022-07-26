@@ -46,8 +46,8 @@
               <option :value="qty" v-for="qty in 10" :key="qty">{{ qty }}</option>
             </select>
             <button
-              class="btn btn-outline-secondary"
               type="button"
+              class="btn btn-outline-secondary"
               @click="addToCart(product.id, qty)"
               :disabled="this.status.loadingItem === product.id"
             >
@@ -62,11 +62,11 @@
     <nav>
       <div class="pt-4 nav nav-tabs" id="nav-tab" role="tablist">
         <button
+          type="button"
           class="nav-link active"
           id="nav-first-tab"
           data-bs-toggle="tab"
           data-bs-target="#nav-first"
-          type="button"
           role="tab"
           aria-controls="nav-first"
           aria-selected="true"
@@ -74,11 +74,11 @@
           購買須知
         </button>
         <button
+          type="button"
           class="nav-link"
           id="nav-second-tab"
           data-bs-toggle="tab"
           data-bs-target="#nav-second"
-          type="button"
           role="tab"
           aria-controls="nav-second"
           aria-selected="false"

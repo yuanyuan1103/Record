@@ -5,8 +5,8 @@
       <a class="navbar-brand iconFont fs-3" href="#">Record</a>
       <div class="mainMeun">
         <button
-          class="navbar-toggler"
           type="button"
+          class="navbar-toggler"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
           aria-controls="navbarNav"
@@ -51,7 +51,7 @@
   <!-- navbar mobile-header   -->
   <nav class="mobile header navbar navbar-expand-lg navbar-dark fixed-top" :class="{ colorNav: act }">
     <div class="container-fluid">
-      <button class="navbar-toggler" type="button" @click.prevent="showOffcanvasMenu()">
+      <button type="button" class="navbar-toggler" @click.prevent="showOffcanvasMenu()">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div

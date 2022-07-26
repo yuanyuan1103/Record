@@ -6,8 +6,8 @@
         Record
       </a>
       <button
-        class="navbar-toggler"
         type="button"
+        class="navbar-toggler"
         data-bs-toggle="collapse"
         data-bs-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup"

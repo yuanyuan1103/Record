@@ -11,8 +11,8 @@
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingOne">
             <button
-              class="accordion-button"
               type="button"
+              class="accordion-button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseOne"
               aria-expanded="true"
@@ -38,8 +38,8 @@
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingTwo">
             <button
-              class="accordion-button collapsed"
               type="button"
+              class="accordion-button collapsed"
               data-bs-toggle="collapse"
               data-bs-target="#collapseTwo"
               aria-expanded="false"
@@ -68,8 +68,8 @@
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingThree">
             <button
-              class="accordion-button collapsed"
               type="button"
+              class="accordion-button collapsed"
               data-bs-toggle="collapse"
               data-bs-target="#collapseThree"
               aria-expanded="false"
@@ -93,8 +93,8 @@
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingFive">
             <button
-              class="accordion-button collapsed"
               type="button"
+              class="accordion-button collapsed"
               data-bs-toggle="collapse"
               data-bs-target="#collapseFive"
               aria-expanded="false"
@@ -116,8 +116,8 @@
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingSix">
             <button
-              class="accordion-button collapsed"
               type="button"
+              class="accordion-button collapsed"
               data-bs-toggle="collapse"
               data-bs-target="#collapseSix"
               aria-expanded="false"
@@ -139,8 +139,8 @@
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingSeven">
             <button
-              class="accordion-button collapsed"
               type="button"
+              class="accordion-button collapsed"
               data-bs-toggle="collapse"
               data-bs-target="#collapseSeven"
               aria-expanded="false"
@@ -162,8 +162,8 @@
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingEight">
             <button
-              class="accordion-button collapsed"
               type="button"
+              class="accordion-button collapsed"
               data-bs-toggle="collapse"
               data-bs-target="#collapseEight"
               aria-expanded="false"

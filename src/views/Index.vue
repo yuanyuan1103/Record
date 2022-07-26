@@ -62,8 +62,8 @@
         </div>
       </div>
       <button
-        class="carousel-control-prev"
         type="button"
+        class="carousel-control-prev"
         data-bs-target="#carouselExampleCaptions"
         data-bs-slide="prev"
       >
@@ -71,8 +71,8 @@
         <span class="visually-hidden">Previous</span>
       </button>
       <button
-        class="carousel-control-next"
         type="button"
+        class="carousel-control-next"
         data-bs-target="#carouselExampleCaptions"
         data-bs-slide="next"
       >
@@ -152,8 +152,8 @@
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingOne">
             <button
-              class="accordion-button"
               type="button"
+              class="accordion-button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseOne"
               aria-expanded="true"
@@ -179,8 +179,8 @@
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingTwo">
             <button
-              class="accordion-button collapsed"
               type="button"
+              class="accordion-button collapsed"
               data-bs-toggle="collapse"
               data-bs-target="#collapseTwo"
               aria-expanded="false"
@@ -209,8 +209,8 @@
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingFour">
             <button
-              class="accordion-button collapsed"
               type="button"
+              class="accordion-button collapsed"
               data-bs-toggle="collapse"
               data-bs-target="#collapseFour"
               aria-expanded="false"

@@ -18,7 +18,7 @@
             placeholder="請輸入訂單編號"
           />
           <div class="input-group-prepend">
-            <button class="btn btn-outline-secondary" type="button" @click.prevent="gotoOrder" :disabled="orderError">
+            <button type="button" class="btn btn-outline-secondary" @click.prevent="gotoOrder" :disabled="orderError">
               <i class="bi bi-search-heart">查詢</i>
             </button>
           </div>
