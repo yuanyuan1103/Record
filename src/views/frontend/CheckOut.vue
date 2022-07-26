@@ -159,4 +159,4 @@ export default {
 };
 </script>
 
-<style src="../assets/helpers/_CheckOut.css" scoped></style>
+<style src="../../assets/helpers/_CheckOut.css" scoped></style>

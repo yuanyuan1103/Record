@@ -181,4 +181,4 @@ export default {
 };
 </script>
 
-<style src="../assets/helpers/_CheckInfo.css" scoped></style>
+<style src="../../assets/helpers/_CheckInfo.css" scoped></style>

@@ -8,7 +8,7 @@
 
 <script>
 // 加入在components下的Navbar元件
-import Navbar from '../components/Navbar.vue';
+import Navbar from '@/components/Navbar.vue';
 import ToastMessages from '@/components/ToastMessages.vue';
 import $httpMessageState from '@/methods/pushMessageState';
 //加入emitter

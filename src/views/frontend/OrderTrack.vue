@@ -59,7 +59,7 @@ export default {
     }
   },
   watch: {
-    order: function () {
+    order() {
       var inclde = /[A-Za-z0-9lu4e00-lugfa5]+$/;
 
       if (!inclde.test(this.order)) {
@@ -76,4 +76,4 @@ export default {
 };
 </script>
 
-<style src="../assets/helpers/_OrderTrack.css" scoped></style>
+<style src="../../assets/helpers/_OrderTrack.css" scoped></style>

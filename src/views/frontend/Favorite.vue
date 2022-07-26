@@ -56,7 +56,7 @@
 
 <script>
 import saveFavorite from '@/methods/saveFavorite';
-import { currency } from '../methods/filters';
+import { currency } from '@/methods/filters';
 
 export default {
   data() {
@@ -144,4 +144,4 @@ export default {
 };
 </script>
 
-<style src="../assets/helpers/_Favorite.css" scoped></style>
+<style src="../../assets/helpers/_Favorite.css" scoped></style>

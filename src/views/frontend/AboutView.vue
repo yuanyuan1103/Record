@@ -22,4 +22,4 @@
   </div>
 </template>
 
-<style src="../assets/helpers/_About.css" scoped></style>
+<style src="../../assets/helpers/_About.css" scoped></style>

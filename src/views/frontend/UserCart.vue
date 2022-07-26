@@ -71,10 +71,10 @@
 </template>
 
 <script>
-import { categoryList } from '../methods/commonData';
+import { categoryList } from '@/methods/commonData';
 import Pagination from '@/components/Pagination.vue';
 import saveFavorite from '@/methods/saveFavorite';
-import { currency } from '../methods/filters';
+import { currency } from '@/methods/filters';
 export default {
   data() {
     return {
@@ -259,4 +259,4 @@ export default {
 };
 </script>
 
-<style src="../assets/helpers/_UserCart.css" scoped></style>
+<style src="../../assets/helpers/_UserCart.css" scoped></style>

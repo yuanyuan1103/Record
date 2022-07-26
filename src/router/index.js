@@ -1,109 +1,92 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
-const HomeView = () => import('../views/HomeView.vue');
-const IndexView = () => import('../views/Index.vue');
-const LoginView = () => import('../views/Login.vue');
-const AboutView = () => import('../views/AboutView.vue');
-const DashboardView = () => import('../views/Dashboard.vue');
-const UserProductView = () => import('../views/UserCart.vue');
-const ProductsView = () => import('../views/Products.vue');
-const OrdersView = () => import('../views/Orders.vue');
-const CouponsView = () => import('../views/Coupons.vue');
-const FavoriteView = () => import('../views/Favorite.vue');
-const ProductDetil = () => import('../views/ProductDetil.vue');
-const OrderTrack = () => import('../views/OrderTrack.vue');
-const CheckCart = () => import('../views/CheckCart.vue');
-const CheckInfo = () => import('../views/CheckInfo.vue');
-const CheckOut = () => import('../views/CheckOut.vue');
-const FAQ = () => import('../views/FQA.vue');
-const UserOrder = () => import('../views/UserOrder.vue');
 
 const routes = [
   {
     path: '/',
     name: '首頁',
-    component: HomeView,
+    component: () => import('../views/frontend/HomeView.vue'),
     children: [
       {
         path: '',
         name: '首頁',
-        component: IndexView
+        component: () => import('../views/frontend/Index.vue')
       },
       {
         path: 'about',
         name: '關於',
-        component: AboutView
+        component: () => import('../views/frontend/AboutView.vue')
       },
       {
         path: 'faq',
         name: '問與答',
-        component: FAQ
+        component: () => import('../views/frontend/FQA.vue')
       },
       {
         path: 'product',
         name: '產品清單',
-        component: UserProductView
+        component: () => import('../views/frontend/UserCart.vue')
       },
       {
         path: 'product/:orderId',
         name: '產品詳細',
-        component: ProductDetil
+        component: () => import('../views/frontend/ProductDetil.vue')
       },
       {
         path: 'ordertrack',
         name: '訂單查詢',
-        component: OrderTrack
+        component: () => import('../views/frontend/OrderTrack.vue')
       },
       {
         path: 'ordertrack/:orderId',
         name: '訂單狀態',
-        component: UserOrder
+        component: () => import('../views/frontend/UserOrder.vue')
       },
       {
         path: 'favorite',
         name: '最愛',
-        component: FavoriteView
+        component: () => import('../views/frontend/Favorite.vue')
       },
       {
         path: 'cart',
         name: '購物車',
-        component: CheckCart
+        component: () => import('../views/frontend/CheckCart.vue')
       },
       {
         path: 'checkinfo',
         name: '訂單資訊',
-        component: CheckInfo
+        component: () => import('../views/frontend/CheckInfo.vue')
       },
       {
         path: 'checkout/:orderId',
         name: '結帳',
-        component: CheckOut
+        component: () => import('../views/frontend/CheckOut.vue')
       }
     ]
   },
   {
     path: '/login',
     name: '登入',
-    component: LoginView
+    component: () => import('../views/Login.vue')
   },
   {
     path: '/dashboard',
     name: '後台儀表板',
-    component: DashboardView,
+    component: () => import('../views/backend/Dashboard.vue'),
     children: [
       {
         path: 'products',
         name: '產品列表',
-        component: ProductsView
+        component: () => import('../views/backend/Products.vue')
       },
       {
         path: 'orders',
         name: '訂單列表',
-        component: OrdersView
+        component: () => import('../views/backend/Orders.vue')
       },
       {
         path: 'coupons',
         name: '優惠券',
-        component: CouponsView
+        component: () => import('../views/backend/Coupons.vue')
       }
     ]
   }

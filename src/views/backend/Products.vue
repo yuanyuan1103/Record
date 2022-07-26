@@ -48,10 +48,10 @@
 
 <script>
 //將寫好的ProductModal載入
-import ProductModal from '../components/ProductModal.vue';
+import ProductModal from '@/components/ProductModal.vue';
 import DelModal from '@/components/DelModal.vue';
 import Pagination from '@/components/Pagination.vue';
-import { currency } from '../methods/filters';
+import { currency } from '@/methods/filters';
 
 export default {
   data() {

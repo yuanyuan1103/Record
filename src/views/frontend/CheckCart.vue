@@ -241,4 +241,4 @@ export default {
 };
 </script>
 
-<style src="../assets/helpers/_CheckCart.css" scoped></style>
+<style src="../../assets/helpers/_CheckCart.css" scoped></style>

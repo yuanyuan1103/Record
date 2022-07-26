@@ -251,8 +251,8 @@
 </template>
 
 <script>
-import { categoryList } from '../methods/commonData';
-import { currency } from '../methods/filters';
+import { categoryList } from '@/methods/commonData';
+import { currency } from '@/methods/filters';
 export default {
   data() {
     return {
@@ -312,4 +312,4 @@ export default {
 };
 </script>
 
-<style src="../assets/helpers/_Index.css" scoped></style>
+<style src="../../assets/helpers/_Index.css" scoped></style>

@@ -136,7 +136,7 @@
 </template>
 
 <script>
-import { currency } from '../methods/filters';
+import { currency } from '@/methods/filters';
 import saveFavorite from '@/methods/saveFavorite';
 
 export default {
@@ -266,4 +266,4 @@ export default {
 };
 </script>
 
-<style src="../assets/helpers/_ProductDetil.css" scoped></style>
+<style src="../../assets/helpers/_ProductDetil.css" scoped></style>
