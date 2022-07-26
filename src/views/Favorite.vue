@@ -1,5 +1,5 @@
 <template>
-  <Loading :active="isLoading"></Loading>
+  <Loading :active="isLoading" />
   <div class="position-relative bg-cover">
     <div class="favoritebanner">
       <h2 class="position-absolute text-hv-center h2 fw-bold favoritebanner-text">喜愛清單</h2>

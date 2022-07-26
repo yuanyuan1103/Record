@@ -1,4 +1,5 @@
 <template>
+  <Loading :active="isLoading" />
   <div class="box"></div>
   <div class="container-fluid h100">
     <!-- checkCart -->

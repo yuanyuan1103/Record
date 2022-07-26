@@ -1,5 +1,5 @@
 <template>
-  <loading :active="isLoading"></loading>
+  <Loading :active="isLoading" />
   <div class="text-end">
     <button class="btn btn-primary" type="button" @click="openModal(true)">增加一個產品</button>
   </div>

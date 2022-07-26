@@ -1,5 +1,5 @@
 <template>
-  <Loading :active="isLoading"></Loading>
+  <Loading :active="isLoading" />
   <div class="loginBg d-flex justify-content-center align-items-center">
     <div class="rounded loginBgcolor d-flex justify-content-center align-items-center">
       <div class="loginWidth">

@@ -1,5 +1,5 @@
 <template>
-  <Loading :active="isLoading"></Loading>
+  <Loading :active="isLoading" />
   <!-- banner -->
   <div class="banner">
     <!-- 輪播 Carousel -->

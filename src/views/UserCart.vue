@@ -1,5 +1,5 @@
 <template>
-  <Loading :active="isLoading"></Loading>
+  <Loading :active="isLoading" />
   <div class="cart">
     <div class="box"></div>
     <div class="container">

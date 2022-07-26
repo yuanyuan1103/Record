@@ -1,5 +1,5 @@
 <template>
-  <Loading :active="isLoading"></Loading>
+  <Loading :active="isLoading" />
   <div class="position-relative">
     <div style="overflow: hidden">
       <div

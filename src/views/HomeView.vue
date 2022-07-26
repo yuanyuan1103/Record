@@ -1,4 +1,5 @@
 <template>
+  <Loading :active="isLoading" />
   <FrontNavbar />
   <ToastMessages />
   <router-view />
@@ -21,7 +22,8 @@ import { currency } from '../methods/filters';
 export default {
   data() {
     return {
-      isShowed: false
+      isShowed: false,
+      isLoading: false
     };
   },
   components: {
