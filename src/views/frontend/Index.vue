@@ -31,7 +31,7 @@
           <img
             src="https://images.unsplash.com/photo-1634650254521-b1596c5a2d37?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470"
             class="d-block"
-            alt="..."
+            alt="RecordBanner"
           />
           <div class="carousel-caption d-md-block">
             <h2 class="textspac">時光在歌唱<br />黑膠唱片收藏的不僅僅是聲音</h2>
@@ -42,7 +42,7 @@
           <img
             src="https://images.unsplash.com/photo-1468164016595-6108e4c60c8b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
             class="d-block"
-            alt="..."
+            alt="RecordBanner"
           />
           <div class="carousel-caption d-md-block">
             <h2 class="textspac">近年被譽為<br />「黑膠唱片復興時代」</h2>
@@ -53,7 +53,7 @@
           <img
             src="https://images.unsplash.com/photo-1526327760257-75f515c74478?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
             class="d-block"
-            alt="..."
+            alt="RecordBanner"
           />
           <div class="carousel-caption d-md-block">
             <h2 class="textspac">聽黑膠需要理由嗎？</h2>
@@ -101,7 +101,12 @@
         </div>
       </div>
       <div class="col-lg-6 p-0 d-flex align-items-center">
-        <img :src="product.imageUrl" class="card-img-top productTest d-flex align-items-center" />
+        <img
+          class="card-img-top productTest d-flex align-items-center"
+          :src="product.imageUrl"
+          :alt="product.title"
+          :title="product.title"
+        />
       </div>
     </div>
   </div>
@@ -112,7 +117,13 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-6 col-sm-12 effect-lily p-0 pointers" v-for="item in categoryList" :key="item.value">
-        <img :src="item.imgUrl" class="img-fluid" @click.prevent="gotoCategory(item.value)" />
+        <img
+          class="img-fluid"
+          :src="item.imgUrl"
+          :alt="item.label"
+          :title="item.label"
+          @click.prevent="gotoCategory(item.value)"
+        />
         <div class="detil" @click.prevent="gotoCategory(item.value)">
           <h2>{{ item.value }}</h2>
           <span>View more</span>
@@ -130,7 +141,7 @@
         <div class="product">
           <div class="bgr position-absolute top-0 end-0" v-if="!(item.price == item.origin_price)">sale</div>
           <a href="#" @click.prevent="gotoProduct(item.id)"><i class="bi bi-search"></i></a>
-          <img :src="item.imageUrl" class="card-img-top imgProduct" alt="..." />
+          <img class="card-img-top imgProduct" :src="item.imageUrl" :alt="item.title" :title="item.title" />
         </div>
         <div class="proDetil p-2">
           <div class="proTitle fw-bolder">

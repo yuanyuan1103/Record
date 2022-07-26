@@ -24,7 +24,7 @@
     </nav>
     <div class="row">
       <div class="col-12 col-md-6 d-flex align-items-center p-3">
-        <img :src="product.imageUrl" class="card-img-top imgProduct" :title="product.title" />
+        <img class="card-img-top imgProduct" :src="product.imageUrl" :alt="product.title" :title="product.title" />
       </div>
       <div class="col-12 col-md-6 p-3 d-flex flex-column justify-content-center textspac">
         <div class="proTitle border-bottom mb-3">
@@ -121,7 +121,7 @@
         <div class="product">
           <div class="bgr position-absolute top-0 end-0" v-if="!(item.price == item.origin_price)">sale</div>
           <a href="#" @click.prevent="gotoProduct(item.id)"><i class="bi bi-search"></i></a>
-          <img :src="item.imageUrl" class="card-img-top imgProduct" :title="item.title" />
+          <img class="card-img-top imgProduct" :src="item.imageUrl" :alt="item.title" :title="item.title" />
         </div>
         <div class="proDetil p-2">
           <div class="fw-bolder">

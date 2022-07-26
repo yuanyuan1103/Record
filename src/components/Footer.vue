@@ -2,12 +2,7 @@
   <div class="footer py-3">
     <div class="container row center" style="gap: 1rem">
       <div class="footerIcon col-lg-4 col-sm-8 mb-2 lh-sm">
-        <img
-          width="140"
-          style="height: fit-content"
-          src="https://cdn2.iconfinder.com/data/icons/party-new-years/128/Party_Newyears_Vinyl_Cassete-512.png"
-          alt="Record"
-        />
+        <img class="loginIcon" src="../assets/vinyl_icon.png" alt="Record" />
         <div class="text-center space">
           <h1 class="fw-bolder">Record</h1>
           <p>紀錄回憶的聲音</p>

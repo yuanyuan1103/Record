@@ -19,7 +19,7 @@
       <tbody class="align-middle text-center">
         <tr class="align-middle" v-for="item in favoriteProduct" :key="item.id">
           <td class="align-middle d-none d-sm-block">
-            <img class="productImg" :src="item.imageUrl" />
+            <img class="productImg" :src="item.imageUrl" :alt="item.title" :title="item.title" />
           </td>
           <td class="align-middle h4 fw-bold">{{ item.title }}</td>
           <td class="align-middle">

@@ -30,7 +30,7 @@
             <div v-for="item in slicePage" :key="item.id" class="col-10 col-md-6 col-lg-4">
               <div class="product">
                 <a href="#" @click.prevent="getProduct(item.id)"><i class="bi bi-search"></i></a>
-                <img :src="item.imageUrl" class="card-img-top imgProduct" alt="..." />
+                <img class="card-img-top imgProduct" :src="item.imageUrl" :alt="item.title" :title="item.title" />
               </div>
               <p class="pt-2 fs-5 textover">{{ item.title }}</p>
               <div class="proDetil pb-3">

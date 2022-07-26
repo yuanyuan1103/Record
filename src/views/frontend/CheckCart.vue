@@ -46,7 +46,12 @@
                           <i class="bi bi-x-circle h4"></i>
                         </button>
                       </div>
-                      <img class="productImg" :src="item.product.imageUrl" alt="" />
+                      <img
+                        class="productImg"
+                        :src="item.product.imageUrl"
+                        :alt="item.product.title"
+                        :title="item.product.title"
+                      />
                       <div class="ms-3 text-start py-4">
                         <div class="h5">{{ item.product.title }}</div>
                         <div v-if="item.product.origin_price != item.product.price" class="h5">
