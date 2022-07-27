@@ -135,7 +135,7 @@
               <span class="text-decoration-line-through text-muted fs-5">NT${{ $filters.currency(cart.total) }}</span>
               <p class="fs-2 fw-bolder">NT${{ $filters.currency(cart.final_total) }}</p>
             </div>
-            <button type="button" class="btn btn-dark w-100" @click="createOrder">送出訂單</button>
+            <button type="button" class="btn btn-dark w-100" @click.prevent="createOrder">送出訂單</button>
           </div>
         </div>
       </div>

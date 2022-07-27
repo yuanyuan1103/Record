@@ -28,7 +28,7 @@
           </div>
           <button type="submit" class="btn btn-secondary w-100 mb-3">Sign in</button>
         </form>
-        <button type="button" class="btn btn-dark w-100" @click="home">Home</button>
+        <button type="button" class="btn btn-dark w-100" @click.prevent="home">Home</button>
       </div>
     </div>
   </div>

@@ -41,7 +41,7 @@
                           type="button"
                           class="btn d-md-block mx-auto btnClose"
                           :disabled="status.loadingItem === item.id"
-                          @click="removeCartItem(item.id)"
+                          @click.prevent="removeCartItem(item.id)"
                         >
                           <i class="bi bi-x-circle h4"></i>
                         </button>
@@ -67,7 +67,7 @@
                             <button
                               type="button"
                               class="btn btn-outline-dark"
-                              @click="updateCart(item, item.qty - 1)"
+                              @click.prevent="updateCart(item, item.qty - 1)"
                               :disabled="item.qty == 1"
                             >
                               <i class="bi bi-dash"></i>
@@ -82,7 +82,7 @@
                             <button
                               type="button"
                               class="btn btn-outline-dark"
-                              @click="updateCart(item, item.qty + 1)"
+                              @click.prevent="updateCart(item, item.qty + 1)"
                               :disabled="item.qty == 10"
                             >
                               <i class="bi bi-plus"></i>
@@ -96,7 +96,7 @@
                         <button
                           type="button"
                           class="btn btn-outline-dark"
-                          @click="updateCart(item, item.qty - 1)"
+                          @click.prevent="updateCart(item, item.qty - 1)"
                           :disabled="item.qty == 1"
                         >
                           <i class="bi bi-dash"></i>
@@ -111,7 +111,7 @@
                         <button
                           type="button"
                           class="btn btn-outline-dark"
-                          @click="updateCart(item, item.qty + 1)"
+                          @click.prevent="updateCart(item, item.qty + 1)"
                           :disabled="item.qty == 10"
                         >
                           <i class="bi bi-plus"></i>
@@ -124,7 +124,7 @@
                         type="button"
                         class="btn d-md-block mx-auto btnClose"
                         :disabled="status.loadingItem === item.id"
-                        @click="removeCartItem(item.id)"
+                        @click.prevent="removeCartItem(item.id)"
                       >
                         <i class="bi bi-x-circle h4"></i>
                       </button>
@@ -153,7 +153,9 @@
               <span class="text-sm text-gray-400 mr-4"></span>
               <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="請輸入優惠碼" v-model="coupon_code" />
-                <button type="button" class="btn btn-outline-secondary" @click="addCouponCode">套用優惠碼</button>
+                <button type="button" class="btn btn-outline-secondary" @click.prevent="addCouponCode">
+                  套用優惠碼
+                </button>
               </div>
             </div>
             <div class="border-top py-4">
@@ -166,7 +168,12 @@
               <span class="text-decoration-line-through text-muted fs-5">NT${{ $filters.currency(cart.total) }}</span>
               <p class="fs-2 fw-bolder">NT${{ $filters.currency(cart.final_total) }}</p>
             </div>
-            <button type="button" class="btn btn-dark w-100" @click="gotocheckinfo" :disabled="!cart.carts.length">
+            <button
+              type="button"
+              class="btn btn-dark w-100"
+              @click.prevent="gotocheckinfo"
+              :disabled="!cart.carts.length"
+            >
               填寫資料
             </button>
           </div>

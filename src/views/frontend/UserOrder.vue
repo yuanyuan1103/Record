@@ -22,7 +22,7 @@
                   <h3 class="border-bottom">訂單編號</h3>
                   <div class="d-flex justify-content-between">
                     <span>{{ order.id }}</span>
-                    <button type="button" class="btn btn-outline-secondary" @click="toCopy(order.id)">
+                    <button type="button" class="btn btn-outline-secondary" @click.prevent="toCopy(order.id)">
                       <i class="bi bi-clipboard-check"></i>
                     </button>
                   </div>
@@ -86,7 +86,7 @@
                 </div>
                 <p class="fs-2 fw-bolder">NT${{ $filters.currency(order.total) }}</p>
                 <div v-if="order.is_paid === false">
-                  <button type="button" class="btn btn-dark w-100" @click="payOrder">確認付款</button>
+                  <button type="button" class="btn btn-dark w-100" @click.prevent="payOrder">確認付款</button>
                 </div>
                 <div v-if="order.is_paid === true">
                   <button type="button" class="btn btn-dark w-100" disabled>已付款</button>
