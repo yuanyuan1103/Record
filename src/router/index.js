@@ -89,6 +89,10 @@ const routes = [
         component: () => import('../views/backend/Coupons.vue')
       }
     ]
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    redirect: '/'
   }
 ];
 
