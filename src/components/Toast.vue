@@ -11,17 +11,16 @@
   </div>
 </template>
 <script>
-import Toast from 'bootstrap/js/dist/toast';
+import Toast from 'bootstrap/js/dist/toast'
 export default {
   name: 'Toast',
   props: ['msg'],
   mounted() {
-    const toastEl = this.$refs.toast;
-    //此吐司顯示5s
+    const toastEl = this.$refs.toast
     const toast = new Toast(toastEl, {
       delay: 1000
-    });
-    toast.show();
+    })
+    toast.show()
   }
-};
+}
 </script>

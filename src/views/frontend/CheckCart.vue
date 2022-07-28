@@ -2,7 +2,6 @@
   <Loading :active="isLoading" />
   <div class="box"></div>
   <div class="container-fluid h100">
-    <!-- checkCart -->
     <div class="checkCart pt-5">
       <div class="stepAct border">
         <i class="bi bi-bag-check"></i>
@@ -190,67 +189,66 @@ export default {
       isLoading: false,
       cart: {},
       status: {
-        loadingItem: '' //對應品項id
+        loadingItem: ''
       },
       coupon_code: ''
-    };
+    }
   },
   inject: ['$httpMessageState', 'emitter'],
   methods: {
     getCart() {
-      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`;
-      this.isLoading = true;
+      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`
+      this.isLoading = true
       this.$http.get(url).then((response) => {
-        this.cart = response.data.data;
-        this.isLoading = false;
-      });
+        this.cart = response.data.data
+        this.isLoading = false
+      })
     },
     removeCartItem(id) {
-      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart/${id}`;
-      this.isLoading = true;
+      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart/${id}`
+      this.isLoading = true
       this.$http.delete(url).then((response) => {
-        this.$httpMessageState(response, '移除購物車品項');
-        this.status.loadingItem = '';
-        this.emitter.emit('update-cart', id);
-        this.getCart();
-        this.isLoading = false;
-      });
+        this.$httpMessageState(response, '移除購物車品項')
+        this.status.loadingItem = ''
+        this.emitter.emit('update-cart', id)
+        this.getCart()
+        this.isLoading = false
+      })
     },
     addCouponCode() {
-      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/coupon`;
+      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/coupon`
       const coupon = {
-        //畫面上的v-model coupon_code
         code: this.coupon_code
-      };
-      this.isLoading = true;
+      }
+      this.isLoading = true
       this.$http.post(url, { data: coupon }).then((res) => {
-        this.$httpMessageState(res, '加入優惠券');
-        this.getCart();
-        this.isLoading = false;
-      });
+        this.$httpMessageState(res, '加入優惠券')
+        this.getCart()
+        this.isLoading = false
+      })
     },
     updateCart(item, qty) {
-      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart/${item.id}`;
-      this.isLoading = true;
-      this.status.loadingItem = item.id;
+      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart/${item.id}`
+      this.isLoading = true
+      this.status.loadingItem = item.id
       const cart = {
         product_id: item.product_id,
         qty
-      };
+      }
       this.$http.put(url, { data: cart }).then((response) => {
-        this.$httpMessageState(response, '更新購物車');
-        this.status.loadingItem = '';
-        this.getCart();
-      });
+        this.$httpMessageState(response, '更新購物車')
+        this.status.loadingItem = ''
+        this.getCart()
+      })
     },
     gotocheckinfo() {
-      this.$router.push(`/checkinfo`);
+      this.$router.push('/checkinfo')
     }
   },
   created() {
-    this.getCart();
+    this.getCart()
   }
-};
+}
 </script>
 
 <style src="../../assets/helpers/_CheckCart.css" scoped></style>

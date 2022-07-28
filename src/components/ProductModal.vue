@@ -154,62 +154,48 @@
 </template>
 
 <script>
-//將bootstrap的modal載入
-import Modal from 'bootstrap/js/dist/modal';
-import modalMixin from '@/mixins/modalMixin';
+import Modal from 'bootstrap/js/dist/modal'
+import modalMixin from '@/mixins/modalMixin'
 
 export default {
   props: {
-    // 內層使用:product接收
     product: {
       type: Object,
       default() {
-        return {};
+        return {}
       }
     }
   },
   mixins: [modalMixin],
-  //監聽事件是否有變更 把傳入的資料傳進tempProduct
   watch: {
     product() {
-      this.tempProduct = this.product;
+      this.tempProduct = this.product
     }
   },
   data() {
     return {
       modal: {},
-      //接收外層的資料
       tempProduct: {}
-    };
+    }
   },
   methods: {
     uploadFile() {
-      //從console.dir(uploadedFile);找到files屬性 確認為陣列第0個資料
-      const uploadedFile = this.$refs.fileInput.files[0];
-      //確認資料是否有取得
-      // console.dir(uploadedFile);
+      const uploadedFile = this.$refs.fileInput.files[0]
+      const formData = new FormData()
 
-      //轉為fromData的格式
-      const formData = new FormData();
-      //file-to-upload表單內容
-      formData.append('file-to-upload', uploadedFile);
+      formData.append('file-to-upload', uploadedFile)
 
-      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/upload`;
+      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/upload`
 
       this.$http.post(url, formData).then((response) => {
-        //確認資料上傳的結果
-        // console.log(response.data);
-        //若成功將資料存進tempProduct
         if (response.data.success) {
-          this.tempProduct.imageUrl = response.data.imageUrl;
+          this.tempProduct.imageUrl = response.data.imageUrl
         }
-      });
+      })
     }
   },
   mounted() {
-    // var myModal = new bootstrap.Modal(document.getElementById('myModal'), options)
-    this.modal = new Modal(this.$refs.modal);
-    // this.modal.show();
+    this.modal = new Modal(this.$refs.modal)
   }
-};
+}
 </script>

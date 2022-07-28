@@ -136,8 +136,8 @@
 </template>
 
 <script>
-import { currency } from '@/methods/filters';
-import saveFavorite from '@/methods/saveFavorite';
+import { currency } from '@/methods/filters'
+import saveFavorite from '@/methods/saveFavorite'
 
 export default {
   data() {
@@ -149,81 +149,80 @@ export default {
       productRandom: [],
       qty: 1,
       status: {
-        loadingItem: '' //對應品項id
+        loadingItem: ''
       }
-    };
+    }
   },
   inject: ['$httpMessageState', 'emitter'],
   watch: {
     '$route.params': {
       immediate: true,
       handler(params) {
-        const { orderId } = params;
-        this.id = orderId;
-        this.getProduct();
-        this.rendomProducts();
+        const { orderId } = params
+        this.id = orderId
+        this.getProduct()
+        this.rendomProducts()
       }
     }
   },
   methods: {
     currency,
     rendomProducts() {
-      this.isLoading = true;
+      this.isLoading = true
 
       this.$http
         .get(`${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/products/all`)
         .then((res) => {
-          if (!res.data.success) throw new Error(res.data.message);
+          if (!res.data.success) throw new Error(res.data.message)
 
           this.productRandom = res.data.products
             .filter((x) => x.id !== this.id)
             .sort(() => Math.random() - 0.5)
-            .splice(1, 4);
+            .splice(1, 4)
 
-          // done
-          this.isLoading = false;
+          this.isLoading = false
         })
         .catch((err) => {
-          console.log(err?.message);
-        });
+          this.$httpMessageState(err, '連線錯誤')
+        })
     },
     getProduct() {
-      const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/product/${this.id}`;
-      this.isLoading = true;
+      const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/product/${this.id}`
+      this.isLoading = true
       this.$http.get(api).then((response) => {
-        this.isLoading = false;
+        this.isLoading = false
         if (response.data.success) {
-          this.product = response.data.product;
+          this.product = response.data.product
         }
-      });
+      })
     },
     addToCart(id, qty) {
-      const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`;
+      const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`
       const data = {
         product_id: id,
         qty
-      };
-      this.status.loadingItem = id;
+      }
+      this.status.loadingItem = id
       this.$http
         .post(api, { data })
         .then((response) => {
           if (!response.data.success) {
-            this.$httpMessageState(response, '加入購物車');
-            return;
+            this.$httpMessageState(response, '加入購物車')
+            return
           }
-          this.status.loadingItem = '';
-          this.qty = 1;
-          this.$httpMessageState(response, '加入購物車');
-          this.emitter.emit('update-cart', id);
+          this.status.loadingItem = ''
+          this.qty = 1
+          this.$httpMessageState(response, '加入購物車')
+          this.emitter.emit('update-cart', id)
         })
         .catch((error) => {
-          this.$httpMessageState(error, '連線錯誤');
-        });
+          this.$httpMessageState(error, '連線錯誤')
+        })
     },
     toggleFavorite(product) {
-      this.isLoading = true;
+      this.isLoading = true
       if (this.favorite.includes(product.id)) {
-        this.favorite.splice(this.favorite.indexOf(product.id), 1); //從最愛移除
+        this.favorite.splice(this.favorite.indexOf(product.id), 1)
         this.$httpMessageState(
           {
             data: {
@@ -231,10 +230,10 @@ export default {
             }
           },
           '移除收藏'
-        );
-        this.isLoading = false;
+        )
+        this.isLoading = false
       } else {
-        this.favorite.push(product.id); //新增最愛
+        this.favorite.push(product.id)
         this.$httpMessageState(
           {
             data: {
@@ -242,28 +241,26 @@ export default {
             }
           },
           '加入收藏'
-        );
-        this.isLoading = false;
+        )
+        this.isLoading = false
       }
-      saveFavorite.saveFavorite(this.favorite);
-      this.emitter.emit('update-favorite', this.favorite);
+      saveFavorite.saveFavorite(this.favorite)
+      this.emitter.emit('update-favorite', this.favorite)
     },
     updateFavorite() {
-      this.favorite = saveFavorite.getFavorite();
+      this.favorite = saveFavorite.getFavorite()
     },
     gotoProduct(id) {
-      //跳轉至專屬於此產品id的頁面
-      //給予空參數 取代原有的頁數或分類
-      this.$router.push({ path: `/product/${id}`, params: {} });
+      this.$router.push({ path: `/product/${id}`, params: {} })
     },
     updateCategory(category) {
       this.$router.push({
         name: '產品清單',
         query: { category: `${category}` }
-      });
+      })
     }
   }
-};
+}
 </script>
 
 <style src="../../assets/helpers/_ProductDetil.css" scoped></style>

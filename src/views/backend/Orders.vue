@@ -56,12 +56,12 @@
 </template>
 
 <script>
-import DelModal from '@/components/DelModal.vue';
-import OrderModal from '@/components/OrderModal';
-import Pagination from '@/components/Pagination.vue';
+import DelModal from '@/components/DelModal.vue'
+import OrderModal from '@/components/OrderModal'
+import Pagination from '@/components/Pagination.vue'
 
 export default {
-  data() {
+  data () {
     return {
       orders: {},
       isNew: false,
@@ -69,7 +69,7 @@ export default {
       isLoading: false,
       tempOrder: {},
       currentPage: 1
-    };
+    }
   },
   components: {
     Pagination,
@@ -77,51 +77,51 @@ export default {
     OrderModal
   },
   methods: {
-    getOrders(currentPage = 1) {
-      this.currentPage = currentPage;
-      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/orders?page=${currentPage}`;
-      this.isLoading = true;
+    getOrders (currentPage = 1) {
+      this.currentPage = currentPage
+      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/orders?page=${currentPage}`
+      this.isLoading = true
       this.$http.get(url, this.tempProduct).then((response) => {
-        this.orders = response.data.orders;
-        this.pagination = response.data.pagination;
-        this.isLoading = false;
-      });
+        this.orders = response.data.orders
+        this.pagination = response.data.pagination
+        this.isLoading = false
+      })
     },
-    openModal(isNew, item) {
-      this.tempOrder = { ...item };
-      this.isNew = false;
-      const orderComponent = this.$refs.orderModal;
-      orderComponent.showModal();
+    openModal (isNew, item) {
+      this.tempOrder = { ...item }
+      this.isNew = false
+      const orderComponent = this.$refs.orderModal
+      orderComponent.showModal()
     },
-    openDelOrderModal(item) {
-      this.tempOrder = { ...item };
-      const delComponent = this.$refs.delModal;
-      delComponent.showModal();
+    openDelOrderModal (item) {
+      this.tempOrder = { ...item }
+      const delComponent = this.$refs.delModal
+      delComponent.showModal()
     },
-    updatePaid(item) {
-      this.isLoading = true;
-      const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/order/${item.id}`;
+    updatePaid (item) {
+      this.isLoading = true
+      const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/order/${item.id}`
       const paid = {
         is_paid: item.is_paid
-      };
+      }
       this.$http.put(api, { data: paid }).then((response) => {
-        this.isLoading = false;
-        this.getOrders(this.currentPage);
-        this.$httpMessageState(response, '更新付款狀態');
-      });
+        this.isLoading = false
+        this.getOrders(this.currentPage)
+        this.$httpMessageState(response, '更新付款狀態')
+      })
     },
-    delOrder() {
-      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/order/${this.tempOrder.id}`;
-      this.isLoading = true;
+    delOrder () {
+      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/order/${this.tempOrder.id}`
+      this.isLoading = true
       this.$http.delete(url).then((response) => {
-        const delComponent = this.$refs.delModal;
-        delComponent.hideModal();
-        this.getOrders(this.currentPage);
-      });
+        const delComponent = this.$refs.delModal
+        delComponent.hideModal()
+        this.getOrders(this.currentPage)
+      })
     }
   },
-  created() {
-    this.getOrders();
+  created () {
+    this.getOrders()
   }
-};
+}
 </script>

@@ -250,18 +250,17 @@
 </template>
 
 <script>
-import { categoryList } from '@/methods/commonData';
-import { currency } from '@/methods/filters';
+import { categoryList } from '@/methods/commonData'
+import { currency } from '@/methods/filters'
 export default {
   data() {
     return {
-      //分類列表 不取全部
-      categoryList: categoryList.filter((e) => e.value != undefined),
+      categoryList: categoryList.filter((e) => e.value !== undefined),
       productRandom: [],
       isLoading: false,
       productIntroduce: {},
       act: false
-    };
+    }
   },
   methods: {
     currency,
@@ -269,46 +268,43 @@ export default {
       this.$router.push({
         name: '產品清單',
         query: { category: `${category}` }
-      });
+      })
     },
     rendomProducts() {
-      this.isLoading = true;
+      this.isLoading = true
 
       this.$http
         .get(`${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/products/all`)
         .then((res) => {
-          if (!res.data.success) throw new Error(res.data.message);
+          if (!res.data.success) throw new Error(res.data.message)
 
           this.productRandom = res.data.products
             .filter((x) => x.id !== this.id)
             .sort(() => Math.random() - 0.5)
-            .splice(1, 4);
+            .splice(1, 4)
           this.productIntroduce = res.data.products
             .filter((x) => x.id !== this.id)
             .sort(() => Math.random() - 0.5)
-            .splice(1, 1);
+            .splice(1, 1)
 
-          // done
-          this.isLoading = false;
+          this.isLoading = false
         })
         .catch((err) => {
-          console.log(err?.message);
-        });
+          this.$httpMessageState(err, '連線錯誤')
+        })
     },
     gotoProduct(id) {
-      //跳轉至專屬於此產品id的頁面
-      //給予空參數 取代原有的頁數或分類
-      this.$router.push({ path: `/product/${id}`, params: {} });
+      this.$router.push({ path: `/product/${id}`, params: {} })
     },
     handleScroll() {
-      this.act = window.scrollY > 300 ? true : false;
+      this.act = window.scrollY > 300
     }
   },
   created() {
-    window.addEventListener('scroll', this.handleScroll);
-    this.rendomProducts();
+    window.addEventListener('scroll', this.handleScroll)
+    this.rendomProducts()
   }
-};
+}
 </script>
 
 <style src="../../assets/helpers/_Index.css" scoped></style>

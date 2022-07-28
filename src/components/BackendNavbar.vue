@@ -29,18 +29,16 @@
 </template>
 
 <script>
-// import Collapse from 'bootstrap/js/dist/collapse';
-
 export default {
   methods: {
     logout() {
-      const api = `${process.env.VUE_APP_API}logout`;
+      const api = `${process.env.VUE_APP_API}logout`
       this.$http.post(api, this.user).then((res) => {
         if (res.data.success) {
-          this.$router.push('/login');
+          this.$router.push('/login')
         }
-      });
+      })
     }
   }
-};
+}
 </script>

@@ -112,30 +112,30 @@ export default {
       },
       orderId: '',
       isLoading: false
-    };
+    }
   },
   inject: ['$httpMessageState', 'emitter'],
   methods: {
     getOrder() {
-      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/order/${this.orderId}`;
-      this.isLoading = true;
+      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/order/${this.orderId}`
+      this.isLoading = true
       this.$http.get(url).then((res) => {
         if (res.data.success) {
-          this.order = res.data.order;
-          this.isLoading = false;
+          this.order = res.data.order
+          this.isLoading = false
         }
-      });
+      })
     },
     payOrder() {
-      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/pay/${this.orderId}`;
-      this.isLoading = true;
+      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/pay/${this.orderId}`
+      this.isLoading = true
       this.$http.post(url).then((res) => {
         if (res.data.success) {
-          this.$httpMessageState(res, '付款成功');
-          this.isLoading = false;
-          this.getOrder();
+          this.$httpMessageState(res, '付款成功')
+          this.isLoading = false
+          this.getOrder()
         }
-      });
+      })
     },
     toCopy(orderId) {
       navigator.clipboard
@@ -148,20 +148,18 @@ export default {
               }
             },
             '複製訂單編號'
-          );
+          )
         })
         .catch((err) => {
-          this.$httpMessageState(err, '複製失敗');
-        });
+          this.$httpMessageState(err, '複製失敗')
+        })
     }
   },
   created() {
-    //取得路由id
-    this.orderId = this.$route.params.orderId;
-    //透過getOrder取得對應的訂單資料
-    this.getOrder();
+    this.orderId = this.$route.params.orderId
+    this.getOrder()
   }
-};
+}
 </script>
 
 <style src="../../assets/helpers/_CheckOut.css" scoped></style>

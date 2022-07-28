@@ -30,10 +30,7 @@
   </div>
 </template>
 <script>
-// :pages="{ 頁碼資訊 }"
-// @emitPages="更新頁面事件"
 export default {
-  // props: ['pages'],
   props: {
     pages: {
       type: Object,
@@ -45,15 +42,10 @@ export default {
       })
     }
   },
-  watch: {
-    // pages() {
-    //   console.log(this.pages);
-    // }
-  },
   methods: {
     updatePage(page) {
-      this.$emit('emit-pages', page);
+      this.$emit('emit-pages', page)
     }
   }
-};
+}
 </script>

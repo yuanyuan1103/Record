@@ -5,22 +5,20 @@
 </template>
 
 <script>
-import Toast from '@/components/Toast.vue';
+import Toast from '@/components/Toast.vue'
 export default {
   components: { Toast },
   data() {
     return {
       messages: []
-    };
+    }
   },
   inject: ['emitter'],
   mounted() {
-    //此message為外部傳來的資訊
     this.emitter.on('push-message', (message) => {
-      const { style = 'success', title, content } = message;
-      //將資料丟進訊息列表
-      this.messages.push({ style, title, content });
-    });
+      const { style = 'success', title, content } = message
+      this.messages.push({ style, title, content })
+    })
   }
-};
+}
 </script>

@@ -1,6 +1,5 @@
-// 啟用mitt
-import mitt from 'mitt';
+import mitt from 'mitt'
 
-const emitter = mitt();
+const emitter = mitt()
 
-export default emitter;
+export default emitter

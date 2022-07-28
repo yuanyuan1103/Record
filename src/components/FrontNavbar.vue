@@ -105,7 +105,7 @@
 <style src="../assets/helpers/_FrontNaver.css" scoped></style>
 
 <script>
-import saveFavorite from '@/methods/saveFavorite';
+import saveFavorite from '@/methods/saveFavorite'
 
 export default {
   data() {
@@ -114,33 +114,33 @@ export default {
       showMenu: false,
       favorite: saveFavorite.getFavorite() || [],
       cart: {}
-    };
+    }
   },
   created() {
-    window.addEventListener('scroll', this.handleScroll);
-    this.getCart();
+    window.addEventListener('scroll', this.handleScroll)
+    this.getCart()
   },
   inject: ['emitter'],
   methods: {
     handleScroll() {
-      this.act = window.scrollY > 80 ? true : false;
+      this.act = window.scrollY > 80
     },
     showOffcanvasMenu() {
-      this.showMenu ? (this.showMenu = false) : (this.showMenu = true);
+      this.showMenu ? (this.showMenu = false) : (this.showMenu = true)
     },
     updateFavorite() {
-      this.favorite = saveFavorite.getFavorite();
+      this.favorite = saveFavorite.getFavorite()
     },
     getCart() {
-      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`;
+      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`
       this.$http.get(url).then((response) => {
-        this.cart = response.data.data.carts.length;
-      });
+        this.cart = response.data.data.carts.length
+      })
     }
   },
   mounted() {
-    this.emitter.on('update-favorite', this.updateFavorite);
-    this.emitter.on('update-cart', this.getCart);
+    this.emitter.on('update-favorite', this.updateFavorite)
+    this.emitter.on('update-cart', this.getCart)
   }
-};
+}
 </script>

@@ -20,4 +20,4 @@ export const categoryList = [
     label: '其他',
     imgUrl: require('@/assets/img/category_4.jpg')
   }
-];
+]

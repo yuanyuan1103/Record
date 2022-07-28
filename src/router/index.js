@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 const routes = [
   {
@@ -94,18 +94,18 @@ const routes = [
     path: '/:pathMatch(.*)*',
     redirect: '/'
   }
-];
+]
 
 const router = createRouter({
   history: createWebHashHistory(),
   linkActiveClass: 'active',
   routes
-});
+})
 
 router.beforeEach((to, from, next) => {
-  window.document.title = `${to.name} - Record`;
-  window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-  next();
-});
+  window.document.title = `${to.name} - Record`
+  window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+  next()
+})
 
-export default router;
+export default router

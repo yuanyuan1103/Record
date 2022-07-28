@@ -49,12 +49,12 @@
 </template>
 <script>
 export default {
-  data() {
+  data () {
     return {
       tel: '(09)-8765-4321',
       email: 'pijhs70401@gmail.com'
-    };
+    }
   }
-};
+}
 </script>
 <style src="../assets/helpers/_Footer.css"></style>

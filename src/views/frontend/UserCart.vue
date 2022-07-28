@@ -60,7 +60,6 @@
             <div class="col-10 col-md-6 col-lg-4" />
           </div>
         </div>
-        <!-- 分頁資訊 -->
         <Pagination
           :pages="{ total_pages: totalPages, current_page: this.page }"
           @emit-pages="(newPage) => replaceUrlQuery('page', newPage)"
@@ -71,83 +70,62 @@
 </template>
 
 <script>
-import { categoryList } from '@/methods/commonData';
-import Pagination from '@/components/Pagination.vue';
-import saveFavorite from '@/methods/saveFavorite';
-import { currency } from '@/methods/filters';
+import { categoryList } from '@/methods/commonData'
+import Pagination from '@/components/Pagination.vue'
+import saveFavorite from '@/methods/saveFavorite'
+import { currency } from '@/methods/filters'
 export default {
   data() {
     return {
-      // 分類列表
       categoryList: categoryList,
-      // 產品列表
       products: [],
-      // 目前頁數
       page: 1,
-      // 存取搜尋字串
       search: '',
-      // 點擊分類列表將分類存入 用來取得分類區分
       category: '',
-
-      // 取得分頁 設定初始值
-      // pagination: {
-      //   total_pages: 1,
-      //   current_page: 1,
-      //   has_pre: false,
-      //   has_next: false
-      // }
       pageSize: 6,
       favorite: saveFavorite.getFavorite() || [],
       isLoading: false,
       status: {
-        loadingItem: '' //對應品項id
+        loadingItem: ''
       },
       hover: false
-    };
+    }
   },
-  //區域註冊
   components: {
     Pagination
   },
-  //只要使用inject就可使用 且不需要import
   inject: ['$httpMessageState', 'emitter'],
   methods: {
     currency,
     getProducts() {
-      this.isLoading = true;
+      this.isLoading = true
 
       this.$http
         .get(`${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/products/all`)
         .then((res) => {
-          if (!res.data.success) throw new Error(res.data.message);
-
-          // update list
-          this.products = res.data.products;
-
-          // done
-          this.isLoading = false;
+          if (!res.data.success) throw new Error(res.data.message)
+          this.products = res.data.products
+          this.isLoading = false
         })
         .catch((err) => {
-          console.log(err?.message);
-        });
+          this.$httpMessageState(err, '連線錯誤')
+        })
     },
     updateData(type, value) {
-      this[type] = value;
+      this[type] = value
     },
     replaceUrlQuery(type, value) {
-      let query = { ...this.$route.query };
-      query[type] = value;
-      if (type == 'category') {
-        query.page = 1;
+      const query = { ...this.$route.query }
+      query[type] = value
+      if (type === 'category') {
+        query.page = 1
       }
-
-      // const query = { ...this.$route.query, [type]: value };
-      this.$router.replace({ query });
+      this.$router.replace({ query })
     },
     toggleFavorite(product) {
-      this.isLoading = true;
+      this.isLoading = true
       if (this.favorite.includes(product.id)) {
-        this.favorite.splice(this.favorite.indexOf(product.id), 1); //從最愛移除
+        this.favorite.splice(this.favorite.indexOf(product.id), 1)
         this.$httpMessageState(
           {
             data: {
@@ -156,10 +134,10 @@ export default {
             }
           },
           '移除收藏'
-        );
-        this.isLoading = false;
+        )
+        this.isLoading = false
       } else {
-        this.favorite.push(product.id); //新增最愛
+        this.favorite.push(product.id)
         this.$httpMessageState(
           {
             data: {
@@ -168,95 +146,90 @@ export default {
             }
           },
           '加入收藏'
-        );
-        this.isLoading = false;
+        )
+        this.isLoading = false
       }
-      saveFavorite.saveFavorite(this.favorite);
-      this.emitter.emit('update-favorite', this.favorite);
+      saveFavorite.saveFavorite(this.favorite)
+      this.emitter.emit('update-favorite', this.favorite)
     },
     updateFavorite() {
-      this.favorite = saveFavorite.getFavorite();
+      this.favorite = saveFavorite.getFavorite()
     },
     getProduct(id) {
-      //跳轉至專屬於此產品id的頁面
-      //給予空參數 取代原有的頁數或分類
-      this.$router.push({ path: `/product/${id}`, params: {} });
+      this.$router.push({ path: `/product/${id}`, params: {} })
     },
     addToCart(id, qty) {
-      this.isLoading = true;
-      const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`;
+      this.isLoading = true
+      const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`
       const data = {
         product_id: id,
         qty
-      };
-      this.status.loadingItem = id;
+      }
+      this.status.loadingItem = id
       this.$http
         .post(api, { data })
         .then((response) => {
           if (!response.data.success) {
-            this.$httpMessageState(response, '加入購物車');
-            return;
+            this.$httpMessageState(response, '加入購物車')
+            return
           }
-          this.isLoading = false;
-          this.status.loadingItem = '';
-          this.qty = 1;
-          this.emitter.emit('update-cart', id);
-          this.$httpMessageState(response, '加入購物車');
+          this.isLoading = false
+          this.status.loadingItem = ''
+          this.qty = 1
+          this.emitter.emit('update-cart', id)
+          this.$httpMessageState(response, '加入購物車')
         })
         .catch((error) => {
-          this.$httpMessageState(error, '連線錯誤');
-          this.isLoading = false;
-        });
+          this.$httpMessageState(error, '連線錯誤')
+          this.isLoading = false
+        })
     }
   },
   created() {
-    this.getProducts();
+    this.getProducts()
   },
   watch: {
     '$route.query': {
       immediate: true,
       handler(param) {
-        const { page, search, category } = param;
+        const { page, search, category } = param
 
-        this.page = parseInt(page, 10) || 1;
-        this.search = search;
-        this.category = category;
+        this.page = parseInt(page, 10) || 1
+        this.search = search
+        this.category = category
       }
     }
   },
   computed: {
     filterProducts() {
-      let result = this.products;
+      let result = this.products
 
-      // search
       if (this.search) {
-        result = result.filter((item) => item.title.match(this.search));
+        result = result.filter((item) => item.title.match(this.search))
       }
 
-      // category
       if (this.category) {
-        result = result.filter((item) => item.category === this.category);
+        result = result.filter((item) => item.category === this.category)
       }
 
-      return result;
+      return result
     },
     slicePage() {
-      let result = this.filterProducts;
+      let result = this.filterProducts
 
-      // page
-      const offset = this.pageSize * (this.page - 1);
-      const end = offset + this.pageSize;
-      result = result.slice(offset, end);
+      const offset = this.pageSize * (this.page - 1)
+      const end = offset + this.pageSize
+      result = result.slice(offset, end)
 
-      return result;
+      return result
     },
     totalPages() {
-      const listLength = this.filterProducts.length;
+      const listLength = this.filterProducts.length
 
-      return Math.ceil(listLength / this.pageSize);
+      return Math.ceil(listLength / this.pageSize)
     }
   }
-};
+}
 </script>
 
 <style src="../../assets/helpers/_UserCart.css" scoped></style>

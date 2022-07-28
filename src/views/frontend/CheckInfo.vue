@@ -2,7 +2,6 @@
   <Loading :active="isLoading" />
   <div class="box"></div>
   <div class="container-fluid h100">
-    <!-- checkCart -->
     <div class="checkCart pt-5">
       <div class="step border">
         <i class="bi bi-bag-check"></i>
@@ -157,33 +156,33 @@ export default {
         },
         message: ''
       }
-    };
+    }
   },
   inject: ['$httpMessageState', 'emitter'],
   methods: {
     createOrder() {
-      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/order`;
-      const order = this.form;
-      this.isLoading = true;
+      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/order`
+      const order = this.form
+      this.isLoading = true
       this.$http.post(url, { data: order }).then((res) => {
-        this.emitter.emit('update-cart');
-        this.$router.push(`/checkout/${res.data.orderId}`);
-        this.isLoading = false;
-      });
+        this.emitter.emit('update-cart')
+        this.$router.push(`/checkout/${res.data.orderId}`)
+        this.isLoading = false
+      })
     },
     getCart() {
-      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`;
-      this.isLoading = true;
+      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`
+      this.isLoading = true
       this.$http.get(url).then((response) => {
-        this.cart = response.data.data;
-        this.isLoading = false;
-      });
+        this.cart = response.data.data
+        this.isLoading = false
+      })
     }
   },
   created() {
-    this.getCart();
+    this.getCart()
   }
-};
+}
 </script>
 
 <style src="../../assets/helpers/_CheckInfo.css" scoped></style>

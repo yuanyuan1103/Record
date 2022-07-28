@@ -55,8 +55,8 @@
 </template>
 
 <script>
-import saveFavorite from '@/methods/saveFavorite';
-import { currency } from '@/methods/filters';
+import saveFavorite from '@/methods/saveFavorite'
+import { currency } from '@/methods/filters'
 
 export default {
   data() {
@@ -65,34 +65,34 @@ export default {
       favoriteProduct: [],
       isLoading: false,
       status: {
-        loadingItem: '' //對應品項id
+        loadingItem: ''
       }
-    };
+    }
   },
   inject: ['$httpMessageState', 'emitter'],
   methods: {
     currency,
     getFavoriteProduct() {
-      this.isLoading = true;
+      this.isLoading = true
       this.$http
         .get(`${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/products/all`)
         .then((response) => {
           if (!response.data.success) {
-            this.$httpMessageState(response, '取得全部產品資料');
-            this.isLoading = false;
-            return;
+            this.$httpMessageState(response, '取得全部產品資料')
+            this.isLoading = false
+            return
           }
-          this.isLoading = false;
-          this.favoriteProduct = response.data.products.filter((product) => this.favorite.includes(product.id));
+          this.isLoading = false
+          this.favoriteProduct = response.data.products.filter((product) => this.favorite.includes(product.id))
         })
         .catch((error) => {
-          this.isLoading = false;
-          this.$httpMessageState(error, '連線錯誤');
-        });
+          this.isLoading = false
+          this.$httpMessageState(error, '連線錯誤')
+        })
     },
     removeFavorite(itemId) {
-      this.isLoading = true;
-      this.favorite.splice(this.favorite.indexOf(itemId), 1);
+      this.isLoading = true
+      this.favorite.splice(this.favorite.indexOf(itemId), 1)
       this.$httpMessageState(
         {
           data: {
@@ -101,47 +101,47 @@ export default {
           }
         },
         '移除收藏'
-      );
-      saveFavorite.saveFavorite(this.favorite);
-      this.emitter.emit('update-favorite');
-      this.isLoading = false;
-      this.getFavoriteProduct();
+      )
+      saveFavorite.saveFavorite(this.favorite)
+      this.emitter.emit('update-favorite')
+      this.isLoading = false
+      this.getFavoriteProduct()
     },
     updateFavorite() {
-      this.favorite = saveFavorite.getFavorite();
+      this.favorite = saveFavorite.getFavorite()
     },
     addToCart(id, qty) {
-      const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`;
+      const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`
       const data = {
         product_id: id,
         qty
-      };
-      this.status.loadingItem = id;
+      }
+      this.status.loadingItem = id
       this.$http
         .post(api, { data })
         .then((response) => {
           if (!response.data.success) {
-            this.$httpMessageState(response, '加入購物車');
-            return;
+            this.$httpMessageState(response, '加入購物車')
+            return
           }
-          this.status.loadingItem = '';
-          this.qty = 1;
-          this.emitter.emit('update-cart', id);
-          this.$httpMessageState(response, '加入購物車');
+          this.status.loadingItem = ''
+          this.qty = 1
+          this.emitter.emit('update-cart', id)
+          this.$httpMessageState(response, '加入購物車')
         })
         .catch((error) => {
-          this.$httpMessageState(error, '連線錯誤');
-        });
+          this.$httpMessageState(error, '連線錯誤')
+        })
     }
   },
   created() {
-    this.getFavoriteProduct();
+    this.getFavoriteProduct()
   },
   mounted() {
-    this.emitter.on('update-favorite', this.updateFavorite);
-    this.getFavoriteProduct();
+    this.emitter.on('update-favorite', this.updateFavorite)
+    this.getFavoriteProduct()
   }
-};
+}
 </script>
 
 <style src="../../assets/helpers/_Favorite.css" scoped></style>

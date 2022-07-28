@@ -45,35 +45,35 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       order: '',
       orderError: false,
       orderErrMsg: ''
-    };
+    }
   },
   inject: [],
   methods: {
-    gotoOrder() {
-      this.$router.push(`/ordertrack/${this.order}`);
+    gotoOrder () {
+      this.$router.push(`/ordertrack/${this.order}`)
     }
   },
   watch: {
-    order() {
-      var inclde = /[A-Za-z0-9lu4e00-lugfa5]+$/;
+    order () {
+      const inclde = /[A-Za-z0-9lu4e00-lugfa5]+$/
 
       if (!inclde.test(this.order)) {
-        this.orderError = true;
-        this.orderErrMsg = '訂單未包含中文字';
+        this.orderError = true
+        this.orderErrMsg = '訂單未包含中文字'
       } else if (this.order.length < 20) {
-        this.orderError = true;
-        this.orderErrMsg = '長度應為20的訂單編號';
+        this.orderError = true
+        this.orderErrMsg = '長度應為20的訂單編號'
       } else {
-        this.orderError = false;
+        this.orderError = false
       }
     }
   }
-};
+}
 </script>
 
 <style src="../../assets/helpers/_OrderTrack.css" scoped></style>
