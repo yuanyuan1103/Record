@@ -2,7 +2,7 @@
   height: fit-content;
   width: 140px;
 }
-.iconFont{
+.iconFont,.linked{
   color: #FEF2F2;
   text-decoration:none;
 }

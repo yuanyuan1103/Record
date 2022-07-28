@@ -15,8 +15,12 @@
           <i class="bi bi-clock-fill pe-1"></i>
           <p class="space">週一至週五 13:30 - 21:50<br />週六 10:00 - 21:50<br />週日 10:00 - 18:00</p>
         </div>
-        <p class="space"><i class="bi bi-envelope-fill pe-1"></i>pijhs70401@gmail.com</p>
-        <p class="space"><i class="bi bi-telephone-fill pe-1"></i>(09)-8765-4321</p>
+        <p class="space">
+          <i class="bi bi-envelope-fill pe-1"></i><a class="linked" :href="'mailto:' + email">{{ email }}</a>
+        </p>
+        <p class="space">
+          <i class="bi bi-telephone-fill pe-1"></i><a class="linked" :href="'tel:' + tel">{{ tel }}</a>
+        </p>
       </div>
       <div class="contact col-lg-3 col-sm-8 lh-sm p-3">
         <h2 class="fs-2 mb-2 text-muted fw-bolder">關於本站</h2>
@@ -43,4 +47,14 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      tel: '(09)-8765-4321',
+      email: 'pijhs70401@gmail.com'
+    };
+  }
+};
+</script>
 <style src="../assets/helpers/_Footer.css"></style>
