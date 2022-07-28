@@ -28,33 +28,21 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img
-            src="https://images.unsplash.com/photo-1634650254521-b1596c5a2d37?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470"
-            class="d-block"
-            alt="RecordBanner"
-          />
+          <img :src="require('./../../assets/img/banner_1.jpg')" class="d-block" alt="RecordBanner" />
           <div class="carousel-caption d-md-block">
             <h2 class="textspac">時光在歌唱<br />黑膠唱片收藏的不僅僅是聲音</h2>
             <a href="#/product" class="custom-btn btn btn-outline-light rounded-pill px-5"> SHOP NOW </a>
           </div>
         </div>
         <div class="carousel-item">
-          <img
-            src="https://images.unsplash.com/photo-1468164016595-6108e4c60c8b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-            class="d-block"
-            alt="RecordBanner"
-          />
+          <img :src="require('./../../assets/img/banner_2.jpg')" class="d-block" alt="RecordBanner" />
           <div class="carousel-caption d-md-block">
             <h2 class="textspac">近年被譽為<br />「黑膠唱片復興時代」</h2>
             <a href="#/product" class="custom-btn btn btn-outline-light rounded-pill px-5"> SHOP NOW </a>
           </div>
         </div>
         <div class="carousel-item">
-          <img
-            src="https://images.unsplash.com/photo-1526327760257-75f515c74478?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-            class="d-block"
-            alt="RecordBanner"
-          />
+          <img :src="require('./../../assets/img/banner_3.jpg')" class="d-block" alt="RecordBanner" />
           <div class="carousel-caption d-md-block">
             <h2 class="textspac">聽黑膠需要理由嗎？</h2>
             <a href="#/product" class="custom-btn btn btn-outline-light rounded-pill px-5"> SHOP NOW </a>

@@ -19,7 +19,7 @@ const routes = [
       {
         path: 'faq',
         name: '問與答',
-        component: () => import('../views/frontend/FQA.vue')
+        component: () => import('../views/frontend/FAQ.vue')
       },
       {
         path: 'product',
