@@ -11,7 +11,7 @@
       <div class="text-center" v-if="this.order == null">
         <i class="bi bi-bag-heart display-1 fw-bold text-dark"></i>
         <h3 class="p-3">請輸入正確的訂單編號或是再次逛逛商店下單</h3>
-        <a href="#/product" class="btn btn-dark btn-lg mb-5">Shop Now</a>
+        <router-link to="/product" class="btn btn-dark btn-lg mb-5">Shop Now</router-link>
       </div>
       <div class="orderTrack container-fluid" v-else>
         <div class="pt-5">

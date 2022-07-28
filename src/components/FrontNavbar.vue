@@ -2,7 +2,7 @@
   <!-- navbar desktop-header -->
   <nav class="desktop header navbar navbar-expand-lg navbar-dark fixed-top" :class="{ colorNav: act }">
     <div class="container">
-      <a class="navbar-brand iconFont fs-3" href="#">Record</a>
+      <router-link to="/" class="navbar-brand iconFont fs-3">Record</router-link>
       <div class="mainMeun">
         <button
           type="button"
