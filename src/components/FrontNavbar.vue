@@ -145,5 +145,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import './../assets/helpers/_FrontNaver.scss';
+@import './../assets/helpers/_FrontNavbar.scss';
 </style>
