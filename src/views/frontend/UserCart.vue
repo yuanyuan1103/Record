@@ -27,32 +27,34 @@
             <label for="search">search</label>
           </div>
           <div class="row justify-content-center" style="min-height: 70vh">
-            <div v-for="item in slicePage" :key="item.id" class="col-10 col-md-6 col-lg-4">
-              <div class="product">
-                <a href="#" @click.prevent="getProduct(item.id)"><i class="bi bi-search"></i></a>
-                <img class="card-img-top imgProduct" :src="item.imageUrl" :alt="item.title" :title="item.title" />
-              </div>
-              <p class="pt-2 fs-5 textover">{{ item.title }}</p>
-              <div class="proDetil pb-3">
-                <div class="proBtn">
-                  <button
-                    type="button"
-                    @click.prevent="addToCart(item.id, 1)"
-                    class="btn colorCart me-2"
-                    :disabled="this.status.loadingItem === item.id"
-                  >
-                    <i class="bi bi-cart"></i>
-                  </button>
-                  <button type="button" @click.stop="toggleFavorite(item)" class="btn btn-favorite colorHeart">
-                    <i class="bi" :class="favorite.includes(item.id) ? 'bi-heart-fill' : 'bi-heart'"></i>
-                  </button>
+            <div v-for="item in slicePage" :key="item.id" class="col-10 col-md-6 col-lg-4 pb-5">
+              <div class="product" @click.prevent="getProduct(item.id)">
+                <div class="imgProduct">
+                  <a href="#"><i class="bi bi-search"></i></a>
+                  <img class="card-img-top" :src="item.imageUrl" :alt="item.title" :title="item.title" />
                 </div>
-                <div class="proTitle">
-                  <span v-if="!(item.price == item.origin_price)" class="text-decoration-line-through text-muted fs-6"
-                    >${{ currency(item.origin_price) }}</span
-                  >
-                  <span v-if="item.price == item.origin_price" class="text-light fs-6">.</span>
-                  <span class="fs-4">${{ currency(item.price) }}</span>
+                <p class="pt-2 fs-5 textover">{{ item.title }}</p>
+                <div class="proDetil pb-3">
+                  <div class="proBtn">
+                    <button
+                      type="button"
+                      @click.prevent="addToCart(item.id, 1)"
+                      class="btn colorCart me-2"
+                      :disabled="this.status.loadingItem === item.id"
+                    >
+                      <i class="bi bi-cart"></i>
+                    </button>
+                    <button type="button" @click.stop="toggleFavorite(item)" class="btn btn-favorite colorHeart">
+                      <i class="bi" :class="favorite.includes(item.id) ? 'bi-heart-fill' : 'bi-heart'"></i>
+                    </button>
+                  </div>
+                  <div class="proTitle">
+                    <span v-if="!(item.price == item.origin_price)" class="text-decoration-line-through text-muted fs-6"
+                      >${{ currency(item.origin_price) }}</span
+                    >
+                    <span v-if="item.price == item.origin_price" class="text-light fs-6">.</span>
+                    <span class="fs-4">${{ currency(item.price) }}</span>
+                  </div>
                 </div>
               </div>
             </div>
