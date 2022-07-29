@@ -102,7 +102,6 @@
     </div>
   </nav>
 </template>
-<style src="../assets/helpers/_FrontNaver.css" scoped></style>
 
 <script>
 import saveFavorite from '@/methods/saveFavorite'
@@ -144,3 +143,7 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="scss">
+@import './../assets/helpers/_FrontNaver.scss';
+</style>

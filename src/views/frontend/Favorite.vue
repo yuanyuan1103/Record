@@ -2,7 +2,7 @@
   <Loading :active="isLoading" />
   <div class="position-relative bg-cover">
     <div class="favoritebanner">
-      <h2 class="position-absolute text-hv-center h2 fw-bold favoritebanner-text">喜愛清單</h2>
+      <h2 class="position-absolute h2 fw-bold favoritebanner-text">喜愛清單</h2>
     </div>
   </div>
   <div class="container mt-4 h100" v-if="favoriteProduct.length">
@@ -144,4 +144,6 @@ export default {
 }
 </script>
 
-<style src="../../assets/helpers/_Favorite.css" scoped></style>
+<style scoped lang="scss">
+@import '../../assets/helpers/_Favorite.scss';
+</style>

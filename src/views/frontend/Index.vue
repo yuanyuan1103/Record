@@ -90,7 +90,7 @@
       </div>
       <div class="col-lg-6 p-0 d-flex align-items-center">
         <img
-          class="card-img-top productTest d-flex align-items-center"
+          class="card-img-top productRecommend d-flex align-items-center"
           :src="product.imageUrl"
           :alt="product.title"
           :title="product.title"
@@ -98,7 +98,7 @@
       </div>
     </div>
   </div>
-  <!-- music -->
+  <!-- category -->
   <div class="container title p-5">
     <h2>分類推薦</h2>
   </div>
@@ -232,7 +232,7 @@
   </section>
   <!-- coupon -->
   <div class="coupon">
-    <div class="intro-banner row m-5">
+    <div class="coupon-banner row m-5">
       <div class="col-lg-6 col-sm-12 align-items-center flex-sm-column d-flex justify-content-center">
         <div class="ticket m-3">
           <span>優惠碼</span>
@@ -307,4 +307,6 @@ export default {
 }
 </script>
 
-<style src="../../assets/helpers/_Index.css" scoped></style>
+<style scoped lang="scss">
+@import '../../assets/helpers/_Index.scss';
+</style>

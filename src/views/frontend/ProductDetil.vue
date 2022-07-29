@@ -3,11 +3,11 @@
   <div class="position-relative">
     <div style="overflow: hidden">
       <div
-        class="collectbanner"
+        class="pageBanner"
         :style="[product.imageUrl ? { backgroundImage: 'url(' + product.imageUrl + ')' } : {}]"
       ></div>
     </div>
-    <h2 class="position-absolute text-hv-center h2 fw-bold pageBanner-text">{{ product.title }}</h2>
+    <h2 class="position-absolute h2 fw-bold pageBanner-text">{{ product.title }}</h2>
   </div>
   <div class="container" v-if="!isLoading">
     <!-- 麵包 -->
@@ -263,4 +263,6 @@ export default {
 }
 </script>
 
-<style src="../../assets/helpers/_ProductDetil.css" scoped></style>
+<style scoped lang="scss">
+@import '../../assets/helpers/_ProductDetil.scss';
+</style>

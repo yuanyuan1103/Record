@@ -1,9 +1,9 @@
+.textspac{
+  letter-spacing: .2rem;
+}
 .iconFont{
   font-family:serif;
   font-size: 1.25rem;
-}
-.textspac{
-  letter-spacing: .2rem;
 }
 .textS{
   font-size: 10px;
@@ -23,13 +23,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-.banner nav{
-  padding: 20px;
-}
-.otherMeun a{
-  color:#FEF2F2;
-  font-size:28px;
+  a{
+    color:#FEF2F2;
+    font-size:28px;
+  }
 }
 .desktop{
   display:flex;
@@ -37,12 +34,13 @@
 .mobile{
   display:none;
 }
-.header.colorNav{
-  background-color:#0005;
-}
 .header{
   transition: all 0.5s;
+  &.colorNav{
+    background-color:#0005;
+  }
 }
+
 @media(max-width:992px){
   .desktop{
     display:none;
@@ -65,21 +63,21 @@
     align-content: center;
     align-items: center;
     justify-content: center;
-  }
-  .offcanvas-body a{
-    font-family:serif;
-    letter-spacing: .2rem;
-    color: rgba(255, 255, 255, 0.55);
-    text-decoration: none;
-    padding: 20px;
-  }
-  .offcanvas-body a:hover{
-    color:#fff;
-    text-decoration: none;
-    padding: 20px;
-  }
-  .offcanvas-body ul{
-    font-size: 24px;
+    a{
+      font-family:serif;
+      letter-spacing: .2rem;
+      color: rgba(255, 255, 255, 0.55);
+      text-decoration: none;
+      padding: 20px;
+    }
+    a:hover{
+      color:#fff;
+      text-decoration: none;
+      padding: 20px;
+    }
+    ul{
+      font-size: 24px;
+    }
   }
   .carousel-item img{
     height: calc(100vh);
@@ -92,15 +90,8 @@
     align-content: space-between;
     align-items: center;
   }
-
   .title h2{
     width:100%;
     text-align: center;
-}
-}
-
-@media(min-width:992px){
-  .mobile-header{
-    display: none;
   }
 }

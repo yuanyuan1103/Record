@@ -232,4 +232,6 @@ export default {
 }
 </script>
 
-<style src="../../assets/helpers/_UserCart.css" scoped></style>
+<style scoped lang="scss">
+@import '../../assets/helpers/_UserCart.scss';
+</style>

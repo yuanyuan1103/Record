@@ -162,4 +162,6 @@ export default {
 }
 </script>
 
-<style src="../../assets/helpers/_CheckOut.css" scoped></style>
+<style scoped lang="scss">
+@import '../../assets/helpers/_CheckOut.scss';
+</style>

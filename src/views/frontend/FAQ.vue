@@ -3,7 +3,7 @@
     <div style="overflow: hidden">
       <div class="faqbanner"></div>
     </div>
-    <h2 class="position-absolute text-hv-center h2 fw-bold faqbanner-text">常見問題</h2>
+    <h2 class="position-absolute h2 fw-bold faqbanner-text">常見問題</h2>
   </div>
   <section id="info-utile" class="bg-white py-5 h100">
     <div class="container">
@@ -188,4 +188,6 @@
   </section>
 </template>
 
-<style src="../../assets/helpers/_FAQ.css" scoped></style>
+<style scoped lang="scss">
+@import '../../assets/helpers/_FAQ.scss';
+</style>

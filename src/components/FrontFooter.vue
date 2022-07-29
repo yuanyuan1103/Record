@@ -2,7 +2,7 @@
   <div class="footer py-3">
     <div class="container row center" style="gap: 1rem">
       <div class="footerIcon col-lg-4 col-sm-8 mb-2 lh-sm">
-        <img class="loginIcon" src="../assets/vinyl_icon.png" alt="Record" />
+        <img src="../assets/vinyl_icon.png" alt="Record" />
         <div class="text-center space">
           <h1 class="fw-bolder">Record</h1>
           <p>紀錄回憶的聲音</p>
@@ -49,7 +49,7 @@
 </template>
 <script>
 export default {
-  data () {
+  data() {
     return {
       tel: '(09)-8765-4321',
       email: 'pijhs70401@gmail.com'
@@ -57,4 +57,7 @@ export default {
   }
 }
 </script>
-<style src="../assets/helpers/_Footer.css"></style>
+
+<style scoped lang="scss">
+@import './../assets/helpers/_Footer.scss';
+</style>

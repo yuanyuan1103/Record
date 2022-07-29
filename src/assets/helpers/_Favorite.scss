@@ -1,11 +1,7 @@
-.favoritebanner-text{
-  color: #ffffff;
-  letter-spacing: .5rem;
-  text-shadow: -1px 0 black, 0 1px black,
-  1px 0 black, 0 -1px black;
-}
-.h100{
-  min-height: calc(100vh - 264px);
+$screen-height: 100vh;
+$banner-height: 264px;
+.h100 {
+  min-height: calc($screen-height - $banner-height);
 }
 .favoritebanner{
   height: 264px;
@@ -13,7 +9,11 @@
   background-size: cover;
   background-position: 60%;
 }
-.text-hv-center {
+.favoritebanner-text{
+  color: #ffffff;
+  letter-spacing: .5rem;
+  text-shadow: -1px 0 black, 0 1px black,
+  1px 0 black, 0 -1px black;
   transform: translate(-50%,-50%);
   top: 50%;
   left: 50%;

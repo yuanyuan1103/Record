@@ -1,5 +1,6 @@
+$screen-height:100vh;
 .about{
-  height: 100vh;
+  height: $screen-height;
 }
 .box{
   background-color:#0005;
@@ -17,9 +18,9 @@
 .aboutcontent{
   z-index: 1;
   letter-spacing: .2rem;
-}
-.aboutcontent h3{
-  font-size: 4rem;
+  h3{
+    font-size: 4rem;
+  }
 }
 @media(max-width:768px){
   .bgAbout{
@@ -34,9 +35,6 @@
     z-index: 3;
     box-shadow: rgba(0, 0, 0, 0.35) 0px -3px 30px -3px inset;
   }
-}
-
-@media(max-width:768px){
   .aboutcontent h3{
     font-size: 2rem;
   }

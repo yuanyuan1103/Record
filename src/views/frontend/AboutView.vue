@@ -22,4 +22,6 @@
   </div>
 </template>
 
-<style src="../../assets/helpers/_About.css" scoped></style>
+<style scoped lang="scss">
+@import '../../assets/helpers/_About.scss';
+</style>

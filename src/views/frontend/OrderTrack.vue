@@ -3,7 +3,7 @@
     <div style="overflow: hidden">
       <div class="orderBanner"></div>
     </div>
-    <h2 class="position-absolute text-hv-center h2 fw-bold orderBanner-text">查看訂單狀態</h2>
+    <h2 class="position-absolute h2 fw-bold orderBanner-text">查看訂單狀態</h2>
   </div>
   <div class="orderTrack">
     <div class="container">
@@ -45,7 +45,7 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       order: '',
       orderError: false,
@@ -54,12 +54,12 @@ export default {
   },
   inject: [],
   methods: {
-    gotoOrder () {
+    gotoOrder() {
       this.$router.push(`/ordertrack/${this.order}`)
     }
   },
   watch: {
-    order () {
+    order() {
       const inclde = /[A-Za-z0-9lu4e00-lugfa5]+$/
 
       if (!inclde.test(this.order)) {
@@ -76,4 +76,6 @@ export default {
 }
 </script>
 
-<style src="../../assets/helpers/_OrderTrack.css" scoped></style>
+<style scoped lang="scss">
+@import '../../assets/helpers/_OrderTrack.scss';
+</style>

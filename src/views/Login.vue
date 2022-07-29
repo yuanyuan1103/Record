@@ -36,7 +36,7 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       isLoading: false,
       user: {
@@ -46,7 +46,7 @@ export default {
     }
   },
   methods: {
-    signIn () {
+    signIn() {
       const api = `${process.env.VUE_APP_API}admin/signin`
       this.isLoading = true
       this.$http.post(api, this.user).then((res) => {
@@ -58,11 +58,13 @@ export default {
         }
       })
     },
-    home () {
+    home() {
       this.$router.push('/')
     }
   }
 }
 </script>
 
-<style src="../assets/helpers/_Login.css" scoped></style>
+<style scoped lang="scss">
+@import '../assets/helpers/_Login.scss';
+</style>

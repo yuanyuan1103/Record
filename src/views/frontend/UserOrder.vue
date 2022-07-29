@@ -4,7 +4,7 @@
     <div style="overflow: hidden">
       <div class="orderBanner"></div>
     </div>
-    <h2 class="position-absolute text-hv-center h2 fw-bold orderBanner-text">查看訂單狀態</h2>
+    <h2 class="position-absolute h2 fw-bold orderBanner-text">查看訂單狀態</h2>
   </div>
   <div class="h100 d-flex justify-content-center align-items-center">
     <div v-if="!isLoading">
@@ -162,4 +162,6 @@ export default {
 }
 </script>
 
-<style src="../../assets/helpers/_UserOrder.css" scoped></style>
+<style scoped lang="scss">
+@import '../../assets/helpers/_UserOrder.scss';
+</style>
