@@ -41,7 +41,7 @@
             >${{ currency(product.origin_price) }}
           </span>
           <p class="pt-3 textspace">{{ product.description }}</p>
-          <div class="input-group pt-3">
+          <div class="input-group pt-3 qtyProduct">
             <select class="form-select" v-model="qty">
               <option :value="qty" v-for="qty in 10" :key="qty">{{ qty }}</option>
             </select>
