@@ -30,6 +30,10 @@ $step-color: #424242;
     font-size: 1.4rem;
   }
 }
+button:disabled {
+  cursor: not-allowed;
+  pointer-events: all !important;
+}
 .productImg{
   max-width: 40%;
   height: auto;

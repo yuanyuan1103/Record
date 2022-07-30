@@ -38,7 +38,7 @@
                   <div class="proBtn">
                     <button
                       type="button"
-                      @click.prevent="addToCart(item.id, 1)"
+                      @click.stop="addToCart(item.id, 1)"
                       class="btn colorCart me-2"
                       :disabled="this.status.loadingItem === item.id"
                     >

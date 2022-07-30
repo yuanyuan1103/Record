@@ -26,7 +26,7 @@
       <div class="col-12 col-md-6 d-flex align-items-center p-3">
         <img class="card-img-top imgProduct" :src="product.imageUrl" :alt="product.title" :title="product.title" />
       </div>
-      <div class="col-12 col-md-6 p-3 d-flex flex-column justify-content-center textspac">
+      <div class="col-12 col-md-6 p-3 d-flex flex-column justify-content-center textspace">
         <div class="proTitle border-bottom mb-3">
           <h1 class="fw-bolder">{{ product.title }}</h1>
           <button type="button" @click.stop="toggleFavorite(product)" class="btn btn-favorite colorHeart">
@@ -89,7 +89,7 @@
     </nav>
     <div class="tab-content" id="nav-tabContent">
       <div
-        class="textspac pt-4 tab-pane fade show active"
+        class="textspace pt-4 tab-pane fade show active"
         id="nav-first"
         role="tabpanel"
         aria-labelledby="nav-first-tab"
@@ -100,7 +100,7 @@
           <li>訂單內若有預購商品，須待預購商品到貨後一併寄出，如欲分開寄送，請個別下單。</li>
         </ul>
       </div>
-      <div class="textspac pt-4 tab-pane fade" id="nav-second" role="tabpanel" aria-labelledby="nav-second-tab">
+      <div class="textspace pt-4 tab-pane fade" id="nav-second" role="tabpanel" aria-labelledby="nav-second-tab">
         <ul>
           <li>
             黑膠唱片較容易因外在因素產生變化，「製作過程」或「拿取過程」也易有刮傷、不平等問題產生。由於本站售出的商品並皆是全新且未拆封的，故無法得知商品內部是否有瑕疵的狀況。

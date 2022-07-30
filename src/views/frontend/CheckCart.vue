@@ -136,7 +136,7 @@
               <div class="text-center">
                 <i class="bi bi-cart4 display-1 fw-bold text-dark"></i>
                 <h3 class="p-3">目前購物車還沒有商品唷</h3>
-                <router-link to="/product" class="btn btn-dark btn-lg mb-5">Shop Now</router-link>
+                <router-link to="/product" class="btn btn-outline-dark btn-lg mb-5">選購商品</router-link>
               </div>
             </div>
           </div>

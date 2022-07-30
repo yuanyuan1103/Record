@@ -18,81 +18,89 @@
         <span class="border-top">確認付款</span>
       </div>
     </div>
-    <div class="pt-5">
-      <div class="row px-5">
-        <div class="col-12 col-lg-7 mb-4">
-          <div class="justify-content-center p-6 border">
-            <div class="mb-3">
-              <h3 class="border-bottom">訂單編號</h3>
-              <div class="d-flex justify-content-between">
-                <span>{{ order.id }}</span>
-                <button type="button" class="btn btn-outline-secondary" @click.prevent="toCopy(order.id)">
-                  <i class="bi bi-clipboard-check"></i>
-                </button>
+    <div v-if="!isLoading">
+      <div class="paySuccess pt-5" v-if="order.is_paid">
+        <i class="bi bi-check-circle-fill display-1 fw-bold text-dark"></i>
+        <h3 class="p-3">感謝您的訂購，現貨商品將於1-2天內為您寄出。請留意時間。</h3>
+        <router-link to="/product" class="btn btn-outline-dark btn-lg mb-5 rotate">繼續購物</router-link>
+      </div>
+      <div class="pt-5">
+        <div class="row px-5">
+          <div class="col-12 col-lg-7 mb-4">
+            <div class="justify-content-center p-6 border">
+              <div class="mb-3">
+                <h3 class="border-bottom">訂單編號</h3>
+                <div class="d-flex justify-content-between">
+                  <span>{{ order.id }}</span>
+                  <button type="button" class="btn btn-outline-secondary" @click.prevent="toCopy(order.id)">
+                    <i class="bi bi-clipboard-check"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="mb-3">
+                <h3 class="border-bottom">收件人信箱</h3>
+                <span>{{ order.user.email }}</span>
+              </div>
+              <div class="mb-3">
+                <h3 class="border-bottom">收件人姓名</h3>
+                <span>{{ order.user.name }}</span>
+              </div>
+              <div class="mb-3">
+                <h3 class="border-bottom">收件人電話</h3>
+                <span>{{ order.user.tel }}</span>
+              </div>
+              <div class="mb-3">
+                <h3 class="border-bottom">收件人地址</h3>
+                <span>{{ order.user.address }}</span>
+              </div>
+              <div class="mb-3">
+                <h3 class="border-bottom">留言</h3>
+                <span>{{ order.message }}</span>
               </div>
             </div>
-            <div class="mb-3">
-              <h3 class="border-bottom">收件人信箱</h3>
-              <span>{{ order.user.email }}</span>
-            </div>
-            <div class="mb-3">
-              <h3 class="border-bottom">收件人姓名</h3>
-              <span>{{ order.user.name }}</span>
-            </div>
-            <div class="mb-3">
-              <h3 class="border-bottom">收件人電話</h3>
-              <span>{{ order.user.tel }}</span>
-            </div>
-            <div class="mb-3">
-              <h3 class="border-bottom">收件人地址</h3>
-              <span>{{ order.user.address }}</span>
-            </div>
-            <div class="mb-3">
-              <h3 class="border-bottom">留言</h3>
-              <span>{{ order.message }}</span>
-            </div>
           </div>
-        </div>
-        <div class="col-12 col-lg-5 mb-4">
-          <div class="border p-6">
-            <table class="table align-middle align-middle">
-              <thead>
-                <tr class="align-middle text-sm text-gray-400">
-                  <th scope="col">品項</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr v-for="item in order.products" :key="item.id">
-                  <td class="d-flex align-items-center flex-column flex-sm-row">
-                    <img
-                      class="productImg"
-                      :src="item.product.imageUrl"
-                      :alt="item.product.title"
-                      :title="item.product.title"
-                    />
-                    <div class="ms-3 text-start py-4">
-                      <div class="h5">{{ item.product.title }}</div>
-                      <h6>數量:{{ item.qty }}</h6>
-                      <h6>NT${{ $filters.currency(item.final_total) }}</h6>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <span class="text-sm text-gray-400">下單時間:</span>{{ new Date(order.create_at * 1000).toLocaleString() }}
-            <div v-if="order.is_paid">
-              <span class="text-sm text-gray-400">付款時間:</span
-              >{{ new Date(order.paid_date * 1000).toLocaleString() }}
-            </div>
-            <div class="py-4">
-              <span class="text-sm text-gray-400 mr-4">總金額</span>
-            </div>
-            <p class="fs-2 fw-bolder">NT${{ $filters.currency(order.total) }}</p>
-            <div v-if="order.is_paid === false">
-              <button type="button" class="btn btn-dark w-100" @click.prevent="payOrder">確認付款</button>
-            </div>
-            <div v-if="order.is_paid === true">
-              <button type="button" class="btn btn-dark w-100" disabled>已付款</button>
+          <div class="col-12 col-lg-5 mb-4">
+            <div class="border p-6">
+              <table class="table align-middle align-middle">
+                <thead>
+                  <tr class="align-middle text-sm text-gray-400">
+                    <th scope="col">品項</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="item in order.products" :key="item.id">
+                    <td class="d-flex align-items-center flex-column flex-sm-row">
+                      <img
+                        class="productImg"
+                        :src="item.product.imageUrl"
+                        :alt="item.product.title"
+                        :title="item.product.title"
+                      />
+                      <div class="ms-3 text-start py-4">
+                        <div class="h5">{{ item.product.title }}</div>
+                        <h6>數量:{{ item.qty }}</h6>
+                        <h6>NT${{ $filters.currency(item.final_total) }}</h6>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <span class="text-sm text-gray-400">下單時間:</span
+              >{{ new Date(order.create_at * 1000).toLocaleString() }}
+              <div v-if="order.is_paid">
+                <span class="text-sm text-gray-400">付款時間:</span
+                >{{ new Date(order.paid_date * 1000).toLocaleString() }}
+              </div>
+              <div class="py-4">
+                <span class="text-sm text-gray-400 mr-4">總金額</span>
+              </div>
+              <p class="fs-2 fw-bolder">NT${{ $filters.currency(order.total) }}</p>
+              <div v-if="order.is_paid === false">
+                <button type="button" class="btn btn-dark w-100" @click.prevent="payOrder">確認付款</button>
+              </div>
+              <div v-if="order.is_paid === true">
+                <button type="button" class="btn btn-dark w-100" disabled>已付款</button>
+              </div>
             </div>
           </div>
         </div>

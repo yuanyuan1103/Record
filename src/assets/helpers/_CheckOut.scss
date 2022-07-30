@@ -1,1 +1,22 @@
 @import "_CheckCart";
+.paySuccess{
+  min-height: calc(100vh - 264px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.rotate:hover{
+  animation: rotate 2s infinite;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
