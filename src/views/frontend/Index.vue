@@ -31,21 +31,21 @@
           <img :src="require('./../../assets/img/banner_1.jpg')" class="d-block" alt="RecordBanner" />
           <div class="carousel-caption d-md-block">
             <h2 class="textspac">時光在歌唱<br />黑膠唱片收藏的不僅僅是聲音</h2>
-            <router-link to="/product" class="custom-btn btn btn-outline-light rounded-pill px-5">SHOP NOW</router-link>
+            <router-link to="/product" class="custom-btn btn btn-outline-light rounded-pill px-5">來去逛逛</router-link>
           </div>
         </div>
         <div class="carousel-item">
           <img :src="require('./../../assets/img/banner_2.jpg')" class="d-block" alt="RecordBanner" />
-          <div class="carousel-caption d-md-block">
+          <div class="carousel-caption d-md-block" style="text-align: left">
             <h2 class="textspac">近年被譽為<br />「黑膠唱片復興時代」</h2>
-            <router-link to="/product" class="custom-btn btn btn-outline-light rounded-pill px-5">SHOP NOW</router-link>
+            <router-link to="/product" class="custom-btn btn btn-outline-light rounded-pill px-5">來去逛逛</router-link>
           </div>
         </div>
         <div class="carousel-item">
           <img :src="require('./../../assets/img/banner_3.jpg')" class="d-block" alt="RecordBanner" />
           <div class="carousel-caption d-md-block">
             <h2 class="textspac">聽黑膠需要理由嗎？</h2>
-            <router-link to="/product" class="custom-btn btn btn-outline-light rounded-pill px-5">SHOP NOW</router-link>
+            <router-link to="/product" class="custom-btn btn btn-outline-light rounded-pill px-5">來去逛逛</router-link>
           </div>
         </div>
       </div>
@@ -84,7 +84,7 @@
         </div>
         <div class="float-end px-5 pb-5">
           <button type="button" class="btn btn-outline-secondary" @click.prevent="gotoProduct(product.id)">
-            View More
+            查看更多
           </button>
         </div>
       </div>
@@ -143,7 +143,7 @@
   </div>
   <!-- FQA -->
   <div class="container title p-5">
-    <h2>FAQ</h2>
+    <h2>常見問答</h2>
   </div>
   <section id="info-utile" class="bg-white pb-5 h100">
     <div class="container">

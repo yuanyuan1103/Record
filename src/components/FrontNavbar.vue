@@ -18,16 +18,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav navbar-nav-scroll">
             <li class="nav-item">
-              <router-link to="/about" class="nav-link iconFont">About</router-link>
+              <router-link to="/about" class="nav-link navbarFont">關於我們</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/product" class="nav-link iconFont">Records</router-link>
+              <router-link to="/product" class="nav-link navbarFont">唱片專區</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/faq" class="nav-link iconFont">FAQ</router-link>
+              <router-link to="/faq" class="nav-link navbarFont">常見問答</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/ordertrack" class="nav-link iconFont">Order</router-link>
+              <router-link to="/ordertrack" class="nav-link navbarFont">訂單查詢</router-link>
             </li>
           </ul>
         </div>
@@ -68,19 +68,19 @@
         <div class="offcanvas-body">
           <ul class="list-unstyled">
             <li class="nav-item">
-              <router-link to="/" class="nav-link" @click.prevent="showOffcanvasMenu()">Home</router-link>
+              <router-link to="/" class="nav-link" @click.prevent="showOffcanvasMenu()">Record</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/about" class="nav-link" @click.prevent="showOffcanvasMenu()">About</router-link>
+              <router-link to="/about" class="nav-link" @click.prevent="showOffcanvasMenu()">關於我們</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/product" class="nav-link" @click.prevent="showOffcanvasMenu()">Records</router-link>
+              <router-link to="/product" class="nav-link" @click.prevent="showOffcanvasMenu()">唱片專區</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/faq" class="nav-link" @click.prevent="showOffcanvasMenu()">FAQ</router-link>
+              <router-link to="/faq" class="nav-link" @click.prevent="showOffcanvasMenu()">常見問答</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/ordertrack" class="nav-link" @click.prevent="showOffcanvasMenu()">Order</router-link>
+              <router-link to="/ordertrack" class="nav-link" @click.prevent="showOffcanvasMenu()">訂單查詢</router-link>
             </li>
           </ul>
         </div>

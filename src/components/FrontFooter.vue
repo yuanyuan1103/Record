@@ -26,14 +26,16 @@
         <h2 class="fs-2 mb-2 text-muted fw-bolder">關於本站</h2>
         <div class="d-flex flex-column space">
           <router-link to="/about" class="px-0 nav-link iconFont"
-            ><i class="bi bi-caret-right-fill"></i>About</router-link
+            ><i class="bi bi-caret-right-fill"></i>關於我們</router-link
           >
           <router-link to="/product" class="px-0 nav-link iconFont"
-            ><i class="bi bi-caret-right-fill"></i>Records</router-link
+            ><i class="bi bi-caret-right-fill"></i>唱片專區</router-link
           >
-          <router-link to="/faq" class="px-0 nav-link iconFont"><i class="bi bi-caret-right-fill"></i>FAQ</router-link>
+          <router-link to="/faq" class="px-0 nav-link iconFont"
+            ><i class="bi bi-caret-right-fill"></i>常見問答</router-link
+          >
           <router-link to="/ordertrack" class="px-0 nav-link iconFont"
-            ><i class="bi bi-caret-right-fill"></i>Order</router-link
+            ><i class="bi bi-caret-right-fill"></i>訂單查詢</router-link
           >
           <a target="_blank" class="px-0 nav-link iconFont" href="https://github.com/yuanyuan1103/Record"
             ><i class="bi bi-caret-right-fill"></i>Github</a

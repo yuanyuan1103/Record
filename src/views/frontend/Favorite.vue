@@ -49,7 +49,7 @@
     <div class="text-center">
       <i class="bi bi-bag-heart display-1 fw-bold text-dark"></i>
       <h3 class="p-3">目前喜愛清單還沒有商品唷</h3>
-      <router-link to="/product" class="btn btn-dark btn-lg mb-5">Shop Now</router-link>
+      <router-link to="/product" class="btn btn-outline-dark btn-lg mb-5">來去逛逛</router-link>
     </div>
   </div>
 </template>
