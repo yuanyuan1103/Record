@@ -159,17 +159,20 @@
     transform: translate3d(0,0,0);
   }
 }
-.effect-lily img{
-  position: relative;
-	display: block;
-	opacity: 0.7;
-	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
- 	transition: opacity 0.35s, transform 0.35s;
+.effect-lily{
+  img{
+    position: relative;
+	  display: block;
+	  opacity: 0.7;
+	  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+ 	  transition: opacity 0.35s, transform 0.35s;
+  }
   &:hover img{
     opacity: 1;
     transform:scale(1.2,1.2);
   }
 }
+
 // introduce
 .title h2{
   font-weight:600;
