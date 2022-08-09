@@ -98,7 +98,7 @@
               <div v-if="order.is_paid === false">
                 <button type="button" class="btn btn-dark w-100" @click.prevent="payOrder">確認付款</button>
               </div>
-              <div v-if="order.is_paid === true">
+              <div v-else>
                 <button type="button" class="btn btn-dark w-100" disabled>已付款</button>
               </div>
             </div>
