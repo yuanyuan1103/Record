@@ -50,9 +50,9 @@
       </template>
     </tbody>
   </table>
-  <OrderModal :order="tempOrder" ref="orderModal" @update-paid="updatePaid"></OrderModal>
-  <DelModal :item="tempOrder" ref="delModal" @del-item="delOrder"></DelModal>
-  <Pagination :pages="pagination" @emit-pages="getOrders"></Pagination>
+  <OrderModal :order="tempOrder" ref="orderModal" @update-paid="updatePaid" />
+  <DelModal :item="tempOrder" ref="delModal" @del-item="delOrder" />
+  <Pagination :pages="pagination" @emit-pages="getOrders" />
 </template>
 
 <script>
@@ -61,7 +61,7 @@ import OrderModal from '@/components/OrderModal'
 import Pagination from '@/components/Pagination.vue'
 
 export default {
-  data () {
+  data() {
     return {
       orders: {},
       isNew: false,
@@ -77,7 +77,7 @@ export default {
     OrderModal
   },
   methods: {
-    getOrders (currentPage = 1) {
+    getOrders(currentPage = 1) {
       this.currentPage = currentPage
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/orders?page=${currentPage}`
       this.isLoading = true
@@ -87,18 +87,18 @@ export default {
         this.isLoading = false
       })
     },
-    openModal (isNew, item) {
+    openModal(isNew, item) {
       this.tempOrder = { ...item }
       this.isNew = false
       const orderComponent = this.$refs.orderModal
       orderComponent.showModal()
     },
-    openDelOrderModal (item) {
+    openDelOrderModal(item) {
       this.tempOrder = { ...item }
       const delComponent = this.$refs.delModal
       delComponent.showModal()
     },
-    updatePaid (item) {
+    updatePaid(item) {
       this.isLoading = true
       const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/order/${item.id}`
       const paid = {
@@ -110,7 +110,7 @@ export default {
         this.$httpMessageState(response, '更新付款狀態')
       })
     },
-    delOrder () {
+    delOrder() {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/order/${this.tempOrder.id}`
       this.isLoading = true
       this.$http.delete(url).then((response) => {
@@ -120,7 +120,7 @@ export default {
       })
     }
   },
-  created () {
+  created() {
     this.getOrders()
   }
 }

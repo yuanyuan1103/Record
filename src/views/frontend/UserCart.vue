@@ -65,7 +65,7 @@
         <Pagination
           :pages="{ total_pages: totalPages, current_page: this.page }"
           @emit-pages="(newPage) => replaceUrlQuery('page', newPage)"
-        ></Pagination>
+        />
       </div>
     </div>
   </div>
