@@ -35,7 +35,7 @@
       </tr>
     </tbody>
   </table>
-  <couponModal :coupon="tempCoupon" ref="couponModal" @update-coupon="updateCoupon" />
+  <CouponModal :coupon="tempCoupon" ref="couponModal" @update-coupon="updateCoupon" />
   <DelModal :item="tempCoupon" ref="delModal" @del-item="delCoupon" />
 </template>
 
@@ -48,7 +48,7 @@ export default {
   props: {
     config: Object
   },
-  data () {
+  data() {
     return {
       coupons: {},
       tempCoupon: {
@@ -63,7 +63,7 @@ export default {
   },
   inject: ['$httpMessageState'],
   methods: {
-    openCouponModal (isNew, item) {
+    openCouponModal(isNew, item) {
       this.isNew = isNew
       if (this.isNew) {
         this.tempCoupon = {
@@ -74,12 +74,12 @@ export default {
       }
       this.$refs.couponModal.showModal()
     },
-    openDelCouponModal (item) {
+    openDelCouponModal(item) {
       this.tempCoupon = { ...item }
       const delComponent = this.$refs.delModal
       delComponent.showModal()
     },
-    getCoupons () {
+    getCoupons() {
       this.isLoading = true
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/coupons`
       this.$http.get(url, this.tempProduct).then((response) => {
@@ -87,7 +87,7 @@ export default {
         this.isLoading = false
       })
     },
-    updateCoupon (tempCoupon) {
+    updateCoupon(tempCoupon) {
       if (this.isNew) {
         const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/coupon`
         this.$http.post(url, { data: tempCoupon }).then((response) => {
@@ -104,7 +104,7 @@ export default {
         })
       }
     },
-    delCoupon () {
+    delCoupon() {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/coupon/${this.tempCoupon.id}`
       this.isLoading = true
       this.$http.delete(url).then((response) => {
@@ -115,7 +115,7 @@ export default {
       })
     }
   },
-  created () {
+  created() {
     this.getCoupons()
   }
 }
