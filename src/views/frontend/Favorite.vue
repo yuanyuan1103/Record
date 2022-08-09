@@ -32,12 +32,12 @@
             </p>
           </td>
           <td class="align-middle">
-            <button type="button" class="btn d-md-block mx-auto btnShop" @click.prevent="addToCart(item.id, 1)">
+            <button type="button" class="btn d-md-block mx-auto btnShop" @click="addToCart(item.id, 1)">
               <i class="bi bi-cart-plus-fill h4"></i>
             </button>
           </td>
           <td class="align-middle">
-            <button type="button" class="btn d-md-block mx-auto btnShop" @click.prevent="removeFavorite(item)">
+            <button type="button" class="btn d-md-block mx-auto btnShop" @click="removeFavorite(item)">
               <i class="bi bi-trash h4"></i>
             </button>
           </td>

@@ -11,7 +11,7 @@
               class="listCategory"
               v-for="item in categoryList"
               :key="item.value"
-              @click.prevent="replaceUrlQuery('category', item.value)"
+              @click="replaceUrlQuery('category', item.value)"
               :class="{ listCategoryActive: item.value === this.category }"
             >
               <span class="writingMode"

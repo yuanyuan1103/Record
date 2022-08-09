@@ -83,9 +83,7 @@
           <p style="font-size: 15px; white-space: pre-line">{{ product.description }}</p>
         </div>
         <div class="float-end px-5 pb-5">
-          <button type="button" class="btn btn-outline-secondary" @click.prevent="gotoProduct(product.id)">
-            查看更多
-          </button>
+          <button type="button" class="btn btn-outline-secondary" @click="gotoProduct(product.id)">查看更多</button>
         </div>
       </div>
       <div class="col-lg-6 p-0 d-flex align-items-center">

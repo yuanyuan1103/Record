@@ -48,7 +48,7 @@
             <button
               type="button"
               class="btn btn-outline-secondary"
-              @click.prevent="addToCart(product.id, qty)"
+              @click="addToCart(product.id, qty)"
               :disabled="this.status.loadingItem === product.id"
             >
               加入購物車
