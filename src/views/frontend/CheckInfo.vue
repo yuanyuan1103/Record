@@ -22,7 +22,7 @@
       <div class="row px-5">
         <div class="col-12 col-lg-7 mb-4">
           <div class="justify-content-center p-6 border">
-            <Form v-slot="{ errors }">
+            <Form @submit="createOrder" v-slot="{ errors }">
               <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
                 <Field
@@ -90,6 +90,7 @@
                   v-model="form.message"
                 ></textarea>
               </div>
+              <button type="submit" class="btn btn-dark w-100">送出訂單</button>
             </Form>
           </div>
         </div>
@@ -119,7 +120,7 @@
                 </tr>
               </tbody>
             </table>
-            <div class="">
+            <div>
               <span class="text-sm text-gray-400 mr-4">商品總計</span
               ><span class="fs-4">NT${{ $filters.currency(cart.total) }}</span>
             </div>
@@ -134,7 +135,6 @@
               <span class="text-decoration-line-through text-muted fs-5">NT${{ $filters.currency(cart.total) }}</span>
               <p class="fs-2 fw-bolder">NT${{ $filters.currency(cart.final_total) }}</p>
             </div>
-            <button type="button" class="btn btn-dark w-100" @click="createOrder">送出訂單</button>
           </div>
         </div>
       </div>
