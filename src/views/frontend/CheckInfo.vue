@@ -164,9 +164,9 @@ export default {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/order`
       const order = this.form
       this.isLoading = true
-      this.$http.post(url, { data: order }).then((res) => {
+      this.$http.post(url, { data: order }).then((response) => {
         this.emitter.emit('update-cart')
-        this.$router.push(`/checkout/${res.data.orderId}`)
+        this.$router.push(`/checkout/${response.data.orderId}`)
         this.isLoading = false
       })
     },

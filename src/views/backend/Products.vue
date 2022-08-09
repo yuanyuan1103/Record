@@ -120,6 +120,7 @@ export default {
 
       this.$http.delete(url).then((response) => {
         this.isLoading = false
+        this.$httpMessageState(response, '刪除產品')
 
         const delComponent = this.$refs.delModal
         delComponent.hideModal()

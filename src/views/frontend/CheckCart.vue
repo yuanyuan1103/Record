@@ -221,8 +221,8 @@ export default {
         code: this.coupon_code
       }
       this.isLoading = true
-      this.$http.post(url, { data: coupon }).then((res) => {
-        this.$httpMessageState(res, '加入優惠券')
+      this.$http.post(url, { data: coupon }).then((response) => {
+        this.$httpMessageState(response, '加入優惠券')
         this.getCart()
         this.isLoading = false
       })

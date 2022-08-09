@@ -117,6 +117,7 @@ export default {
         const delComponent = this.$refs.delModal
         delComponent.hideModal()
         this.getOrders(this.currentPage)
+        this.$httpMessageState(response, '刪除訂單')
       })
     }
   },

@@ -173,8 +173,6 @@ export default {
       this.$http
         .get(`${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/products/all`)
         .then((res) => {
-          if (!res.data.success) throw new Error(res.data.message)
-
           this.productRandom = res.data.products
             .filter((x) => x.id !== this.id)
             .sort(() => Math.random() - 0.5)

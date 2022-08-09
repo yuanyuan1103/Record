@@ -37,7 +37,7 @@
             </button>
           </td>
           <td class="align-middle">
-            <button type="button" class="btn d-md-block mx-auto btnShop" @click.prevent="removeFavorite(item.id)">
+            <button type="button" class="btn d-md-block mx-auto btnShop" @click.prevent="removeFavorite(item)">
               <i class="bi bi-trash h4"></i>
             </button>
           </td>
@@ -77,11 +77,6 @@ export default {
       this.$http
         .get(`${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/products/all`)
         .then((response) => {
-          if (!response.data.success) {
-            this.$httpMessageState(response, '取得全部產品資料')
-            this.isLoading = false
-            return
-          }
           this.isLoading = false
           this.favoriteProduct = response.data.products.filter((product) => this.favorite.includes(product.id))
         })
@@ -90,17 +85,16 @@ export default {
           this.$httpMessageState(error, '連線錯誤')
         })
     },
-    removeFavorite(itemId) {
+    removeFavorite(item) {
       this.isLoading = true
-      this.favorite.splice(this.favorite.indexOf(itemId), 1)
+      this.favorite.splice(this.favorite.indexOf(item.id), 1)
       this.$httpMessageState(
         {
           data: {
-            success: true,
-            message: `已將 ${itemId.title} 移除收藏`
+            success: true
           }
         },
-        '移除收藏'
+        `已將 ${item.title} 移除喜愛清單`
       )
       saveFavorite.saveFavorite(this.favorite)
       this.emitter.emit('update-favorite')
@@ -120,14 +114,10 @@ export default {
       this.$http
         .post(api, { data })
         .then((response) => {
-          if (!response.data.success) {
-            this.$httpMessageState(response, '加入購物車')
-            return
-          }
           this.status.loadingItem = ''
           this.qty = 1
           this.emitter.emit('update-cart', id)
-          this.$httpMessageState(response, '加入購物車')
+          this.$httpMessageState(response, ` ${response.data.data.product.title}加入購物車 `)
         })
         .catch((error) => {
           this.$httpMessageState(error, '連線錯誤')

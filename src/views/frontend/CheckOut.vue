@@ -128,21 +128,17 @@ export default {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/order/${this.orderId}`
       this.isLoading = true
       this.$http.get(url).then((res) => {
-        if (res.data.success) {
-          this.order = res.data.order
-          this.isLoading = false
-        }
+        this.order = res.data.order
+        this.isLoading = false
       })
     },
     payOrder() {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/pay/${this.orderId}`
       this.isLoading = true
       this.$http.post(url).then((res) => {
-        if (res.data.success) {
-          this.$httpMessageState(res, '付款成功')
-          this.isLoading = false
-          this.getOrder()
-        }
+        this.$httpMessageState(res, '付款成功')
+        this.isLoading = false
+        this.getOrder()
       })
     },
     toCopy(orderId) {

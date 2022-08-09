@@ -105,7 +105,6 @@ export default {
       this.$http
         .get(`${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/products/all`)
         .then((res) => {
-          if (!res.data.success) throw new Error(res.data.message)
           this.products = res.data.products
           this.isLoading = false
         })
@@ -131,11 +130,10 @@ export default {
         this.$httpMessageState(
           {
             data: {
-              success: true,
-              message: `已將 ${product.title} 移除收藏`
+              success: true
             }
           },
-          '移除收藏'
+          `已將 ${product.title} 移除喜愛清單`
         )
         this.isLoading = false
       } else {
@@ -143,11 +141,10 @@ export default {
         this.$httpMessageState(
           {
             data: {
-              success: true,
-              message: `已將 ${product.title} 加入收藏`
+              success: true
             }
           },
-          '加入收藏'
+          `已將 ${product.title} 加入喜愛清單`
         )
         this.isLoading = false
       }
@@ -171,15 +168,11 @@ export default {
       this.$http
         .post(api, { data })
         .then((response) => {
-          if (!response.data.success) {
-            this.$httpMessageState(response, '加入購物車')
-            return
-          }
           this.isLoading = false
           this.status.loadingItem = ''
           this.qty = 1
           this.emitter.emit('update-cart', id)
-          this.$httpMessageState(response, '加入購物車')
+          this.$httpMessageState(response, ` ${response.data.data.product.title}加入購物車 `)
         })
         .catch((error) => {
           this.$httpMessageState(error, '連線錯誤')

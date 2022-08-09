@@ -119,23 +119,29 @@ export default {
     getOrder() {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/order/${this.orderId}`
       this.isLoading = true
-      this.$http.get(url).then((res) => {
-        if (res.data.success) {
+      this.$http
+        .get(url)
+        .then((res) => {
           this.order = res.data.order
           this.isLoading = false
-        }
-      })
+        })
+        .catch((err) => {
+          this.$httpMessageState(err, '取得訂單失敗')
+        })
     },
     payOrder() {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/pay/${this.orderId}`
       this.isLoading = true
-      this.$http.post(url).then((res) => {
-        if (res.data.success) {
+      this.$http
+        .post(url)
+        .then((res) => {
           this.$httpMessageState(res, '付款成功')
           this.isLoading = false
           this.getOrder()
-        }
-      })
+        })
+        .catch((err) => {
+          this.$httpMessageState(err, '付款失敗')
+        })
     },
     toCopy(orderId) {
       navigator.clipboard
