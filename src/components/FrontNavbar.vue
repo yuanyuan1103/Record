@@ -36,13 +36,13 @@
         <router-link to="/favorite" class="nav-link"
           ><i class="bi bi-heart"></i
           ><span class="position-absolute badge rounded-pill bg-danger textS" v-if="favorite.length"
-            >{{ favorite.length ? favorite.length : '' }}<span class="visually-hidden">unread messages</span></span
+            >{{ favorite.length }}<span class="visually-hidden">unread messages</span></span
           ></router-link
         >
         <router-link to="/cart" class="position-relative nav-link">
           <i class="bi bi-cart3"></i>
           <span class="position-absolute badge rounded-pill bg-danger textS" v-if="cart"
-            >{{ cart ? cart : '' }}<span class="visually-hidden">unread messages</span></span
+            >{{ cart }}<span class="visually-hidden">unread messages</span></span
           >
         </router-link>
       </div>
