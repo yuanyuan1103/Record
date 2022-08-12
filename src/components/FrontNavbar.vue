@@ -51,7 +51,7 @@
   <!-- navbar mobile-header   -->
   <nav class="mobile header navbar navbar-expand-lg navbar-dark fixed-top" :class="{ colorNav: act }">
     <div class="container-fluid">
-      <button type="button" class="navbar-toggler" @click="showOffcanvasMenu">
+      <button type="button" class="navbar-toggler" @click="showOffcanvasMenu()">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div

@@ -28,4 +28,10 @@ $banner-height: 264px;
   max-width: 80%;
   margin: auto;
 }
+@media (max-width: 575px){
+  .orderTrack{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
 

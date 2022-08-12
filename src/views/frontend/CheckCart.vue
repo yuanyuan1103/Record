@@ -1,7 +1,7 @@
 <template>
   <Loading :active="isLoading" />
   <div class="box"></div>
-  <div class="container-fluid h100">
+  <div class="container h100">
     <div class="checkCart pt-5">
       <div class="stepAct border">
         <i class="bi bi-bag-check"></i>
@@ -20,16 +20,16 @@
     </div>
     <div class="pt-5">
       <div class="row" v-if="cart.carts">
-        <div class="col-12 col-lg-8 mb-4">
+        <div class="col-12 col-xl-8 mb-4">
           <div class="border">
-            <div class="container-fluid mt-4" v-if="cart.carts.length">
+            <div class="container mt-4" v-if="cart.carts.length">
               <table class="table table-hover align-middle align-middle">
                 <thead>
                   <tr class="align-middle text-sm text-gray-400">
-                    <th scope="col">品項</th>
-                    <th scope="col" class="d-none d-md-table-cell" width="24%">數量</th>
-                    <th scope="col" class="d-none d-md-table-cell text-center">總計</th>
-                    <th scope="col" class="d-none d-md-table-cell text-center">刪除</th>
+                    <th scope="col" style="width: 52%">購物車</th>
+                    <th scope="col" class="d-none d-md-table-cell" style="width: 23%">數量</th>
+                    <th scope="col" class="d-none d-md-table-cell" style="width: 15%">總計</th>
+                    <th scope="col" class="d-none d-md-table-cell text-center" style="width: 10%">刪除</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -51,28 +51,29 @@
                         :alt="item.product.title"
                         :title="item.product.title"
                       />
-                      <div class="ms-3 text-start py-4">
-                        <div class="h5">{{ item.product.title }}</div>
-                        <div v-if="item.product.origin_price != item.product.price" class="h5">
+                      <div class="text-start py-4">
+                        <div class="h5 fw-bolder">{{ item.product.title }}</div>
+                        <!-- <div v-if="item.product.origin_price != item.product.price" class="h5">
                           <span class="text-decoration-line-through text-muted h6"
                             >NT${{ $filters.currency(item.product.origin_price) }}</span
                           ><br />NT${{ $filters.currency(item.product.price) }}
                         </div>
                         <div v-if="item.product.origin_price == item.product.price" class="h5">
                           NT${{ $filters.currency(item.product.price) }}
-                        </div>
+                        </div> -->
                         <div class="d-md-none">
+                          <div class="py-2">NT${{ $filters.currency(item.total) }}</div>
                           <div class="input-group">
                             <button
                               type="button"
                               class="btn btn-outline-dark"
-                              @click.prevent="updateCart(item, item.qty - 1)"
+                              @click="updateCart(item, item.qty - 1)"
                               :disabled="item.qty == 1"
                             >
                               <i class="bi bi-dash"></i>
                             </button>
                             <input
-                              type="number"
+                              type="text"
                               min="1"
                               v-model.number="item.qty"
                               class="form-control form-control-sm text-center border-dark bg-transparent"
@@ -81,7 +82,7 @@
                             <button
                               type="button"
                               class="btn btn-outline-dark"
-                              @click.prevent="updateCart(item, item.qty + 1)"
+                              @click="updateCart(item, item.qty + 1)"
                               :disabled="item.qty == 10"
                             >
                               <i class="bi bi-plus"></i>
@@ -117,7 +118,7 @@
                         </button>
                       </div>
                     </td>
-                    <td class="d-none d-md-table-cell text-end h5 py-5">NT${{ $filters.currency(item.total) }}</td>
+                    <td class="d-none d-md-table-cell text-end h5">NT${{ $filters.currency(item.total) }}</td>
                     <td class="d-none d-md-table-cell text-end">
                       <button
                         type="button"
@@ -141,7 +142,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-lg-4 mb-4">
+        <div class="col-12 col-xl-4 mb-4">
           <div class="border p-6">
             <div class="">
               <span class="text-sm text-gray-400 mr-4">商品總計</span

@@ -1,7 +1,7 @@
 <template>
   <Loading :active="isLoading" />
   <div class="box"></div>
-  <div class="container-fluid h100">
+  <div class="container h100">
     <div class="checkCart pt-5">
       <div class="step border">
         <i class="bi bi-bag-check"></i>
@@ -19,7 +19,7 @@
       </div>
     </div>
     <div class="pt-5">
-      <div class="row px-5">
+      <div class="row">
         <div class="col-12 col-lg-7 mb-4">
           <div class="justify-content-center p-6 border">
             <Form @submit="createOrder" v-slot="{ errors }">
@@ -111,7 +111,7 @@
                       :alt="item.product.title"
                       :title="item.product.title"
                     />
-                    <div class="ms-3 text-start py-4">
+                    <div class="text-start py-4">
                       <div class="h5">{{ item.product.title }}</div>
                       <h6>數量:{{ item.qty }}</h6>
                       <h6>NT${{ $filters.currency(item.total) }}</h6>

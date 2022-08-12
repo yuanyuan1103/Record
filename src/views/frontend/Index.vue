@@ -124,16 +124,19 @@
   <div class="container">
     <div class="row">
       <div class="col-12 col-sm-6 col-lg-3 p-3" v-for="item in productRandom" :key="item.id">
-        <div class="product">
-          <div class="bgr position-absolute top-0 end-0" v-if="!(item.price == item.origin_price)">sale</div>
-          <a href="#" @click.prevent="gotoProduct(item.id)"><i class="bi bi-search"></i></a>
-          <img class="card-img-top imgProduct" :src="item.imageUrl" :alt="item.title" :title="item.title" />
-        </div>
-        <div class="proDetil p-2">
-          <div class="proTitle fw-bolder">
-            <p>{{ item.title }}</p>
-            <span v-if="item.price == item.origin_price" class="fs-5">${{ currency(item.origin_price) }}</span>
-            <span v-if="!(item.price == item.origin_price)" class="text-danger fs-5">${{ currency(item.price) }}</span>
+        <div class="product" @click="gotoProduct(item.id)">
+          <div class="imgProduct">
+            <div class="bgr position-absolute top-0 end-0" v-if="!(item.price == item.origin_price)">sale</div>
+            <img class="card-img-top imgProduct" :src="item.imageUrl" :alt="item.title" :title="item.title" />
+          </div>
+          <div class="proDetil p-2">
+            <p class="textover fw-bolder">{{ item.title }}</p>
+            <div class="proTitle fw-bolder">
+              <span v-if="item.price == item.origin_price" class="fs-5">${{ currency(item.origin_price) }}</span>
+              <span v-if="!(item.price == item.origin_price)" class="text-danger fs-5"
+                >${{ currency(item.price) }}</span
+              >
+            </div>
           </div>
         </div>
       </div>

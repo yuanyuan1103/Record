@@ -35,12 +35,11 @@ button:disabled {
   pointer-events: all !important;
 }
 .productImg{
-  max-width: 40%;
+  max-width: 150px;
   height: auto;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
   aspect-ratio: 4/3;
   object-fit: contain;
+  margin-right: 1.5rem;
 }
 .text-gray-400{
   --tw-text-opacity: 1;
@@ -59,9 +58,10 @@ button:disabled {
 .btnClose:hover{
   color:red;
 }
-@media (max-width: 576px){
+@media (max-width: 575px){
   .productImg{
     max-width: 100%;
-    // aspect-ratio: 1;
+    margin-right: 0rem;
+    padding-top: 1.5rem;
   }
 }
