@@ -20,3 +20,8 @@
     transform: rotate(0deg);
   }
 }
+@media (max-width: 575px){
+  .productImg{
+    padding-top: 1.5rem;
+  }
+}

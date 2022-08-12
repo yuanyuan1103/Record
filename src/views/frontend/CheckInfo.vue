@@ -90,7 +90,19 @@
                   v-model="form.message"
                 ></textarea>
               </div>
-              <button type="submit" class="btn btn-dark w-100">送出訂單</button>
+              <button
+                type="submit"
+                class="btn btn-dark w-100"
+                :disabled="
+                  form.user.email &&
+                  form.user.name &&
+                  form.user.tel &&
+                  form.user.address &&
+                  Object.keys(errors).length !== 0
+                "
+              >
+                送出訂單
+              </button>
             </Form>
           </div>
         </div>
@@ -155,7 +167,8 @@ export default {
           address: ''
         },
         message: ''
-      }
+      },
+      isEmpty: true
     }
   },
   inject: ['$httpMessageState', 'emitter'],
@@ -168,6 +181,7 @@ export default {
         this.emitter.emit('update-cart')
         this.$router.push(`/checkout/${response.data.orderId}`)
         this.isLoading = false
+        this.$httpMessageState(response, '建立訂單')
       })
     },
     getCart() {
