@@ -252,5 +252,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '../../assets/helpers/_CheckCart.scss';
+@import '@/assets/scss/helpers/_CheckCart.scss';
 </style>

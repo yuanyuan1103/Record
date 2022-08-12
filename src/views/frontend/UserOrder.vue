@@ -169,5 +169,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '../../assets/helpers/_UserOrder.scss';
+@import '@/assets/scss/helpers/_UserOrder.scss';
 </style>

@@ -135,5 +135,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '../../assets/helpers/_Favorite.scss';
+@import '@/assets/scss/helpers/_Favorite.scss';
 </style>

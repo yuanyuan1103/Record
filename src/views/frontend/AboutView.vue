@@ -23,5 +23,5 @@
 </template>
 
 <style scoped lang="scss">
-@import '../../assets/helpers/_About.scss';
+@import '@/assets/scss/helpers/_About.scss';
 </style>

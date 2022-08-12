@@ -167,5 +167,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '../../assets/helpers/_CheckOut.scss';
+@import '@/assets/scss/helpers/_CheckOut.scss';
 </style>

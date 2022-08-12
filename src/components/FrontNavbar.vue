@@ -51,7 +51,7 @@
   <!-- navbar mobile-header   -->
   <nav class="mobile header navbar navbar-expand-lg navbar-dark fixed-top" :class="{ colorNav: act }">
     <div class="container-fluid">
-      <button type="button" class="navbar-toggler" @click.prevent="showOffcanvasMenu()">
+      <button type="button" class="navbar-toggler" @click="showOffcanvasMenu">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div
@@ -61,7 +61,7 @@
         :style="{ visibility: showMenu ? 'visible' : 'hidden' }"
       >
         <div class="offcanvas-header">
-          <button type="button" class="btn-close text-reset h2" @click.prevent="showOffcanvasMenu()">
+          <button type="button" class="btn-close text-reset h2" @click="showOffcanvasMenu()">
             <i class="bi bi-x-lg"></i>
           </button>
         </div>
@@ -145,5 +145,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import './../assets/helpers/_FrontNavbar.scss';
+@import './../assets/scss/helpers/_FrontNavbar.scss';
 </style>

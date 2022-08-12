@@ -189,5 +189,5 @@
 </template>
 
 <style scoped lang="scss">
-@import '../../assets/helpers/_FAQ.scss';
+@import '@/assets/scss/helpers/_FAQ.scss';
 </style>

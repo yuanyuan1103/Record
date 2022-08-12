@@ -186,5 +186,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '../../assets/helpers/_CheckInfo.scss';
+@import '@/assets/scss/helpers/_CheckInfo.scss';
 </style>

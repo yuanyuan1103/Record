@@ -2,7 +2,7 @@
   <div class="footer py-3">
     <div class="container row center" style="gap: 1rem">
       <div class="footerIcon col-lg-4 col-sm-8 mb-2 lh-sm">
-        <img src="../assets/vinyl_icon.png" alt="Record" />
+        <img src="../assets/img/vinyl_icon.png" alt="Record" />
         <div class="text-center space">
           <h1 class="fw-bolder">Record</h1>
           <p>紀錄回憶的聲音</p>
@@ -62,5 +62,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import './../assets/helpers/_Footer.scss';
+@import './../assets/scss/helpers/_Footer.scss';
 </style>

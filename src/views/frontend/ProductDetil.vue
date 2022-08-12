@@ -262,5 +262,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '../../assets/helpers/_ProductDetil.scss';
+@import '@/assets/scss/helpers/_ProductDetil.scss';
 </style>

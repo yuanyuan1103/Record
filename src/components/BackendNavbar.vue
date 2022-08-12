@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #000">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
-        <img src="../assets/record.png" alt="" width="30" height="30" />
+        <img src="../assets/img/record.png" alt="LOGO" width="30" height="30" />
         Record
       </a>
       <button

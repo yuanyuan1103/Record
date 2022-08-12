@@ -66,5 +66,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '../assets/helpers/_Login.scss';
+@import '../assets/scss/helpers/_Login.scss';
 </style>

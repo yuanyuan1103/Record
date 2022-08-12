@@ -77,5 +77,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '../../assets/helpers/_OrderTrack.scss';
+@import '@/assets/scss/helpers/_OrderTrack.scss';
 </style>

@@ -228,5 +228,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '../../assets/helpers/_UserCart.scss';
+@import '@/assets/scss/helpers/_UserCart.scss';
 </style>
