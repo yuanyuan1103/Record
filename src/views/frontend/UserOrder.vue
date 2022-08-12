@@ -60,7 +60,7 @@
                     </thead>
                     <tbody>
                       <tr v-for="item in order.products" :key="item.id">
-                        <td class="d-flex align-items-center flex-column flex-sm-row">
+                        <td class="d-flex flex-column flex-sm-row">
                           <img
                             class="productImg"
                             :src="item.product.imageUrl"
