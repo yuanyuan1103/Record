@@ -16,29 +16,30 @@
           <p class="space">週一至週五 13:30 - 21:50<br />週六 10:00 - 21:50<br />週日 10:00 - 18:00</p>
         </div>
         <p class="space">
-          <i class="bi bi-envelope-fill pe-1"></i><a class="linked" :href="'mailto:' + email">{{ email }}</a>
+          <i class="bi bi-envelope-fill pe-1" />
+          <a class="linked" :href="`mailto:${email}`">{{ email }}</a>
         </p>
         <p class="space">
-          <i class="bi bi-telephone-fill pe-1"></i><a class="linked" :href="'tel:' + tel">{{ tel }}</a>
+          <i class="bi bi-telephone-fill pe-1" /><a class="linked" :href="`tel:${tel}`">{{ tel }}</a>
         </p>
       </div>
       <div class="contact col-lg-3 col-sm-8 lh-sm p-3">
         <h2 class="fs-2 mb-2 text-muted fw-bolder">關於本站</h2>
         <div class="d-flex flex-column space">
           <router-link to="/about" class="px-0 nav-link iconFont"
-            ><i class="bi bi-caret-right-fill"></i>關於我們</router-link
+            ><i class="bi bi-caret-right-fill" />關於我們</router-link
           >
           <router-link to="/product" class="px-0 nav-link iconFont"
-            ><i class="bi bi-caret-right-fill"></i>唱片專區</router-link
+            ><i class="bi bi-caret-right-fill" />唱片專區</router-link
           >
           <router-link to="/faq" class="px-0 nav-link iconFont"
-            ><i class="bi bi-caret-right-fill"></i>常見問答</router-link
+            ><i class="bi bi-caret-right-fill" />常見問答</router-link
           >
           <router-link to="/ordertrack" class="px-0 nav-link iconFont"
-            ><i class="bi bi-caret-right-fill"></i>訂單查詢</router-link
+            ><i class="bi bi-caret-right-fill" />訂單查詢</router-link
           >
           <a target="_blank" class="px-0 nav-link iconFont" href="https://github.com/yuanyuan1103/Record"
-            ><i class="bi bi-caret-right-fill"></i>Github</a
+            ><i class="bi bi-caret-right-fill" />Github</a
           >
         </div>
       </div>
@@ -53,8 +54,8 @@
 export default {
   data() {
     return {
-      tel: '(09)-8765-4321',
-      email: 'pijhs70401@gmail.com'
+      email: 'pijhs70401@gmail.com',
+      tel: '(09)-8765-4321'
     }
   }
 }
