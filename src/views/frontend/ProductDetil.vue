@@ -127,9 +127,7 @@
             <p class="textover fw-bolder">{{ item.title }}</p>
             <div class="fw-bolder">
               <span v-if="item.price == item.origin_price" class="fs-5">${{ currency(item.origin_price) }}</span>
-              <span v-if="!(item.price == item.origin_price)" class="text-danger fs-5"
-                >${{ currency(item.price) }}</span
-              >
+              <span v-else class="text-danger fs-5">${{ currency(item.price) }}</span>
             </div>
           </div>
         </div>

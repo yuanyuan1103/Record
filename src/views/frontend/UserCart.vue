@@ -52,7 +52,7 @@
                     <span v-if="!(item.price == item.origin_price)" class="text-decoration-line-through text-muted fs-6"
                       >${{ currency(item.origin_price) }}</span
                     >
-                    <span v-if="item.price == item.origin_price" class="text-light fs-6">.</span>
+                    <span v-else class="text-light fs-6">.</span>
                     <span class="fs-4">${{ currency(item.price) }}</span>
                   </div>
                 </div>
