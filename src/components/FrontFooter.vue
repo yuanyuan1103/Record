@@ -12,7 +12,7 @@
         <h2 class="fs-2 mb-2 text-muted fw-bolder">聯絡方式</h2>
         <p class="pt-2 space"><i class="bi bi-geo-alt-fill pe-1"></i>地球上某個角落</p>
         <div class="d-flex">
-          <i class="bi bi-clock-fill pe-1"></i>
+          <i class="bi bi-clock-fill pe-1" />
           <p class="space">週一至週五 13:30 - 21:50<br />週六 10:00 - 21:50<br />週日 10:00 - 18:00</p>
         </div>
         <p class="space">
