@@ -112,7 +112,7 @@
         />
         <div class="detil" @click.prevent="gotoCategory(item.value)">
           <h2>{{ item.value }}</h2>
-          <span>View more</span>
+          <span class="rotate">View more</span>
         </div>
       </div>
     </div>
