@@ -6,7 +6,7 @@
         <div class="col-md-7 bgAbout"></div>
         <div class="aboutcontent col-md-12 sec-text text-left py-5">
           <div class="container">
-            <p class="fs-4 pt-5"><i class="bi bi-vinyl-fill"></i>About</p>
+            <p class="fs-4 pt-5"><i class="bi bi-vinyl-fill" />About</p>
             <h3 class="fw-bolder pb-5">Record</h3>
             <div class="text-muted">
               <p>有鑒於黑膠唱片機的經典</p>

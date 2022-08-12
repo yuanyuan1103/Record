@@ -4,23 +4,23 @@
   <div class="container h100">
     <div class="checkCart pt-5">
       <div class="step border">
-        <i class="bi bi-bag-check"></i>
+        <i class="bi bi-bag-check" />
         <span class="border-top">確認清單</span>
       </div>
-      <i class="bi bi-caret-right"></i>
+      <i class="bi bi-caret-right" />
       <div class="step border">
-        <i class="bi bi-card-list"></i>
+        <i class="bi bi-card-list" />
         <span class="border-top">填寫資料</span>
       </div>
-      <i class="bi bi-caret-right"></i>
+      <i class="bi bi-caret-right" />
       <div class="stepAct border border-secondary">
-        <i class="bi bi-credit-card"></i>
+        <i class="bi bi-credit-card" />
         <span class="border-top">確認付款</span>
       </div>
     </div>
     <div v-if="!isLoading">
       <div class="paySuccess pt-5" v-if="order.is_paid">
-        <i class="bi bi-check-circle-fill display-1 fw-bold text-dark"></i>
+        <i class="bi bi-check-circle-fill display-1 fw-bold text-dark" />
         <h3 class="p-3">感謝您的訂購，現貨商品將於1-2天內為您寄出。請留意時間。</h3>
         <router-link to="/product" class="btn btn-outline-dark btn-lg mb-5 rotate">繼續購物</router-link>
       </div>
@@ -33,7 +33,7 @@
                 <div class="d-flex justify-content-between">
                   <span>{{ order.id }}</span>
                   <button type="button" class="btn btn-outline-secondary" @click="toCopy(order.id)">
-                    <i class="bi bi-clipboard-check"></i>
+                    <i class="bi bi-clipboard-check" />
                   </button>
                 </div>
               </div>

@@ -10,7 +10,7 @@
     <div class="h100">
       <div v-if="!isLoading">
         <div class="text-center" v-if="this.order == null">
-          <i class="bi bi-bag-heart display-1 fw-bold text-dark"></i>
+          <i class="bi bi-bag-heart display-1 fw-bold text-dark" />
           <h3 class="p-3">請輸入正確的訂單編號或是再次逛逛商店下單</h3>
           <router-link to="/product" class="btn btn-dark btn-lg mb-5">Shop Now</router-link>
         </div>
@@ -24,7 +24,7 @@
                     <div class="d-flex justify-content-between">
                       <span>{{ order.id }}</span>
                       <button type="button" class="btn btn-outline-secondary" @click="toCopy(order.id)">
-                        <i class="bi bi-clipboard-check"></i>
+                        <i class="bi bi-clipboard-check" />
                       </button>
                     </div>
                   </div>

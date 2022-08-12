@@ -4,17 +4,17 @@
   <div class="container h100">
     <div class="checkCart pt-5">
       <div class="stepAct border">
-        <i class="bi bi-bag-check"></i>
+        <i class="bi bi-bag-check" />
         <span class="border-top">確認清單</span>
       </div>
-      <i class="bi bi-caret-right-fill"></i>
+      <i class="bi bi-caret-right-fill" />
       <div class="step border border-secondary">
         <i class="bi bi-card-list"></i>
         <span class="border-top">填寫資料</span>
       </div>
-      <i class="bi bi-caret-right"></i>
+      <i class="bi bi-caret-right" />
       <div class="step border border-secondary">
-        <i class="bi bi-credit-card"></i>
+        <i class="bi bi-credit-card" />
         <span class="border-top">確認付款</span>
       </div>
     </div>
@@ -40,7 +40,7 @@
                           type="button"
                           class="btn d-md-block mx-auto btnClose"
                           :disabled="status.loadingItem === item.id"
-                          @click.prevent="removeCartItem(item.id)"
+                          @click="removeCartItem(item.id)"
                         >
                           <i class="bi bi-x-circle h4"></i>
                         </button>
@@ -53,14 +53,6 @@
                       />
                       <div class="text-start py-4">
                         <div class="h5 fw-bolder">{{ item.product.title }}</div>
-                        <!-- <div v-if="item.product.origin_price != item.product.price" class="h5">
-                          <span class="text-decoration-line-through text-muted h6"
-                            >NT${{ $filters.currency(item.product.origin_price) }}</span
-                          ><br />NT${{ $filters.currency(item.product.price) }}
-                        </div>
-                        <div v-if="item.product.origin_price == item.product.price" class="h5">
-                          NT${{ $filters.currency(item.product.price) }}
-                        </div> -->
                         <div class="d-md-none">
                           <div class="py-2">NT${{ $filters.currency(item.total) }}</div>
                           <div class="input-group">
@@ -70,7 +62,7 @@
                               @click="updateCart(item, item.qty - 1)"
                               :disabled="item.qty == 1"
                             >
-                              <i class="bi bi-dash"></i>
+                              <i class="bi bi-dash" />
                             </button>
                             <input
                               type="text"
@@ -85,7 +77,7 @@
                               @click="updateCart(item, item.qty + 1)"
                               :disabled="item.qty == 10"
                             >
-                              <i class="bi bi-plus"></i>
+                              <i class="bi bi-plus" />
                             </button>
                           </div>
                         </div>
@@ -96,10 +88,10 @@
                         <button
                           type="button"
                           class="btn btn-outline-dark"
-                          @click.prevent="updateCart(item, item.qty - 1)"
+                          @click="updateCart(item, item.qty - 1)"
                           :disabled="item.qty == 1"
                         >
-                          <i class="bi bi-dash"></i>
+                          <i class="bi bi-dash" />
                         </button>
                         <input
                           type="number"
@@ -111,10 +103,10 @@
                         <button
                           type="button"
                           class="btn btn-outline-dark"
-                          @click.prevent="updateCart(item, item.qty + 1)"
+                          @click="updateCart(item, item.qty + 1)"
                           :disabled="item.qty == 10"
                         >
-                          <i class="bi bi-plus"></i>
+                          <i class="bi bi-plus" />
                         </button>
                       </div>
                     </td>
@@ -124,9 +116,9 @@
                         type="button"
                         class="btn d-md-block mx-auto btnClose"
                         :disabled="status.loadingItem === item.id"
-                        @click.prevent="removeCartItem(item.id)"
+                        @click="removeCartItem(item.id)"
                       >
-                        <i class="bi bi-x-circle h4"></i>
+                        <i class="bi bi-x-circle h4" />
                       </button>
                     </td>
                   </tr>
@@ -135,7 +127,7 @@
             </div>
             <div class="container-fluid mt-4" v-else>
               <div class="text-center">
-                <i class="bi bi-cart4 display-1 fw-bold text-dark"></i>
+                <i class="bi bi-cart4 display-1 fw-bold text-dark" />
                 <h3 class="p-3">目前購物車還沒有商品唷</h3>
                 <router-link to="/product" class="btn btn-outline-dark btn-lg mb-5">選購商品</router-link>
               </div>
@@ -153,9 +145,7 @@
               <span class="text-sm text-gray-400 mr-4"></span>
               <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="請輸入優惠碼" v-model="coupon_code" />
-                <button type="button" class="btn btn-outline-secondary" @click.prevent="addCouponCode">
-                  套用優惠碼
-                </button>
+                <button type="button" class="btn btn-outline-secondary" @click="addCouponCode">套用優惠碼</button>
               </div>
             </div>
             <div class="border-top py-4">
@@ -168,12 +158,7 @@
               <span class="text-decoration-line-through text-muted fs-5">NT${{ $filters.currency(cart.total) }}</span>
               <p class="fs-2 fw-bolder">NT${{ $filters.currency(cart.final_total) }}</p>
             </div>
-            <button
-              type="button"
-              class="btn btn-dark w-100"
-              @click.prevent="gotocheckinfo"
-              :disabled="!cart.carts.length"
-            >
+            <button type="button" class="btn btn-dark w-100" @click="gotocheckinfo" :disabled="!cart.carts.length">
               填寫資料
             </button>
           </div>

@@ -33,12 +33,12 @@
           </td>
           <td class="align-middle">
             <button type="button" class="btn d-md-block mx-auto btnShop" @click="addToCart(item.id, 1)">
-              <i class="bi bi-cart-plus-fill h4"></i>
+              <i class="bi bi-cart-plus-fill h4" />
             </button>
           </td>
           <td class="align-middle">
             <button type="button" class="btn d-md-block mx-auto btnShop" @click="removeFavorite(item)">
-              <i class="bi bi-trash h4"></i>
+              <i class="bi bi-trash h4" />
             </button>
           </td>
         </tr>
@@ -47,7 +47,7 @@
   </div>
   <div class="container-fluid d-flex justify-content-center align-items-center h100" v-else>
     <div class="text-center">
-      <i class="bi bi-bag-heart display-1 fw-bold text-dark"></i>
+      <i class="bi bi-bag-heart display-1 fw-bold text-dark" />
       <h3 class="p-3">目前喜愛清單還沒有商品唷</h3>
       <router-link to="/product" class="btn btn-outline-dark btn-lg mb-5">來去逛逛</router-link>
     </div>

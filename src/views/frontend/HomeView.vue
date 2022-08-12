@@ -6,7 +6,7 @@
   <FrontFooter />
   <div class="position-fixed end-0 bottom-0 scroll-top-btn pe-4 pb-4" v-if="isShowed">
     <button type="button" class="btn btn-secondary rounded-circle shadow btn-lg" @click="scrollToTop">
-      <i class="bi bi-caret-up-fill"></i>
+      <i class="bi bi-caret-up-fill" />
     </button>
   </div>
 </template>

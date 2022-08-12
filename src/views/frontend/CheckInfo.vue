@@ -4,17 +4,17 @@
   <div class="container h100">
     <div class="checkCart pt-5">
       <div class="step border">
-        <i class="bi bi-bag-check"></i>
+        <i class="bi bi-bag-check" />
         <span class="border-top">確認清單</span>
       </div>
-      <i class="bi bi-caret-right"></i>
+      <i class="bi bi-caret-right" />
       <div class="stepAct border border-secondary">
-        <i class="bi bi-card-list"></i>
+        <i class="bi bi-card-list" />
         <span class="border-top">填寫資料</span>
       </div>
-      <i class="bi bi-caret-right-fill"></i>
+      <i class="bi bi-caret-right-fill" />
       <div class="step border border-secondary">
-        <i class="bi bi-credit-card"></i>
+        <i class="bi bi-credit-card" />
         <span class="border-top">確認付款</span>
       </div>
     </div>

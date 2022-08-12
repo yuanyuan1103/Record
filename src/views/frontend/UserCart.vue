@@ -2,7 +2,7 @@
   <Loading :active="isLoading" />
   <div class="cart">
     <div class="box"></div>
-    <div class="container">
+    <div class="container pt-3">
       <div class="row justify-content-center">
         <div class="col-12 col-md-3 p-3 categoryList">
           <div class="list-group list-group-flush flex-md-column flex-row align-items-end">
@@ -28,9 +28,9 @@
           </div>
           <div class="row justify-content-center" style="min-height: 70vh">
             <div v-for="item in slicePage" :key="item.id" class="col-10 col-md-6 col-lg-4 pb-5">
-              <div class="product" @click.prevent="getProduct(item.id)">
+              <div class="product" @click="getProduct(item.id)">
                 <div class="imgProduct">
-                  <a href="#" @click.prevent><i class="bi bi-search"></i></a>
+                  <a href="#" @click.prevent><i class="bi bi-search" /></a>
                   <img class="card-img-top" :src="item.imageUrl" :alt="item.title" :title="item.title" />
                 </div>
                 <p class="pt-2 fs-5 textover">{{ item.title }}</p>
@@ -42,7 +42,7 @@
                       class="btn colorCart me-2"
                       :disabled="this.status.loadingItem === item.id"
                     >
-                      <i class="bi bi-cart"></i>
+                      <i class="bi bi-cart" />
                     </button>
                     <button type="button" @click.stop="toggleFavorite(item)" class="btn btn-favorite colorHeart">
                       <i class="bi" :class="favorite.includes(item.id) ? 'bi-heart-fill' : 'bi-heart'"></i>
