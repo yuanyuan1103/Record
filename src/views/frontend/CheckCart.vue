@@ -94,7 +94,7 @@
                           <i class="bi bi-dash" />
                         </button>
                         <input
-                          type="number"
+                          type="text"
                           min="1"
                           v-model.number="item.qty"
                           class="form-control form-control-sm text-center border-dark bg-transparent"
@@ -144,7 +144,13 @@
             <div class="border-top py-4">
               <span class="text-sm text-gray-400 mr-4"></span>
               <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="請輸入優惠碼" v-model="coupon_code" />
+                <input
+                  style="max-width: 200px"
+                  type="text"
+                  class="form-control"
+                  placeholder="請輸入優惠碼"
+                  v-model="coupon_code"
+                />
                 <button type="button" class="btn btn-outline-secondary" @click="addCouponCode">套用優惠碼</button>
               </div>
             </div>

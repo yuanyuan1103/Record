@@ -28,7 +28,7 @@
             data-bs-parent="#accordionExample"
           >
             <div class="accordion-body">
-              <ul class="ms-5">
+              <ul>
                 <li>信用卡</li>
                 <li>ATM轉帳匯款</li>
               </ul>
@@ -55,7 +55,7 @@
             data-bs-parent="#accordionExample"
           >
             <div class="accordion-body">
-              <ul class="ms-5">
+              <ul>
                 <li>Step1。選購您喜愛的商品您可以透過網頁引導或搜尋的方式找到您要的商品再點選加入購物車。</li>
                 <li>Step2。繼續購物/訂單結帳 。</li>
                 <li>Step3。確認購買清單。</li>

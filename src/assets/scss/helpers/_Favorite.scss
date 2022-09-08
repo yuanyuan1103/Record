@@ -19,6 +19,7 @@ $banner-height: 264px;
   left: 50%;
   white-space: nowrap;
 }
+
 .bgcolor{
   background: #2D2B1E;
   color:#FEF2F2;
@@ -34,3 +35,16 @@ $banner-height: 264px;
   aspect-ratio: 4/3;
   object-fit: contain;
 }
+@media(max-width:767px){
+  .table-layout{
+    width:100%;
+    table-layout: fixed;
+  }
+  .textover{
+    overflow:hidden;
+    text-overflow:ellipsis;
+    word-break:keep-all;
+    white-space:nowrap;
+  }
+}
+

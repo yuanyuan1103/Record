@@ -20,6 +20,10 @@ $banner-height: 264px;
   left: 50%;
   white-space: nowrap;
 }
+.accordion{
+  margin: auto;
+  max-width: 70%;
+}
 .accordion-item {
   background-color: #fff;
   border: none;
@@ -56,5 +60,10 @@ $banner-height: 264px;
     background-repeat: no-repeat;
     background-size: 1.25rem;
     transition: transform .2s ease-in-out;
+  }
+}
+@media(max-width: 992px){
+  .accordion{
+    max-width: 100%;
   }
 }

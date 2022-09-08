@@ -51,7 +51,7 @@
   <!-- navbar mobile-header   -->
   <nav class="mobile header navbar navbar-expand-lg navbar-dark fixed-top" :class="{ colorNav: act }">
     <div class="container-fluid">
-      <button type="button" class="navbar-toggler" @click="showOffcanvasMenu()">
+      <button type="button" class="navbar-toggler" @click="showOffcanvasMenu">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div
@@ -61,26 +61,26 @@
         :style="{ visibility: showMenu ? 'visible' : 'hidden' }"
       >
         <div class="offcanvas-header">
-          <button type="button" class="btn-close text-reset h2" @click="showOffcanvasMenu()">
+          <button type="button" class="btn-close text-reset h2" @click="showOffcanvasMenu">
             <i class="bi bi-x-lg"></i>
           </button>
         </div>
         <div class="offcanvas-body">
           <ul class="list-unstyled">
             <li class="nav-item">
-              <router-link to="/" class="nav-link" @click.prevent="showOffcanvasMenu()">Record</router-link>
+              <router-link to="/" class="nav-link" @click.prevent="showOffcanvasMenu">Record</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/about" class="nav-link" @click.prevent="showOffcanvasMenu()">關於我們</router-link>
+              <router-link to="/about" class="nav-link" @click.prevent="showOffcanvasMenu">關於我們</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/product" class="nav-link" @click.prevent="showOffcanvasMenu()">唱片專區</router-link>
+              <router-link to="/product" class="nav-link" @click.prevent="showOffcanvasMenu">唱片專區</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/faq" class="nav-link" @click.prevent="showOffcanvasMenu()">常見問答</router-link>
+              <router-link to="/faq" class="nav-link" @click.prevent="showOffcanvasMenu">常見問答</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/ordertrack" class="nav-link" @click.prevent="showOffcanvasMenu()">訂單查詢</router-link>
+              <router-link to="/ordertrack" class="nav-link" @click.prevent="showOffcanvasMenu">訂單查詢</router-link>
             </li>
           </ul>
         </div>

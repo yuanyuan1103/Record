@@ -6,10 +6,10 @@
     </div>
   </div>
   <div class="container mt-4 h100" v-if="favoriteProduct.length">
-    <table class="table table-striped table-hover align-middle">
+    <table class="table table-striped table-hover align-middle table-layout">
       <thead>
         <tr class="text-center align-middle bgcolor">
-          <th scope="col" class="d-none d-sm-block border-bottom-0"></th>
+          <th scope="col" class="d-none d-md-block border-bottom-0"></th>
           <th scope="col">名稱</th>
           <th scope="col">金額</th>
           <th scope="col">加入購物車</th>
@@ -18,10 +18,10 @@
       </thead>
       <tbody class="align-middle text-center">
         <tr class="align-middle" v-for="item in favoriteProduct" :key="item.id">
-          <td class="align-middle d-none d-sm-block">
+          <td class="align-middle d-none d-md-block">
             <img class="productImg" :src="item.imageUrl" :alt="item.title" :title="item.title" />
           </td>
-          <td class="align-middle h4 fw-bold">{{ item.title }}</td>
+          <td class="align-middle h4 fw-bold textover">{{ item.title }}</td>
           <td class="align-middle">
             <p v-if="item.price == item.origin_price" class="fs-5 m-0 fw-bold">${{ currency(item.origin_price) }}</p>
             <p v-if="!(item.price == item.origin_price)" class="text-danger fw-bold m-0 fs-5">
