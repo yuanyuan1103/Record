@@ -35,7 +35,7 @@
                   rules="email|required"
                   v-model="form.user.email"
                 ></Field>
-                <ErrorMessage name="email" class="invalid-feedback"></ErrorMessage>
+                <ErrorMessage name="email" class="invalid-feedback" />
               </div>
               <div class="mb-3">
                 <label for="name" class="form-label">收件人姓名</label>
@@ -49,7 +49,7 @@
                   rules="required"
                   v-model="form.user.name"
                 ></Field>
-                <ErrorMessage name="姓名" class="invalid-feedback"></ErrorMessage>
+                <ErrorMessage name="姓名" class="invalid-feedback" />
               </div>
               <div class="mb-3">
                 <label for="tel" class="form-label">收件人電話</label>
@@ -63,7 +63,7 @@
                   rules="required"
                   v-model="form.user.tel"
                 ></Field>
-                <ErrorMessage name="電話" class="invalid-feedback"></ErrorMessage>
+                <ErrorMessage name="電話" class="invalid-feedback" />
               </div>
               <div class="mb-3">
                 <label for="address" class="form-label">收件人地址</label>
@@ -77,7 +77,7 @@
                   rules="required"
                   v-model="form.user.address"
                 ></Field>
-                <ErrorMessage name="地址" class="invalid-feedback"></ErrorMessage>
+                <ErrorMessage name="地址" class="invalid-feedback" />
               </div>
               <div class="mb-3">
                 <label for="message" class="form-label">留言</label>
