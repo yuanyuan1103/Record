@@ -28,7 +28,7 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img :src="require('./../../assets/img/banner_1.jpg')" class="d-block" alt="RecordBanner" />
+          <img :src="require('@/assets/img/banner_1.webp')" class="d-block" alt="RecordBanner" />
           <div class="carousel-caption d-md-block">
             <h2 class="textspac">時光在歌唱<br />黑膠唱片收藏的不僅僅是聲音</h2>
             <router-link to="/product" class="custom-btn btn btn-outline-light rounded-pill px-5">來去逛逛</router-link>
