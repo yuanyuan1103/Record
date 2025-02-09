@@ -6,7 +6,7 @@ $banner-height: 264px;
 }
 .orderBanner{
   height: 264px;
-  background: url('../../assets/img/bg_5.jpg');
+  background: url('@/assets/img/bg_5.webp');
   background-size: cover;
   filter: blur(5px);
   transform: scale(1.1);

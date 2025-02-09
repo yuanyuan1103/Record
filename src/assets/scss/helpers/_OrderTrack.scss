@@ -2,7 +2,7 @@ $screen-height: 100vh;
 $banner-height: 264px;
 .orderBanner{
   height: $banner-height;
-  background: url('../../assets/img/bg_4.jpg') 80%;
+  background: url('@/assets/img/bg_4.webp') 80%;
   background-size: cover;
   filter: blur(5px);
   transform: scale(1.1);

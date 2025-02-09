@@ -35,14 +35,14 @@
           </div>
         </div>
         <div class="carousel-item">
-          <img :src="require('./../../assets/img/banner_2.jpg')" class="d-block" alt="RecordBanner" />
+          <img :src="require('@/assets/img/banner_2.webp')" class="d-block" alt="RecordBanner" />
           <div class="carousel-caption d-md-block" style="text-align: left">
             <h2 class="textspac">近年被譽為<br />「黑膠唱片復興時代」</h2>
             <router-link to="/product" class="custom-btn btn btn-outline-light rounded-pill px-5">來去逛逛</router-link>
           </div>
         </div>
         <div class="carousel-item">
-          <img :src="require('./../../assets/img/banner_3.jpg')" class="d-block" alt="RecordBanner" />
+          <img :src="require('@/assets/img/banner_3.webp')" class="d-block" alt="RecordBanner" />
           <div class="carousel-caption d-md-block">
             <h2 class="textspac">聽黑膠需要理由嗎？</h2>
             <router-link to="/product" class="custom-btn btn btn-outline-light rounded-pill px-5">來去逛逛</router-link>
